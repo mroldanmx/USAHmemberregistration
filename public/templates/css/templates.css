@@ -1,0 +1,442 @@
+
+/*HEADER--------------------------*/
+
+#registrationForm{
+	font-size: 18px;
+}
+
+	#registrationForm .navbar-default{
+		background-color: #003976;
+		color: white;
+		margin-bottom: 0;
+		border: none;
+		border-radius: 0;
+		height: 71px;
+	}
+
+	#registrationForm .navbar-default .container-fluid{
+        width: 900px;
+        height: 100%;
+        position: relative;
+    }
+
+	#registrationForm .navbar-default .navbar-nav>li>a{
+		color: white;
+	}
+	#registrationForm .navbar-default .navbar-nav>li>a:hover{
+		color: white;
+		text-decoration: underline;
+	}
+
+	#registrationForm .navbar-default img{
+		width: 116px;
+		margin-top: 3px;
+		margin-left: 11px;
+	}
+
+	#registrationForm .navbar-default h1{
+		text-align: center;
+		font-size: 26px;
+		position: absolute;
+		margin: 0;
+		top: 12px;
+		left: 50%;
+		margin-left: -81px;
+	}
+
+		#registrationForm .navbar-default h1 small{
+			font-size: 0.7em;
+			display: block;
+			color: white;
+		}
+
+	#registrationForm .navbar-default .navbar-right{
+		margin-top: 10px;
+	}
+
+
+/*STEPS BAR--------------------------*/
+
+#steps-bar{
+	background: #0651A2;
+	text-align: center;
+	position: relative;
+}
+
+	#steps-bar .steps-container{
+		width: 950px;
+		margin: 0 auto;
+		padding: 10px 0;
+	}
+
+
+	#steps-bar .step{
+		display: inline-block;
+		color: white;
+		text-align: center;
+		position: relative;
+		z-index: 1;
+		width: 115px;
+		float: none;
+		vertical-align: middle;
+		}
+
+	#steps-bar .step.last{
+		margin: 0;
+	}
+
+		#steps-bar .step .number{
+			display: block;
+			font-weight: normal;
+			font-size: 14px;
+			margin-bottom: 2px;
+		}
+
+		#steps-bar .step i{
+			width: 45px;
+			height: 45px;
+			background: #B3B3B3;
+			border-radius: 50%;
+			display: inline-block;
+			margin-bottom: 2px;
+			font-size: 26px;
+			line-height: 44px;
+		}
+		#steps-bar .step.active i{
+			background: #DD0A37;
+		}
+
+		#steps-bar .step .name{
+			margin-bottom: 0;
+			display: block;
+			font-weight: normal;
+			width: 150px;
+		}
+
+
+	#steps-bar .steps-progress{
+		position: absolute;
+		top: 50px;
+		height: 10px;
+		background: #B3B3B3;
+		width: 750px;
+		box-shadow: none;
+		display: block;
+		margin-left: calc(50% - 540px);
+	}
+
+	/*Bar*/
+
+	.step-bar{
+		background: #b3b3b3;
+		height: 15px;
+		width: 10%;
+		margin-top: -5px;
+		margin-left: -42px;
+		margin-right: -42px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.step-bar.active{
+		width: 45%;
+	}
+
+		.step-bar .step-progress{
+			background: #DD0A37;
+			width: 0%;
+			height: 100%;
+		}
+		.step-bar .step-progress.p-1{ width: 0% }
+		.step-bar .step-progress.p-2{ width: 7.7% }
+		.step-bar .step-progress.p-3{ width: 15.4% }
+		.step-bar .step-progress.p-4{ width: 23.1% }
+		.step-bar .step-progress.p-5{ width: 30.8% }
+		.step-bar .step-progress.p-6{ width: 38.5% }
+		.step-bar .step-progress.p-7{ width: 46.2% }
+		.step-bar .step-progress.p-8{ width: 53.9% }
+		.step-bar .step-progress.p-9{ width: 61.6% }
+		.step-bar .step-progress.p-10{ width: 69.3% }
+		.step-bar .step-progress.p-11{ width: 77% }
+		.step-bar .step-progress.p-12{ width: 84.7% }
+		.step-bar .step-progress.p-13{ width: 92.4% }
+		.step-bar .step-progress.complete{ width: 100% }
+
+
+/*FORM--------------------------*/
+
+#registrationForm .container{
+	text-align: center;
+	padding-top: 25px;
+	padding-bottom: 35px;
+	min-height: calc(100vh - 182px);
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	padding-right: 25px;
+	padding-left: 25px;
+}
+
+	#registrationForm .container .question-icon i{
+		color: #0651A2;
+		width: 60px;
+		height: 60px;
+		border: 3px solid #0651A2;
+		border-radius: 50%;
+		font-size: 36px;
+		line-height: 55px;
+	}
+
+	#registrationForm .container h2{
+		color: #0651A2;
+		text-align: center;
+		margin: 10px 0 28px;
+	}
+
+	#registrationForm p{
+		text-align: left;
+		margin-bottom: 15px;
+	}
+
+	#registrationForm .container .form-group{
+		text-align: left;
+	}
+
+		#registrationForm .container .form-group label{
+			font-weight: normal;
+			margin-bottom: 2px;
+		}
+
+		#registrationForm .container .form-group .form-control,
+		#registrationForm .container .form-group select{
+			border-radius: 0!important;
+			border: 1px solid lightgray;
+			box-shadow: none;
+			background: white;
+		}
+
+		#registrationForm .container .input-group .form-control{
+			border-left: 0;
+			padding-left: 0px;
+		}
+
+		#registrationForm .container .input-group .input-group-addon{
+			border-radius: 0;
+		    background: white;
+		    border-right: none;
+		    position: relative;
+		    z-index: 3;
+		}
+
+			#registrationForm .container .input-group .input-group-addon i{
+			    font-size: 24px;
+			}
+
+	#registrationForm .btn{
+		border-radius: 0;
+		font-size: 18px;
+		margin-top: 20px;
+		border: none;
+		height: 46px;
+	}
+	#registrationForm .btn:active{
+		transform: translateY(2px);
+	}
+
+	#registrationForm .btn-link{color: #9F9F9F;line-height: 33px;}
+
+	#registrationForm .btn-primary{
+		background: #0651A2;
+		padding: 10px 50px;
+	}
+	#registrationForm .btn-primary:hover{
+		background: #025abb;
+	}
+
+	#registrationForm .required{
+		color: #DD0A37;
+	}
+
+	/*Note*/
+	#registrationForm .note{background: #eaeaea;text-align: left;padding: 10px 22px;margin-top: 15px;margin-bottom: 5px;}
+
+		#registrationForm .note h3{
+			font-size: 18px;
+			font-weight: bold;
+			margin-top: 10px;
+		}
+
+		#registrationForm .note .highlight{
+			color: #DD0A37;
+		}
+
+		#registrationForm .note a{
+			color: #DD0A37;
+		}
+
+		#registrationForm .note p{
+			text-align: left;
+		}
+
+
+/*CUSTOM RADIO AND CHECK--------------------------*/
+
+.object {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: auto;
+  display: inline-block;
+  font-weight: normal;
+}
+
+	.object input {
+	  position: absolute;
+	  opacity: 0;
+	  cursor: pointer;
+	  height: 0;
+	  width: 0;
+	}
+
+.checkmark {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  height: 28px;
+  width: 28px;
+  border: 2px solid #b3b3b3;
+  background: none;
+}
+
+	.object:hover input ~ .checkmark {
+	  background-color: #b6b6b6;
+	}
+
+	.object input:checked ~ .checkmark {
+	  background-color: #004ea4;
+	  border-color: #004ea4;
+	}
+
+	.checkmark:after {
+	  content: "";
+	  position: absolute;
+	  display: none;
+	  margin-top: 1px;
+	}
+
+	.object input:checked ~ .checkmark:after {
+	  display: block;
+	}
+
+	.object .checkmark:after{
+	  left: 8px;
+	  top: 2px;
+	  width: 9px;
+	  height: 15px;
+	  border: solid white;
+	  border-width: 0 3px 3px 0;
+	  -webkit-transform: rotate(45deg);
+	  -ms-transform: rotate(45deg);
+	  transform: rotate(45deg);
+	}
+
+	.checkbox label, .radio label{
+		padding-left: 7px;
+		font-weight: normal;
+	}
+
+.object.radio .checkmark {
+	border-radius: 50%;
+}
+
+	.object.radio .checkmark:after {
+	 	top: 6px;
+	 	left: 7px;
+	 	width: 10px;
+	 	height: 10px;
+	 	border-radius: 50%;
+	 	background: white;
+	}
+
+
+
+/*DESKTOP--------------------------*/
+
+@media (min-width: 993px){
+    
+    #registrationForm .container{
+        width: 600px;
+    }
+
+}
+
+/*MOBILE--------------------------*/
+
+.navbar-default .navbar-toggle{
+	margin-top: 18px;
+    margin-right: 16px;
+}
+
+	.navbar-default .navbar-toggle .icon-bar{
+		background: white;
+	}
+
+@media (max-width: 992px){
+
+	#registrationForm .navbar-default .container-fluid{
+		width: 100%;
+	}
+
+	#registrationForm .navbar-default img{
+	width: 100px;
+	margin-top: 7px;
+	}
+
+	#registrationForm .navbar-default h1{
+		font-size: 25px;
+		margin-left: -68px;
+	}
+    
+    #steps-bar .steps-container{
+        width: 100%;   
+    }
+
+        #steps-bar .step{
+            width: 80px;
+        }
+        #steps-bar .step.active{
+        }
+
+            #steps-bar .step .name{
+                font-size: 14px;    
+            }
+
+        #steps-bar .steps-progress{
+            width: 300px;
+            margin-left: calc(50% - 150px);    
+        }
+
+    .step-bar{
+		width: 10%;
+		margin-top: 0px;
+		margin-left: -25px;
+		margin-right: -25px;
+	}
+	.step-bar.active{
+		width: 20%;
+	}
+
+	#registrationForm .btn-primary{
+		min-width: 170px;
+		padding: 10px 20px;
+	}
+
+}
+
