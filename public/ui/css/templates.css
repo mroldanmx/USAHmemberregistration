@@ -6,7 +6,7 @@
 }
 
 	#registrationForm .navbar-default{
-		background-color: #003976;
+		background-color: #262626;
 		color: white;
 		margin-bottom: 0;
 		border: none;
@@ -58,7 +58,7 @@
 /*STEPS BAR--------------------------*/
 
 #steps-bar{
-	background: #0651A2;
+	background: url(../img/header-desktop.jpg) #3F3F3F center center no-repeat;
 	text-align: center;
 	position: relative;
 }
@@ -95,7 +95,7 @@
 		#steps-bar .step i{
 			width: 45px;
 			height: 45px;
-			background: #B3B3B3;
+			background: #969595;
 			border-radius: 50%;
 			display: inline-block;
 			margin-bottom: 2px;
@@ -128,7 +128,7 @@
 	/*Bar*/
 
 	.step-bar{
-		background: #b3b3b3;
+		background: #7d7d7d;
 		height: 15px;
 		width: 10%;
 		margin-top: -5px;
@@ -178,17 +178,17 @@
 }
 
 	#registrationForm .container .question-icon i{
-		color: #0651A2;
+		color: black;
 		width: 60px;
 		height: 60px;
-		border: 3px solid #0651A2;
+		border: 3px solid black;
 		border-radius: 50%;
 		font-size: 36px;
 		line-height: 55px;
 	}
 
 	#registrationForm .container h2{
-		color: #0651A2;
+		color: #DD0A37;
 		text-align: center;
 		margin: 10px 0 28px;
 	}
@@ -243,14 +243,16 @@
 		transform: translateY(2px);
 	}
 
-	#registrationForm .btn-link{color: #9F9F9F;line-height: 33px;}
+	#registrationForm .btn-link{
+		color: #9F9F9F;line-height: 33px;
+	}
 
 	#registrationForm .btn-primary{
-		background: #0651A2;
+		background: #DD0A37;
 		padding: 10px 50px;
 	}
 	#registrationForm .btn-primary:hover{
-		background: #025abb;
+		background: #f91848;
 	}
 
 	#registrationForm .required{
@@ -258,7 +260,13 @@
 	}
 
 	/*Note*/
-	#registrationForm .note{background: #eaeaea;text-align: left;padding: 10px 22px;margin-top: 15px;margin-bottom: 5px;}
+	#registrationForm .note{
+		background: #eaeaea;
+		text-align: left;
+		padding: 10px 22px;
+		margin-top: 15px;
+		margin-bottom: 5px;
+	}
 
 		#registrationForm .note h3{
 			font-size: 18px;
@@ -266,12 +274,10 @@
 			margin-top: 10px;
 		}
 
-		#registrationForm .note .highlight{
-			color: #DD0A37;
-		}
-
-		#registrationForm .note a{
-			color: #DD0A37;
+		#registrationForm .container a{
+			color: #004ba5;
+			text-decoration: underline;
+			cursor: pointer;
 		}
 
 		#registrationForm .note p{
@@ -365,6 +371,80 @@
 	 	background: white;
 	}
 
+/*FOOTER--------------------------*/
+
+footer .info-bar{
+	background: #272727;
+	color: white;
+	text-align: center;
+	padding: 16px 0 6px;
+}
+
+	footer .info-bar .usa-hokey-logo{
+		width: 110px;
+	}
+
+	footer .info-bar h3{
+		margin-bottom: 13px;
+	}
+
+	footer .info-bar .social-media{
+			margin-bottom: 25px;
+	}
+
+		footer .info-bar .social-media li{
+			display: inline-block;
+			margin: 0 10px;
+		}
+
+			footer .info-bar .social-media li i{
+				color: white;
+				background: #DD0A37;
+				border-radius: 50%;
+				width: 35px;
+				height: 35px;
+				line-height: 36px;
+				font-size: 20px;
+			}
+
+		footer .info-bar .contact{
+			/*border-top: 1px solid white;*/
+			margin-top: 22px;
+			margin-left: 30px;
+			margin-right: 30px;
+		}
+
+			footer .info-bar .contact i{
+				display: block;
+				font-size: 26px;
+				margin-bottom: 9px;
+			}
+
+			footer .info-bar .contact a{
+				color: white;
+				font-size: 18px;
+				margin-bottom: 9px;
+				display: block;
+			}
+
+
+
+
+footer .rights-bar{
+	background: black;
+	color: white;
+	font-size: 14px;
+	padding: 15px 0;
+	text-align: center;
+	border-top: 1px solid white;
+}
+
+	footer .rights-bar a{
+		text-decoration: underline;
+		color: white;
+		margin: 0 5px;
+		cursor: pointer;
+	}
 
 
 /*DESKTOP--------------------------*/
@@ -374,6 +454,11 @@
     #registrationForm .container{
         width: 600px;
     }
+
+		footer .info-bar .contact .item{
+			display: inline-block;
+			margin: 0 20px;
+		}
 
 }
 
@@ -437,6 +522,14 @@
 		min-width: 170px;
 		padding: 10px 20px;
 	}
+
+	footer .rights-bar span{
+		display: block;
+	}
+
+		footer .info-bar .contact{
+			display: block;
+		}
 
 }
 

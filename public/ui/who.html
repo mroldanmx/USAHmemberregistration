@@ -24,7 +24,7 @@
   <body id=registrationForm>
 
 
-      <nav class="navbar navbar-default">
+     <nav class="navbar navbar-default">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -63,7 +63,7 @@
           </div><!-- step -->
 
           <div class="step-bar active">
-            <div class="step-progress p-13"></div>
+            <div class="step-progress p-3"></div>
           </div><!-- step-bar -->
 
           <div class="step">
@@ -103,47 +103,25 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <h2>USA Hockey Concussion Information and Acknowledgement</h2>
+            <h2>Who are you registering?</h2>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-12">
-            <p>Please read and accept USA Hockey Concussion Information and Acknowledgement</p>
-          </div>
-        </div>
+          <div class="col-md-offset-2 col-md-8" style="text-align: left;">
 
-        <div class="row">
-          <div class="col-md-offset-0 col-md-12" style="text-align: left;">
-
-            <div class="note">
-
-              <h3>USA Hockey Concussion Information and Acknowledgement </h3>
-
-              <p>All sports and free play are associated with risk for a concussion, including playing, officiating or participating in ice hockey. It is important that all participants and parents learn about concussion prevention, recognition, treatment and return to play.</p>
-
-              <p>A concussion is a type of traumatic brain injury-or TBI- caused by a bump or blow to the head or by a hit to the body that causes the head and brain to move quickly back and forth.</p>
-
-              <p> Bouncing or twisting of the brain in the skull can cause chemical changes and sometimes stretching of the brain cells. A concussion disrupts the way the brain normally works. Most concussions are mild, but all concussions should be taken seriously because permanent brain damage and death can occur from another injury. A concussion may be difficult to recognize.</p>
-
-              <p>A player does not have to be "knocked-out" to have a concussion- less than 10% of players actually lose consciousness. Signs and symptoms may show up right after the injury or can take hours or days to fully appear.</p>
-
-              <p>If a person reports one or more symptoms or demonstrates any signs of concussion after a blow to the head or body, s/he should be kept out of practice, play or training immediately and referred to a health care professional with experience in concussion management. A concussed brain needs time to heal and the person is much more likely to have another concussion if they return to soon.</p>
-
-              <p>Repeat concussions are usually more severe and take longer to heal. Return to play is allowed only after the individual is without symptoms, has progressed through the concussion protocol and is cleared by the health care professional.</p>
-
-              <p>USA Hockey provides all participants with information and educational materials about concussions, including the risk of sustaining a concussion, how to minimize these risks, concussion signs and symptoms, and USA Hockey's program for returning to play following a concussion. USA Hockey's Concussion Management Program can be found on the USA Hockey website at: http://www.usahockey.com/safety-concussions.</p>
-
-              <p>By checking the box and placing my initials in the box below,  participant, and participant's parent(s) or legal guardian(s) if participant is a minor, hereby acknowledges <br>
-              (1) that I have had the opportunity to review information on concussions provided by USA Hockey, including the signs and symptoms of a concussion, (2) that participating in the sport of ice hockey involves the risk of sustaining a concussion and that I knowingly, freely and fully assume all such risks, (3) that any participant suspected of possibly sustaining a concussion will be removed from practice or competition (and that I will remove myself from practice or competition) and not returned to practice or competition until cleared in writing by a licensed health care provider trained in the evaluation and management of concussions, and (4) that I shall follow USA Hockey's Post-Concussion Return to Play Protocol and any applicable state law prior to returning to play.</p>
-
-            </div><!-- note -->
-
-            <div class="object checkbox">
-              <label>
-                <input type="checkbox">  <span class="checkmark"></span> I have read and accept the USA Hockey Concussion Information and Acknowledgement <span class="required">*</span>
-              </label>
-            </div>
+            <label class="object radio">Myself
+              <input type="radio" checked="checked" name="radio">
+              <span class="checkmark"></span>
+            </label><br>
+            <label class="object radio">Adult Family Member (18 and over)
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+            </label><br>
+            <label class="object radio">Adult Non-family Member
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+            </label>
 
           </div>
         </div>  
@@ -151,15 +129,51 @@
         <div class="row">
 
             <div class="btn btn-link">Previous</div>
-            <div class="btn btn-primary">Continue to Next Step</div>
+            <div class="btn btn-primary">Next</div>
 
         </div>  
 
 
       </div><!-- container -->
+
+      <footer>
+
+        <div class="info-bar">
+          <div><img class="usa-hokey-logo" src="img/usa-hockey-logo.svg"></div>
+
+          <h3>Follow us</h3>
+          <ul class="social-media">
+            <li><i class="fab fa-facebook-f"></i></li>
+            <li><i class="fab fa-twitter"></i></li>
+            <li><i class="fab fa-instagram"></i></li>
+            <li><i class="fab fa-youtube"></i></li>
+            <li><i class="fas fa-shopping-cart"></i></li>
+          </ul>
+
+          <div class="contact">
+              
+            <h3>Contact us</h3>
+
+            <div class="item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:1-800-566-3288">1-800-566-3288 ext. 123</a>    
+            </div>
+
+            <div class="item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:memberservices@usahockey.org">memberservices@usahockey.org</a>    
+            </div>
+          </div>
+
+        </div><!-- info -->
+
+        <div class="rights-bar">
+          <span>©2019 USA Hockey All Rights Reserved.</span>
+          <span><a>Terms of Use</a> <a>Privacy Policy Login</a></span>
+        </div>
       
-      
-      
+      </footer>
+         
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
