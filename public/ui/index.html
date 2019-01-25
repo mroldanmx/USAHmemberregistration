@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/fontawesome-5.css">
 
-    <link rel="stylesheet" type="text/css" href="css/templates.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,115 +21,122 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body id=registrationForm>
+  <body>
 
 
-      <nav class="navbar navbar-default">
+      <nav id="landing-page-nav" class="navbar navbar-default">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
             <img src="img/usa-hockey-logo.svg">
           </div>
 
-            <h1>
-              2018-2019
-              <small>Season Registration</small>
-            </h1>
+          <div class="pull-right">
+          	<div class="item">
+			        <i class="fas fa-phone"></i>
+			        <a href="tel:1-800-566-3288">1-800-566-3288 ext. 123</a>		
+		        </div>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Questions</a></li>
-              <li><a href="#">Support</a></li>
-            </ul>
-          </div><!-- /.navbar-collapse -->
+		        <div class="item">
+			        <i class="fas fa-envelope"></i>
+			        <a href="mailto:memberservices@usahockey.org">memberservices@usahockey.org</a>		
+		        </div>
+          </div>
+ 
         </div><!-- /.container-fluid -->
       </nav><!-- navbar -->
 
-      <div id="steps-bar">
-        
-        <div class="steps-container">
+   		
+			<div id="banner">
 
-          <div class="step active">
-            <label class="number">STEP 1</label>
-            <i class="far fa-file-alt"></i>
-            <label class="name">Information</label>
-          </div><!-- step -->
+				<div class="content">
+					<h1>MEMBER REGISTRATION
+						<small>Fast and Secured Registration</small>
+					</h1>
 
-          <div class="step-bar active">
-            <div class="step-progress p-1"></div>
-          </div><!-- step-bar -->
+					<div class="buttons">
+						<a href="register.html" class="btn btn-primary btn-lg">Register Now</a>
+						<button class="btn btn-primary btn-lg">Member Login</button>
+					</div><!-- buttons -->
 
-          <div class="step">
-            <label class="number">STEP 2</label>
-            <i class="far fa-thumbs-up"></i>
-            <label class="name">Review</label>
-          </div><!-- step -->
+				</div><!-- title-wrapper -->
 
-          <div class="step-bar">
-            <div class="step-progress"></div>
-          </div><!-- step-bar -->
+				<video src="img/YouthtoUSAHockey_NOMUSIC.mp4" autoplay loop muted poster="img/benefits.jpg">
+				</video>
 
-          <div class="step">
-            <label class="number">STEP 3</label>
-            <i class="far fa-credit-card"></i>
-            <label class="name">Payment</label>
-          </div><!-- step -->
+			</div>
+				
+			<section id="welcome" class="row">
 
-          <div class="step-bar">
-            <div class="step-progress"></div>
-          </div><!-- step-bar -->
+				<div class="col-md-12">
+					<h2>Welcome</h2>
+				</div>
 
-          <div class="step last">
-            <label class="number">STEP 4</label>
-            <i class="fas fa-print"></i>
-            <label class="name">Confirmation</label>
-          </div><!-- step -->
+				<div class="col-md-offset-3 col-md-6">
+					<p>USA Hockey, Inc., is the National Governing Body for the sport of ice hockey in the United States. Its mission is to promote the growth of hockey in America and provide the best possible experience for all members by encouraging, developing, advancing and administering the sport.</p>
+				</div>
 
-        </div><!-- steps-container -->
+			</section>
 
-      </div><!-- steps-bar -->
+			<section id="register-now" class="row">
+				
+				<div class="col-md-12">
+					<h2>Join the action</h2>
+				</div>
 
-       <div class="container">
-        
-        <div class="row question-icon">
-          <i class="fas fa-user-tie"></i>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <h2>Are you 18 years of age or older?</h2>
-          </div>
-        </div>
+				<div class="col-md-offset-4 col-md-4">
+					<p>Join as a player, coach, referee, or volunteer. Membership is easy</p>
+				</div>
 
-        <div class="row">
-          <div class="col-md-offset-1 col-md-10">
+				<div class="col-md-12">
+					<a href="register.html" class="btn btn-primary btn-lg">Register Now</a>
+				</div>
 
-            <p>You must be 18 or older to complete an online registration for yourself or your child.</p>
-            <p>If you are not, a parent or guardian must complete this registration for you.</p>
+			</section>
 
-            <div class="object checkbox">
-              <label>
-                <input type="checkbox">  <span class="checkmark"></span> I am 18 years old or greater <span class="required">*</span>
-              </label>
-            </div>
+			<section id="benefits" class="row">
+				
+				<div class="col-md-12">
+					<h2>Membership Benefits</h2>
+				</div>
 
-          </div>
-        </div>  
+				<div class="col-md-offset-1 col-md-4">
+					<img src="img/benefits.jpg">
+				</div>
 
-        <div class="row">
+				<div class="col-md-6">
+					
+					<ul class="benefits-list">
+						<li>
+							<i class="fas fa-book-open"></i>
+							<h4>Subscription to USA Hockey Magazine</h4>
+							<p>The most widely distributed hockey publication in the world</p>
+						</li>
+						<li>
+							<i class="fas fa-medkit"></i>
+							<h4>World-class insurance coverage</h4>
+							<p>To provide peace-of-mind for all involved in the sport</p>
+						</li>
+						<li>
+							<i class="fas fa-flag"></i>
+							<h4>Participation in events as Team USA like</h4>
+							<ul>
+								<li>Olympic and Paralympic Winter Games</li>
+								<li>World Championships at all levels</li>
+								<li>Other international events</li>
+							</ul>
+						</li>
+						<li>
+							<i class="fas fa-clipboard-list"></i>
+							<h4>Official Playing Rules</h4>
+							<p>To provide consistency for all participants.</p>
+						</li>
+					</ul>
 
-            <a class="btn btn-primary" href="type.html">Next</a>
+				</div>
 
-        </div>  
+			</section>
 
-
-      </div><!-- container -->
       
       <footer>
 
@@ -145,7 +152,7 @@
 	        	<li><i class="fas fa-shopping-cart"></i></li>
 	        </ul>
 
-	        <div class="contact">
+	        <div class="contact hide">
 		        	
 		        <h3>Contact us</h3>
 
@@ -173,6 +180,17 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
+
+    <script type="text/javaScript">
+
+    	$(window).on('scroll',function() {
+    		if($(window).scrollTop())
+    			$('nav').addClass('sticky');
+    		else
+    			$('nav').removeClass('sticky');
+    	})
+
+    </script>
 
   </body>
 </html>
