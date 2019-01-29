@@ -1,38 +1,531 @@
 
-/*HEADER--------------------------*/
+/*GENERIC//////////////////////////////////////////////////*/
+
+@import url('https://fonts.googleapis.com/css?family=Palanquin:200,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Rambla:700i,400i');
+
+
+
+/*BOOTSTRAP OVERRIDES--------------------------*/
+
+body{
+	font-size: 20px;
+	color: #4D4D4D;
+	font-family: 'Palanquin', sans-serif;
+	font-weight: 200;
+}
+
+small{
+	font-family: 'Palanquin', sans-serif;
+	font-weight: 200;
+}
+
+/*Buttons*/
+.btn-primary{
+	background: #DD0A37;
+	padding: 10px 20px 15px;
+}
+.btn-primary:hover{
+	background: #f91848;
+}
+.btn-primary:active, .btn-primary:focus, .btn-primary:visited{
+	background: #DD0A37!important;
+}
+
+.btn{
+	border-radius: 0;
+	font-size: 24px;
+	margin-top: 20px;
+	border: none;
+}
+.btn:active{
+	transform: translateY(2px);
+}
+.btn-link{
+	color: #9F9F9F;
+	line-height: 33px;
+}
+
+h1, h2, h3{
+	font-family: 'Rambla', sans-serif;
+	font-weight: 700;
+    font-style: italic;
+}
+
+h3{
+	font-family: 'Rambla', sans-serif;
+	font-weight: 400;
+    font-style: italic;
+}
+
+/*NAVBAR--------------------------*/
+
+.navbar-default{
+	background-color: #262626;
+	color: white;
+	margin-bottom: 0;
+	border: none;
+	border-radius: 0;
+	height: 71px;
+	border-bottom: 1px solid #5a5a5a;
+}
+
+.navbar-default .navbar-nav>li>a{
+	color: white;
+}
+.navbar-default .navbar-nav>li>a:hover{
+	color: white;
+	text-decoration: underline;
+}
+
+.navbar-default img{
+	width: 116px;
+	margin-top: 3px;
+	margin-left: 11px;
+}
+
+.navbar-default .navbar-right{
+	margin-top: 10px;
+}
+
+
+/*FOOTER--------------------------*/
+
+footer .info-bar{
+	background: #000000; /* Old browsers */
+	background: -moz-linear-gradient(top, #000000 0%, #303030 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #000000 0%,#303030 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #000000 0%,#303030 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#303030',GradientType=0 ); /* IE6-9 */
+	color: white;
+	text-align: center;
+	padding: 16px 0 6px;
+}
+
+	footer .info-bar .usa-hokey-logo{
+		width: 110px;
+	}
+
+	footer .info-bar h3{
+		margin-bottom: 8px;
+		font-size: 22px;
+	}
+
+	footer .info-bar .social-media{
+		margin-bottom: 15px;
+		margin-top: 18px;
+		padding-left: 0;
+	}
+
+		footer .info-bar .social-media li{
+			display: inline-block;
+			margin: 0 10px;
+		}
+
+			footer .info-bar .social-media li i{
+				color: white;
+				background: #DD0A37;
+				border-radius: 50%;
+				width: 50px;
+				height: 50px;
+				line-height: 51px;
+				font-size: 21px;
+			}
+
+		footer .info-bar .contact{
+			/*border-top: 1px solid white;*/
+			margin-top: 22px;
+			margin-left: 30px;
+			margin-right: 30px;
+		}
+
+			footer .info-bar .contact i{
+				display: block;
+				font-size: 26px;
+				margin-bottom: 9px;
+			}
+
+			footer .info-bar .contact a{
+				color: white;
+				font-size: 18px;
+				margin-bottom: 9px;
+				display: block;
+			}
+
+
+
+
+footer .rights-bar{
+	background: black;
+	color: white;
+	font-size: 14px;
+	padding: 15px 0;
+	text-align: center;
+	border-top: 1px solid #5a5a5a;
+}
+
+	footer .rights-bar a{
+		text-decoration: underline;
+		color: white;
+		margin: 0 1px;
+		cursor: pointer;
+	}
+
+
+/*LANDING PAGE//////////////////////////////////////////////////*/
+
+/*NAVBAR--------------------------*/
+
+#landing-page .navbar{
+	position: fixed;
+	z-index: 2;
+	width: 100%;
+	background: none;
+	border-bottom: 1px solid #8c8c8c;
+}
+
+	#landing-page .navbar .pull-right{
+		margin-top: 20px;
+		margin-right: 10px;
+	}
+
+		#landing-page .navbar .pull-right .item{
+			color: white;	
+			display: inline-block;
+			margin-left: 20px;
+		}
+
+			#landing-page .navbar .pull-right .item i{
+				color: white;	
+			}
+
+			#landing-page .navbar .pull-right .item a{
+				color: white;
+				font-size: 18px;
+			}
+				#landing-page .navbar .pull-right .item a:hover{
+					text-decoration: none;
+				}
+
+					#landing-page .navbar .pull-right .item a span:hover{
+						text-decoration: underline;
+						display: inline-block;
+					}
+
+
+#landing-page .navbar.sticky{
+	background: #262626;
+	border-bottom: none;
+	height: 50px;
+	border-bottom: 1px solid #5a5a5a;
+}
+
+	#landing-page .navbar.sticky img{
+	    width: 90px;
+	    margin-top: 0px;
+	}
+
+	#landing-page .navbar.sticky .pull-right{
+		margin-top: 11px;
+	}
+
+
+
+/*BANNER--------------------------*/
+
+#banner{
+	width: 100%;
+	height: 550px;
+	background: gray;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+}
+
+	#banner .content{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background: rgba(0, 0, 0, 0.5);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding-top: 70px;
+	}
+
+		#banner .content h1{
+			color: white;
+			font-size: 2.3em;
+			margin: 0 0 30px;
+		}
+
+			#banner .content h1 div{
+				color: #dd0a37;
+			    font-size: 1.3em;
+			    margin-bottom: -9px;
+			}
+
+
+			#banner .content h1 small{
+				color: #cacaca;
+				display: block;
+				margin-top: 5px;
+			}
+
+		#banner .content .buttons{
+
+		}
+
+			#banner .content .buttons .btn{
+				display: inline-block;
+				margin: 0 7px;
+			}
+
+	#banner video{
+		width: 100%;
+		
+	}
+
+
+/*SECTIONS--------------------------*/
+
+#landing-page section{
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+/*Titles*/
+
+#landing-page section h2{
+	color: #DD0A37;
+	font-size: 2.5em;
+	margin-bottom: 20px;
+}
+
+
+/*Register Now*/
+
+#welcome{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+/*Register Now*/
+
+#register-now{
+	background: url(../img/join-background.jpg) center center no-repeat;
+	background-size: cover;
+	color: white;
+	background-attachment: fixed;
+	padding: 100px 0!important;
+}
+
+	#register-now h2{
+		color: white!important;
+	}
+
+/*Membership Benefits*/
+
+#benefits{
+	/*background: gray;*/
+}
+
+#benefits h2{
+	margin-bottom: 40px!important;
+}
+
+#benefits img{
+	width: 100%;
+}
+
+.left-col{
+	text-align: right;
+}
+
+.benefits-list{
+	list-style: none;
+	text-align: left;
+	padding: 0;
+}
+
+	.benefits-list > li{margin-bottom: 18px;}
+
+		.benefits-list li i{
+		font-size: 1.4em;
+		vertical-align: middle;
+		margin-right: 5px;
+		margin-top: -0.3em;
+		}
+
+		.benefits-list li h4{
+			display: inline-block;
+			margin-bottom: 0;
+			font-size: inherit;
+			font-weight: 500;
+		}
+
+		.benefits-list li p{
+		margin-left: 42px;
+		}
+
+		.benefits-list li ul{
+			list-style: none;
+		}
+
+			.benefits-list li ul li{
+				line-height: 1.3em;
+			}
+
+			.benefits-list li ul li:before {
+			  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+			  color: #DD0A37; /* Change the color */
+			  font-weight: bold; /* If you want it to be bold */
+			  display: inline-block; /* Needed to add space between the bullet and the text */
+			  width: 21px; /* Also needed for space (tweak if needed) */
+			   /* Also needed for space (tweak if needed) */
+			  font-size: 1.8em;
+			  position: relative;
+			  top: 0.2em;
+			  height: 0;
+			}
+
+
+/*DESKTOP--------------------------*/
+
+@media (min-width: 993px){
+
+	#landing-page .container{
+		width: 100%;
+		padding: 0;
+	}
+
+    #landing-page .row{
+    	margin-left: 0;
+    	margin-right: 0;
+    }
+
+    #benefits{
+	    padding-bottom: 60px!important;
+	   }
+
+    #register-now{
+    	margin: 0;
+    }
+
+    footer .info-bar .contact{
+    	display: none;
+    }
+
+    #banner img{
+    	display: none;
+    }
+
+}
+
+/*MOBILE--------------------------*/
+
+@media (max-width: 992px){
+
+	#banner .content .buttons .btn{
+	    margin-bottom: 18px;
+	}
+
+	#banner .content h1{
+		color: white;
+		font-size: 1.9em;
+		margin: 0 0 30px;
+		width: 80%;
+	}
+
+	#banner .content h1 div{
+		font-size: inherit;
+		margin-bottom: -1px;
+		color: #ff1d4d;
+	}
+
+	#banner .content h1 small{
+	    color: white;
+	}
+
+	#landing-page section h2{
+		font-size: 2.2em;
+	}
+
+	#landing-page .navbar .pull-right .item span{
+		display: none;
+	}
+
+	#landing-page .navbar .pull-right{
+		position: absolute;
+		top: -8px;
+		right: 2px;
+	}
+
+	#landing-page .navbar .pull-right .item{
+		margin-left: 4px;
+	}
+
+	#landing-page .navbar .pull-right .item i{
+		font-size: 24px;
+		width: 48px;
+		height: 48px;
+		display: inline-block;
+		text-align: center;
+		line-height: 49px;
+	}
+
+	#banner video{
+		display: none;
+	}	
+
+	#benefits{
+		padding-left: 10px;
+    	padding-right: 10px;
+	}
+
+		#benefits img {
+		    margin-bottom: 30px;
+		}
+
+		.benefits-list li ul{
+			padding: 0;
+		}
+
+			.benefits-list li p{
+				margin-left: 0px;
+			}
+
+
+	footer .info-bar .social-media li{
+		margin: 0 4px;
+	}
+
+		footer .info-bar .social-media li i{
+			width: 45px;
+			height: 45px;
+			line-height: 46px;
+		}
+
+}
+
+
+/*REGISTRATION FORM//////////////////////////////////////////////////*/
 
 #registrationForm{
 	font-size: 18px;
 }
 
-	#registrationForm .navbar-default{
-		background-color: #262626;
-		color: white;
-		margin-bottom: 0;
-		border: none;
-		border-radius: 0;
-		height: 71px;
-	}
 
-	#registrationForm .navbar-default .container-fluid{
-        width: 900px;
-        height: 100%;
-        position: relative;
-    }
+/*NAVBAR--------------------------*/
 
-	#registrationForm .navbar-default .navbar-nav>li>a{
-		color: white;
-	}
-	#registrationForm .navbar-default .navbar-nav>li>a:hover{
-		color: white;
-		text-decoration: underline;
-	}
-
-	#registrationForm .navbar-default img{
-		width: 116px;
-		margin-top: 3px;
-		margin-left: 11px;
-	}
+#registrationForm .navbar-default .container-fluid{
+    width: 900px;
+    height: 100%;
+    position: relative;
+}
 
 	#registrationForm .navbar-default h1{
 		text-align: center;
@@ -42,7 +535,9 @@
 		top: 12px;
 		left: 50%;
 		margin-left: -81px;
+		color: #dd0a37;
 	}
+
 
 		#registrationForm .navbar-default h1 small{
 			font-size: 0.7em;
@@ -58,9 +553,10 @@
 /*STEPS BAR--------------------------*/
 
 #steps-bar{
-	background: url(../img/header-desktop.jpg) #3F3F3F center center no-repeat;
+	background: url(../img/form-background.jpg) #404040 top center no-repeat;
 	text-align: center;
 	position: relative;
+	background-attachment: fixed;
 }
 
 	#steps-bar .steps-container{
@@ -87,29 +583,36 @@
 
 		#steps-bar .step .number{
 			display: block;
-			font-weight: normal;
+			font-weight: 700;
 			font-size: 14px;
 			margin-bottom: 2px;
+			/* font-style: italic; */
+			font-family: 'Rambla', sans-serif;
 		}
 
 		#steps-bar .step i{
 			width: 45px;
 			height: 45px;
-			background: #969595;
+			background: #bbbbbb;
 			border-radius: 50%;
 			display: inline-block;
 			margin-bottom: 2px;
-			font-size: 26px;
+			font-size: 18px;
 			line-height: 44px;
+			box-shadow: 0px 2px 6px rgba(0,0,0,0.5);
 		}
 		#steps-bar .step.active i{
 			background: #DD0A37;
 		}
 
+		#steps-bar .step.complete i{
+			background: #0659b5;
+		}
+
 		#steps-bar .step .name{
 			margin-bottom: 0;
 			display: block;
-			font-weight: normal;
+			font-weight: 200;
 			width: 150px;
 		}
 
@@ -128,7 +631,7 @@
 	/*Bar*/
 
 	.step-bar{
-		background: #7d7d7d;
+		background: #efefef;
 		height: 15px;
 		width: 10%;
 		margin-top: -5px;
@@ -159,7 +662,10 @@
 		.step-bar .step-progress.p-11{ width: 77% }
 		.step-bar .step-progress.p-12{ width: 84.7% }
 		.step-bar .step-progress.p-13{ width: 92.4% }
-		.step-bar .step-progress.complete{ width: 100% }
+		.step-bar .step-progress.complete{
+			width: 100%;
+			background: #0659b5;
+		}
 
 
 /*FORM--------------------------*/
@@ -178,19 +684,40 @@
 }
 
 	#registrationForm .container .question-icon i{
-		color: black;
+		color: #004da3;
 		width: 60px;
 		height: 60px;
-		border: 3px solid black;
+		border: 3px solid #004da3;
 		border-radius: 50%;
-		font-size: 36px;
+		font-size: 32px;
 		line-height: 55px;
 	}
+
+		#registrationForm .container .question-icon .gender{
+			width: 60px;
+		    height: 60px;
+		    display: inline-block;
+		    border-radius: 50%;
+		    border: 3px solid #004da3;
+		}
+
+			#registrationForm .container .question-icon .gender i{
+				width: initial;
+				border: initial;
+				color: #004da3;
+			}
+
+			#registrationForm .container .question-icon .gender i.male{
+				position: relative;
+    			left: 2px;
+			}
 
 	#registrationForm .container h2{
 		color: #DD0A37;
 		text-align: center;
 		margin: 10px 0 28px;
+		font-style: normal;
+		font-weight: normal;
 	}
 
 	#registrationForm p{
@@ -203,7 +730,7 @@
 	}
 
 		#registrationForm .container .form-group label{
-			font-weight: normal;
+			font-weight: 400;
 			margin-bottom: 2px;
 		}
 
@@ -231,44 +758,22 @@
 			#registrationForm .container .input-group .input-group-addon i{
 			    font-size: 24px;
 			}
-
-	#registrationForm .btn{
-		border-radius: 0;
-		font-size: 18px;
-		margin-top: 20px;
-		border: none;
-		height: 46px;
-	}
-	#registrationForm .btn:active{
-		transform: translateY(2px);
-	}
-
-	#registrationForm .btn-link{
-		color: #9F9F9F;
-		line-height: 33px;
-	}
-	#registrationForm a.btn-link {
-		color: #9F9F9F !important;
-		line-height: 33px;
-		text-decoration:none !important;
-	}
-
-	#registrationForm .btn-primary{
-		background: #DD0A37;
-		padding: 10px 50px;
-	}
-	#registrationForm a.btn-primary{
-		color:#ffffff !important;
-		background: #DD0A37;
-		padding: 10px 50px;
-		text-decoration:none !important;
-	}
-	#registrationForm .btn-primary:hover{
-		background: #f91848;
-	}
+	
 
 	#registrationForm .required{
 		color: #DD0A37;
+	}
+
+	/*Buttons*/
+
+	#registrationForm .btn-primary{
+		padding: 10px 50px;
+	}
+
+	#registrationForm .btn{
+		font-size: 18px;
+		margin-top: 20px;
+		height: 46px;
 	}
 
 	/*Note*/
@@ -383,81 +888,6 @@
 	 	background: white;
 	}
 
-/*FOOTER--------------------------*/
-
-footer .info-bar{
-	background: #272727;
-	color: white;
-	text-align: center;
-	padding: 16px 0 6px;
-}
-
-	footer .info-bar .usa-hokey-logo{
-		width: 110px;
-	}
-
-	footer .info-bar h3{
-		margin-bottom: 13px;
-	}
-
-	footer .info-bar .social-media{
-			margin-bottom: 25px;
-	}
-
-		footer .info-bar .social-media li{
-			display: inline-block;
-			margin: 0 10px;
-		}
-
-			footer .info-bar .social-media li i{
-				color: white;
-				background: #DD0A37;
-				border-radius: 50%;
-				width: 35px;
-				height: 35px;
-				line-height: 36px;
-				font-size: 20px;
-			}
-
-		footer .info-bar .contact{
-			/*border-top: 1px solid white;*/
-			margin-top: 22px;
-			margin-left: 30px;
-			margin-right: 30px;
-		}
-
-			footer .info-bar .contact i{
-				display: block;
-				font-size: 26px;
-				margin-bottom: 9px;
-			}
-
-			footer .info-bar .contact a{
-				color: white;
-				font-size: 18px;
-				margin-bottom: 9px;
-				display: block;
-			}
-
-
-
-
-footer .rights-bar{
-	background: black;
-	color: white;
-	font-size: 14px;
-	padding: 15px 0;
-	text-align: center;
-	border-top: 1px solid white;
-}
-
-	footer .rights-bar a{
-		text-decoration: underline;
-		color: white;
-		margin: 0 5px;
-		cursor: pointer;
-	}
-
 
 /*DESKTOP--------------------------*/
 
@@ -467,10 +897,16 @@ footer .rights-bar{
         width: 600px;
     }
 
+		#registrationForm footer .info-bar .contact{
+			display: block;
+		}
+
 		footer .info-bar .contact .item{
 			display: inline-block;
 			margin: 0 20px;
+			margin-top: -2px;
 		}
+
 
 }
 
@@ -496,8 +932,8 @@ footer .rights-bar{
 	margin-top: 7px;
 	}
 
-	#registrationForm .navbar-default h1{
-		font-size: 25px;
+	#registrationForm h1{
+		font-size: 26px;
 		margin-left: -68px;
 	}
     
@@ -544,4 +980,10 @@ footer .rights-bar{
 		}
 
 }
+
+
+
+
+
+
 

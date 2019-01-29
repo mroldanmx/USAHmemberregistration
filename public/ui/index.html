@@ -8,11 +8,11 @@
     <title>Registration Form</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
-
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/fontawesome-5.css">
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/templates.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,10 +21,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body id="landing-page">
 
 
-      <nav id="landing-page-nav" class="navbar navbar-default">
+      <nav class="navbar navbar-default">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -33,38 +33,45 @@
 
           <div class="pull-right">
           	<div class="item">
-			        <i class="fas fa-phone"></i>
-			        <a href="tel:1-800-566-3288">1-800-566-3288 ext. 123</a>		
+			        <a href="tel:1-800-566-3288">
+			        	<i class="fas fa-phone"></i>
+			        	<span>1-800-566-3288 ext. 123</span>
+			        </a>		
 		        </div>
 
 		        <div class="item">
-			        <i class="fas fa-envelope"></i>
-			        <a href="mailto:memberservices@usahockey.org">memberservices@usahockey.org</a>		
+			        <a href="mailto:memberservices@usahockey.org">
+			        	<i class="fas fa-envelope"></i>
+			        	<span>memberservices@usahockey.org</span>
+			        </a>		
 		        </div>
           </div>
  
         </div><!-- /.container-fluid -->
       </nav><!-- navbar -->
 
-   		
-			<div id="banner">
+		<div id="banner">
 
-				<div class="content">
-					<h1>MEMBER REGISTRATION
-						<small>Fast and Secured Registration</small>
-					</h1>
+			<div class="content">
+				<h1>
+					<div>2019-2020</div>
+					Member Registration
+					<small>Join as a player, coach, referee or volunteer</small>
+				</h1>
 
-					<div class="buttons">
-						<a href="register.html" class="btn btn-primary btn-lg">Register Now</a>
-						<button class="btn btn-primary btn-lg">Member Login</button>
-					</div><!-- buttons -->
+				<div class="buttons">
+					<a href="register.html" class="btn btn-primary btn-lg">Register Now</a>
+				</div><!-- buttons -->
 
-				</div><!-- title-wrapper -->
+			</div><!-- title-wrapper -->
 
-				<video src="img/YouthtoUSAHockey_NOMUSIC.mp4" autoplay loop muted poster="img/benefits.jpg">
-				</video>
+			<img src="img/banner-mobile.jpg">
+			<video src="img/YouthtoUSAHockey_NOMUSIC.mp4" autoplay loop muted poster="img/benefits.jpg">
+			</video>
 
-			</div>
+		</div><!-- banner -->
+
+		<div class="container">
 				
 			<section id="welcome" class="row">
 
@@ -73,7 +80,7 @@
 				</div>
 
 				<div class="col-md-offset-3 col-md-6">
-					<p>USA Hockey, Inc., is the National Governing Body for the sport of ice hockey in the United States. Its mission is to promote the growth of hockey in America and provide the best possible experience for all members by encouraging, developing, advancing and administering the sport.</p>
+					<p>USA Hockey provides the foundation for the sport of ice hockey in America; helps young people become leaders, even Olympic heroes; and connects the game at every level while promoting a lifelong love of the sport.</p>
 				</div>
 
 			</section>
@@ -81,15 +88,15 @@
 			<section id="register-now" class="row">
 				
 				<div class="col-md-12">
-					<h2>Join the action</h2>
-				</div>
-
-				<div class="col-md-offset-4 col-md-4">
-					<p>Join as a player, coach, referee, or volunteer. Membership is easy</p>
+					<h2>Introducing Member Login</h2>
 				</div>
 
 				<div class="col-md-12">
-					<a href="register.html" class="btn btn-primary btn-lg">Register Now</a>
+					<p>Sign in to manage your existing USA Hockey membership</p>
+				</div>
+
+				<div class="col-md-12">
+					<button class="btn btn-primary btn-lg">Login or Create Account</button>
 				</div>
 
 			</section>
@@ -100,26 +107,23 @@
 					<h2>Membership Benefits</h2>
 				</div>
 
-				<div class="col-md-offset-1 col-md-4">
+				<div class="col-md-offset-1 col-md-4 left-col">
 					<img src="img/benefits.jpg">
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-md-6 right-col">
 					
 					<ul class="benefits-list">
 						<li>
-							<i class="fas fa-book-open"></i>
-							<h4>Subscription to USA Hockey Magazine</h4>
+							<h4><i class="fas fa-book-open"></i> Subscription to USA Hockey Magazine</h4>
 							<p>The most widely distributed hockey publication in the world</p>
 						</li>
 						<li>
-							<i class="fas fa-medkit"></i>
-							<h4>World-class insurance coverage</h4>
+							<h4><i class="fas fa-medkit"></i> World-class insurance coverage</h4>
 							<p>To provide peace-of-mind for all involved in the sport</p>
 						</li>
 						<li>
-							<i class="fas fa-flag"></i>
-							<h4>Participation in events as Team USA like</h4>
+							<h4><i class="fas fa-flag-usa"></i> Participation in events as Team USA like</h4>
 							<ul>
 								<li>Olympic and Paralympic Winter Games</li>
 								<li>World Championships at all levels</li>
@@ -127,8 +131,7 @@
 							</ul>
 						</li>
 						<li>
-							<i class="fas fa-clipboard-list"></i>
-							<h4>Official Playing Rules</h4>
+							<h4><i class="fas fa-clipboard-list"></i> Official Playing Rules</h4>
 							<p>To provide consistency for all participants.</p>
 						</li>
 					</ul>
@@ -137,6 +140,7 @@
 
 			</section>
 
+		</div><!-- container -->
       
       <footer>
 
@@ -152,7 +156,7 @@
 	        	<li><i class="fas fa-shopping-cart"></i></li>
 	        </ul>
 
-	        <div class="contact hide">
+	        <div class="contact">
 		        	
 		        <h3>Contact us</h3>
 
@@ -177,9 +181,12 @@
       </footer>
       
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script> -->
+    <script src="js/jquery.js"></script>
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script> -->
+    <script src="bootstrap.js"></script>
 
     <script type="text/javaScript">
 
