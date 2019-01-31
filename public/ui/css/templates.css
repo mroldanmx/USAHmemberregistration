@@ -980,8 +980,18 @@ footer .rights-bar{
 		}
 
 }
+#registrationForm a.btn-link {
+	color: #9F9F9F !important;
+	line-height: 33px;
+	text-decoration:none !important;
+}
 
-
+#registrationForm a.btn-primary{
+	color:#ffffff !important;
+	background: #DD0A37;
+	padding: 10px 50px;
+	text-decoration:none !important;
+}
 
 
 
