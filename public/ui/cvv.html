@@ -8,7 +8,8 @@
     <title>Registration Form</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
     <link rel="stylesheet" type="text/css" href="css/fontawesome-5.css">
 
@@ -38,7 +39,7 @@
           </div>
 
             <h1>
-              2018-2019
+              2019-2020
               <small>Season Registration</small>
             </h1>
 
@@ -56,79 +57,108 @@
         
         <div class="steps-container">
 
-          <div class="step active">
+          <div class="step complete">
             <label class="number">STEP 1</label>
-            <i class="far fa-file-alt"></i>
-            <label class="name">Information</label>
-          </div><!-- step -->
-
-          <div class="step-bar active">
-            <div class="step-progress p-13"></div>
-          </div><!-- step-bar -->
-
-          <div class="step">
-            <label class="number">STEP 2</label>
-            <i class="far fa-thumbs-up"></i>
-            <label class="name">Review</label>
+            <i class="fas fa-user"></i>
+            <label class="name">Register</label>
           </div><!-- step -->
 
           <div class="step-bar">
-            <div class="step-progress"></div>
+            <div class="step-progress complete"></div>
           </div><!-- step-bar -->
 
-          <div class="step">
+          <div class="step complete">
+            <label class="number">STEP 2</label>
+            <i class="fas fa-check"></i>
+            <label class="name">Verify</label>
+          </div><!-- step -->
+
+          <div class="step-bar">
+            <div class="step-progress complete"></div>
+          </div><!-- step-bar -->
+
+          <div class="step active">
             <label class="number">STEP 3</label>
-            <i class="far fa-credit-card"></i>
+            <i class="fas fa-dollar-sign"></i>
             <label class="name">Payment</label>
           </div><!-- step -->
 
-          <div class="step-bar">
-            <div class="step-progress"></div>
+          <div class="step-bar payment active">
+            <div class="step-progress p-2"></div>
           </div><!-- step-bar -->
 
           <div class="step last">
             <label class="number">STEP 4</label>
-            <i class="fas fa-print"></i>
-            <label class="name">Confirmation</label>
+            <i class="fas fa-shopping-cart"></i>
+            <label class="name">Checkout</label>
           </div><!-- step -->
 
         </div><!-- steps-container -->
 
       </div><!-- steps-bar -->
 
-       <div class="container">
-        
+       <div class="container medium">
+
         <div class="row question-icon">
-          <i class="far fa-user"></i>
+          <i class="far fa-credit-card"></i>
+          <h2>Card Information</h2>
+          <p>Enter your billing information to complete registration</p>
         </div>
+
         <div class="row">
-          <div class="col-md-12">
-            <h2>USA Hockey Concussion Information and Acknowledgement</h2>
+          
+          <div class="col-md-5">
+
+            <div class="block-container">
+
+              <h3>Bill Information</h3>
+
+              <p>USA Hockey <span class="pull-right">$40.00</span></p>
+              <p>Affiliate <span class="pull-right">$10.00</span></p>
+              <p>USA Hockey Foundation <span class="pull-right">$0.00</span></p>
+
+              <hr>
+
+              <p><b>Subtotal</b> <span class="pull-right">$50.00</span></p>
+
+              <hr>
+
+              <p><b>Gran Total</b> <span class="pull-right red">$50.00</span></p>
+
+              
+            </div><!-- block-container -->
+            
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <p>Please read and accept <a>USA Hockey Concussion Information and Acknowledgement</a></p>
-          </div>
-        </div>
+          <div class="col-md-7">
 
-        <div class="row">
-          <div class="col-md-offset-0 col-md-12" style="text-align: left;">
+            <div class="row">
+              
+              <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-md-offset-2 col-md-8">
+                <img src="img/credit-card-back.svg" style="margin-bottom: 15px;">
+              </div>
 
-            <div class="object checkbox">
-              <label>
-                <input type="checkbox">  <span class="checkmark"></span> I have read and accept the USA Hockey Concussion Information and Acknowledgement <span class="required">*</span>
-              </label>
+              <div class="col-xs-offset-3 col-xs-6 col-sm-offset-4 col-sm-4 col-md-offset-4 col-md-4">
+
+                <div class="form-group">
+                  <label>CVV/CVC <span class="required">*</span></label>
+                    <input type="text" class="form-control input-lg" placeholder="e.g. 123">
+                </div>
+                
+              </div>
+
             </div>
-
+            
           </div>
-        </div>  
+
+        </div>
+
+        
 
         <div class="row">
 
-            <a href="liability.html" class="btn btn-link">Previous</a>
-            <a href="review.html" class="btn btn-primary">Continue to Next Step</a>
+            <a href="card.html" class="btn btn-link">Previous</a>
+            <a href="billing_address.html" class="btn btn-primary">Next</a>
 
         </div>  
 
@@ -172,11 +202,14 @@
         </div>
       
       </footer>
-            
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
+        
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script> -->
+      <script src="js/jquery.js"></script>
+
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script> -->
+      <script src="bootstrap.js"></script>
 
   </body>
 </html>

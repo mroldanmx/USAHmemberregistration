@@ -1,5 +1,5 @@
-
-/*GENERIC//////////////////////////////////////////////////* /
+ 
+/*GENERIC//////////////////////////////////////////////////*/
 
 @import url('https://fonts.googleapis.com/css?family=Palanquin:200,400,500,700');
 @import url('https://fonts.googleapis.com/css?family=Rambla:700i,400i');
@@ -684,27 +684,37 @@ footer .rights-bar{
 }
 
 	#registrationForm .container .question-icon i{
-		color: #004da3;
+		color: #424242;
 		width: 60px;
 		height: 60px;
-		border: 3px solid #004da3;
+		border: 3px solid #424242;
 		border-radius: 50%;
-		font-size: 32px;
+		font-size: 28px;
 		line-height: 55px;
 	}
 
+		#registrationForm .container .question-icon h2{
+			margin-bottom: 0;
+		}
+
+		#registrationForm .container .question-icon p{
+			text-align: center;
+    		margin-bottom: 30px;
+		}
+
+
 		#registrationForm .container .question-icon .gender{
 			width: 60px;
-		    height: 60px;
-		    display: inline-block;
-		    border-radius: 50%;
-		    border: 3px solid #004da3;
+			height: 60px;
+			display: inline-block;
+			border-radius: 50%;
+			border: 3px solid #424242;
 		}
 
 			#registrationForm .container .question-icon .gender i{
 				width: initial;
 				border: initial;
-				color: #004da3;
+				color: #424242;
 			}
 
 			#registrationForm .container .question-icon .gender i.male{
@@ -730,8 +740,9 @@ footer .rights-bar{
 	}
 
 		#registrationForm .container .form-group label{
-			font-weight: 400;
+			font-weight: 200;
 			margin-bottom: 2px;
+			color: #7d7d7d;
 		}
 
 		#registrationForm .container .form-group .form-control,
@@ -740,6 +751,7 @@ footer .rights-bar{
 			border: 1px solid lightgray;
 			box-shadow: none;
 			background: white;
+			padding-top: 7px;
 		}
 
 		#registrationForm .container .input-group .form-control{
@@ -870,9 +882,14 @@ footer .rights-bar{
 	  transform: rotate(45deg);
 	}
 
+	.checkbox{
+		line-height: 22px;
+		margin-bottom: 13px;
+	}
+
 	.checkbox label, .radio label{
 		padding-left: 7px;
-		font-weight: normal;
+		font-weight: 200;
 	}
 
 .object.radio .checkmark {
@@ -888,13 +905,171 @@ footer .rights-bar{
 	 	background: white;
 	}
 
+/*STEP 2--------------------------*/
+
+#registrationForm .wrapper{
+	background-color: #F2F2F2;
+	padding: 30px 30px 17px;
+}
+
+	#registrationForm .wrapper .divider{
+		border-top:1px solid gray;
+	}
+
+
+
+	#registrationForm .data{
+		line-height: 16px;
+		margin-bottom: 20px;
+	}
+
+	#registrationForm .wrapper .form-control{
+		display: none;
+	}
+
+#registrationForm .wrapper hr{
+    border-top: 1px solid #d0d0d0;
+    margin-top: 3px;
+    margin-bottom: 16px;
+}
+
+button.action, button.action:visited, button.action:focus{
+	color: inherit;
+	text-decoration: none!important;
+}
+button.action:hover{
+	color: #6d6c6c;
+}
+
+	button.action i{
+		font-size: 1.3em;
+	}
+
+	#registrationForm .wrapper button.action{
+		margin: 7px 0 0;
+	}
+
+/*Edit mode*/
+#registrationForm .wrapper.edit .data{
+	display: none;
+}
+
+#registrationForm .wrapper.edit .form-control{
+	display: block;
+}
+#registrationForm .wrapper.edit .no-edit{
+	display: none;
+}
+
+#registrationForm .wrapper .save{
+	display: none;
+}
+#registrationForm .wrapper .cancel{
+	display: none;
+}
+#registrationForm .wrapper.edit .save{
+	display: inline-block;
+}
+#registrationForm .wrapper.edit .cancel{
+	display: inline-block;
+}
+#registrationForm .wrapper.edit .edit{
+	display: none;
+}
+#registrationForm .wrapper.edit .delete{
+	display: none;
+}
+
+#registrationForm .block-container{
+	background-color: #F2F2F2;
+	text-align: left;
+	padding: 20px 30px 9px;
+	margin-bottom: 30px;
+}
+
+	#registrationForm .block-container .pull-right{
+		font-family: sans-serif;
+	}
+
+		#registrationForm .block-container .pull-right.red{
+			font-family: sans-serif;
+			color: #DD0A37;
+		}
+
+	#registrationForm .block-container h3{
+		margin: 0 0 20px;
+	}
+
+	#registrationForm .block-container hr{
+    	border-top: 1px solid #d0d0d0;
+	}
+
+	#registrationForm .narrow-gap .col-md-3,
+	#registrationForm .narrow-gap .col-md-12{
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	#registrationForm .narrow-gap .row{
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+
+
+
+
+/*STEP 3--------------------------*/
+
+#registrationForm label.label-row {
+    width: 100%;
+    font-weight: normal;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.payment .step-progress.p-1{ width: 0% }
+.payment .step-progress.p-2{ width: 25% }
+.payment .step-progress.p-3{ width: 50% }
+.payment .step-progress.p-4{ width: 75% }
+
+
+/*STEP 4--------------------------*/
+
+button.vertical-icon, button.vertical-icon:visited, button.vertical-icon:focus{
+	color: inherit;
+	text-decoration: none!important;
+	height: initial!important;
+	margin-top: 0!important;
+}
+button.vertical-icon:hover{
+	color: #6d6c6c;
+}
+
+	button.vertical-icon i{
+		font-size: 2.5em;
+		display: block;
+	}
+
+	#registrationForm .wrapper button.vertical-icon{
+		margin: 7px 0 0;
+	}
+
+	#barcode{
+		width: 100%;
+		margin-top: 7px;
+	}
+
 
 /*DESKTOP--------------------------*/
 
 @media (min-width: 993px){
     
-    #registrationForm .container{
+    #registrationForm .container:not(.expanded){
         width: 600px;
+    }
+
+    #registrationForm .container.medium{
+        width: 900px;
     }
 
 		#registrationForm footer .info-bar .contact{
@@ -907,6 +1082,10 @@ footer .rights-bar{
 			margin-top: -2px;
 		}
 
+	#registrationForm .wrapper{
+		width: 80%;
+		margin-left: 10%;
+	}
 
 }
 
@@ -979,6 +1158,15 @@ footer .rights-bar{
 			display: block;
 		}
 
+	.single-line-mobile{
+		display: block;
+	}
+
+	#barcode{
+		margin-top: 0;
+    	margin-bottom: 18px;
+	}
+
 }
 #registrationForm a.btn-link {
 	color: #9F9F9F !important;
@@ -992,6 +1180,8 @@ footer .rights-bar{
 	padding: 10px 50px;
 	text-decoration:none !important;
 }
+
+
 
 
 
