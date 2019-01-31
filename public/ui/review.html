@@ -272,10 +272,10 @@
 	        	<div class="col-md-12">
 	        		
 	        		<button class="btn btn-link action delete"><i class="fas fa-trash-alt"></i> Delete</button>
-	        		<button class="btn btn-link action edit"><i class="fas fa-edit"></i> Edit</button>
+	        		<button class="btn btn-link action edit edit_save"><i class="fas fa-edit"></i> Edit</button>
 
 	        		<button class="btn btn-link action cancel"><i class="fas fa-ban"></i> Cancel</button>
-	        		<button class="btn btn-link action save"><i class="fas fa-folder"></i> Save</button>
+	        		<button class="btn btn-link action save edit_save"><i class="fas fa-folder"></i> Save</button>
 
 	        	</div>
 
@@ -334,6 +334,10 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
-
+	<script>
+	   $('.edit_save').click(function(){
+			$('.wrapper').toggleClass('edit');
+	   });
+	</script>
   </body>
 </html>
