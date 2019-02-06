@@ -1,4 +1,5 @@
  
+
 /*GENERIC//////////////////////////////////////////////////*/
 
 @import url('https://fonts.googleapis.com/css?family=Palanquin:200,400,500,700');
@@ -22,14 +23,14 @@ small{
 
 /*Buttons*/
 .btn-primary{
-	background: #DD0A37;
+	background: #E10000;
 	padding: 10px 20px 15px;
 }
 .btn-primary:hover{
-	background: #f91848;
+	background: #fb1e1e;
 }
 .btn-primary:active, .btn-primary:focus, .btn-primary:visited{
-	background: #DD0A37!important;
+	background: #d60000!important;
 }
 
 .btn{
@@ -92,18 +93,19 @@ h3{
 /*FOOTER--------------------------*/
 
 footer .info-bar{
-	background: #000000; /* Old browsers */
-	background: -moz-linear-gradient(top, #000000 0%, #303030 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, #000000 0%,#303030 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, #000000 0%,#303030 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#303030',GradientType=0 ); /* IE6-9 */
-	color: white;
-	text-align: center;
-	padding: 16px 0 6px;
+	 /* Old browsers */
+	  /* FF3.6-15 */
+	  /* Chrome10-25,Safari5.1-6 */
+	  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	  /* IE6-9 */
+	 color: white;
+	 text-align: center;
+	 padding: 16px 0 6px;
+	 background: #07213F;
 }
 
 	footer .info-bar .usa-hokey-logo{
-		width: 110px;
+		width: 150px;
 	}
 
 	footer .info-bar h3{
@@ -124,11 +126,12 @@ footer .info-bar{
 
 			footer .info-bar .social-media li i{
 				color: white;
-				background: #DD0A37;
+				background: transparent;
+				border: 2px solid white;
 				border-radius: 50%;
 				width: 50px;
 				height: 50px;
-				line-height: 51px;
+				line-height: 48px;
 				font-size: 21px;
 			}
 
@@ -156,12 +159,12 @@ footer .info-bar{
 
 
 footer .rights-bar{
-	background: black;
+	background: #05182f;
 	color: white;
 	font-size: 14px;
 	padding: 15px 0;
 	text-align: center;
-	border-top: 1px solid #5a5a5a;
+	border-top: 1px solid #9c9b9b;
 }
 
 	footer .rights-bar a{
@@ -174,6 +177,33 @@ footer .rights-bar{
 
 /*LANDING PAGE//////////////////////////////////////////////////*/
 
+a.icon-with-text{
+	color: white;
+	margin: 0 10px;
+}
+a.icon-with-text:hover{
+	text-decoration: none;
+}
+
+	a.icon-with-text i{
+		border: 2px solid white;
+		border-radius: 50%;
+		width: 30px;
+		height: 30px;
+		line-height: 27px;
+		text-align: center;
+		font-size: .7em;
+		margin-right: 4px;
+		vertical-align: middle;
+		position: relative;
+		top: -1px;
+	}
+
+.pull-right a.icon-with-text{
+	margin:0 0 0 20px;
+}
+
+
 /*NAVBAR--------------------------*/
 
 #landing-page .navbar{
@@ -181,7 +211,8 @@ footer .rights-bar{
 	z-index: 2;
 	width: 100%;
 	background: none;
-	border-bottom: 1px solid #8c8c8c;
+	border-bottom: 1px solid #9c9b9b;
+	background: #07213f;
 }
 
 	#landing-page .navbar .pull-right{
@@ -189,35 +220,8 @@ footer .rights-bar{
 		margin-right: 10px;
 	}
 
-		#landing-page .navbar .pull-right .item{
-			color: white;	
-			display: inline-block;
-			margin-left: 20px;
-		}
-
-			#landing-page .navbar .pull-right .item i{
-				color: white;	
-			}
-
-			#landing-page .navbar .pull-right .item a{
-				color: white;
-				font-size: 18px;
-			}
-				#landing-page .navbar .pull-right .item a:hover{
-					text-decoration: none;
-				}
-
-					#landing-page .navbar .pull-right .item a span:hover{
-						text-decoration: underline;
-						display: inline-block;
-					}
-
-
 #landing-page .navbar.sticky{
-	background: #262626;
-	border-bottom: none;
 	height: 50px;
-	border-bottom: 1px solid #5a5a5a;
 }
 
 	#landing-page .navbar.sticky img{
@@ -226,7 +230,7 @@ footer .rights-bar{
 	}
 
 	#landing-page .navbar.sticky .pull-right{
-		margin-top: 11px;
+		margin-top: 9px;
 	}
 
 
@@ -247,31 +251,36 @@ footer .rights-bar{
 		width: 100%;
 		height: 100%;
 		z-index: 1;
-		background: rgba(0, 0, 0, 0.5);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
 		padding-top: 70px;
+
+		background: -moz-linear-gradient(top, rgba(7,33,63,1) 0%, rgba(7,33,63,0) 54%, rgba(7,33,63,0) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(7,33,63,1) 0%,rgba(7,33,63,0) 54%,rgba(7,33,63,0) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(7,33,63,1) 0%,rgba(7,33,63,0) 54%,rgba(7,33,63,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#07213f', endColorstr='#0007213f',GradientType=0 ); /* IE6-9 */
 	}
 
 		#banner .content h1{
 			color: white;
 			font-size: 2.3em;
 			margin: 0 0 30px;
+			text-shadow: 1px 2px 5px rgba(0,0,0,0.3);
 		}
 
 			#banner .content h1 div{
-				color: #dd0a37;
-			    font-size: 1.3em;
-			    margin-bottom: -9px;
+				font-size: 1.3em;
+				margin-bottom: -9px;
 			}
 
 
 			#banner .content h1 small{
-				color: #cacaca;
+				color: white;
 				display: block;
-				margin-top: 5px;
+				margin-top: 20px;
+				font-size: 0.7em;
 			}
 
 		#banner .content .buttons{
@@ -300,7 +309,7 @@ footer .rights-bar{
 /*Titles*/
 
 #landing-page section h2{
-	color: #DD0A37;
+	color: #e10001;
 	font-size: 2.5em;
 	margin-bottom: 20px;
 }
@@ -322,19 +331,33 @@ footer .rights-bar{
 	background-attachment: fixed;
 	padding: 100px 0!important;
 }
+#register-now.red-theme{
+	background: url(../img/join-background-red.jpg) center center no-repeat;
+	background-size: cover;
+	color: white;
+	background-attachment: fixed;
+	padding: 100px 0!important;
+}
+#register-now.red-theme.gradient{
+	background: url(../img/join-background-red-gradient.jpg) center center no-repeat;
+	background-size: cover;
+	color: white;
+	background-attachment: fixed;
+	padding: 100px 0!important;
+}
 
 	#register-now h2{
 		color: white!important;
+	}
+	#register-now.red-theme .btn{
+		background: white;
+		color: #E9516E;
 	}
 
 /*Membership Benefits*/
 
 #benefits{
-	/*background: gray;*/
-}
-
-#benefits h2{
-	margin-bottom: 40px!important;
+	background: #F1F1F1;
 }
 
 #benefits img{
@@ -381,7 +404,7 @@ footer .rights-bar{
 
 			.benefits-list li ul li:before {
 			  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-			  color: #DD0A37; /* Change the color */
+			  color: #e10001; /* Change the color */
 			  font-weight: bold; /* If you want it to be bold */
 			  display: inline-block; /* Needed to add space between the bullet and the text */
 			  width: 21px; /* Also needed for space (tweak if needed) */
@@ -392,15 +415,48 @@ footer .rights-bar{
 			  height: 0;
 			}
 
+.tab-content>.active {
+    display: block;
+    padding-top: 25px;
+}
+
+.nav-tabs{
+    text-align: center;
+    border: none;
+}
+
+	.nav-tabs>li{
+	    float: none;
+	    display: inline-block;
+	    min-width: 10%;
+	    margin: 0 -4px;
+	}
+
+	.nav-tabs>li>a{
+		color: #4D4D4D;
+		padding-left: 25px;
+		padding-right: 25px;
+		font-family: 'Rambla', sans-serif;
+		font-weight: 400;
+		font-style: italic;
+		background: transparent!important;
+		border:none!important;
+		border-bottom: 1px solid #b3b3b3!important;
+	}
+
+		.nav-tabs>li.active a{
+			background: transparent!important;
+			border-radius: 0;
+			border-bottom: 3px solid #07213F!important;
+			color: #4D4D4D;
+			padding-bottom: 9px;
+		}
+
+
 
 /*DESKTOP--------------------------*/
 
 @media (min-width: 993px){
-
-	#landing-page .container{
-		width: 100%;
-		padding: 0;
-	}
 
     #landing-page .row{
     	margin-left: 0;
@@ -419,9 +475,24 @@ footer .rights-bar{
     	display: none;
     }
 
-    #banner img{
+    #banner #mobile-image{
     	display: none;
     }
+
+}
+
+/*TABLET--------------------------*/
+
+@media (min-width: 768px){
+
+	#landing-page .container{
+		width: 100%;
+		padding: 0;
+	}
+
+	.nav-tabs{
+	    margin: 0 10%;
+	}
 
 }
 
@@ -429,29 +500,43 @@ footer .rights-bar{
 
 @media (max-width: 992px){
 
+	#banner .content{
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#07213f+0,07213f+100&1+0,0.56+50,0+100 */
+		background: -moz-linear-gradient(top, rgba(7,33,63,1) 0%, rgba(7,33,63,0.56) 50%, rgba(7,33,63,0) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(7,33,63,1) 0%,rgba(7,33,63,0.56) 50%,rgba(7,33,63,0) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(7,33,63,1) 0%,rgba(7,33,63,0.56) 50%,rgba(7,33,63,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#07213f', endColorstr='#0007213f',GradientType=0 ); /* IE6-9 */
+	}
+
 	#banner .content .buttons .btn{
 	    margin-bottom: 18px;
 	}
 
 	#banner .content h1{
 		color: white;
-		font-size: 1.9em;
+		font-size: 1.7em;
 		margin: 0 0 30px;
 		width: 80%;
 	}
 
 	#banner .content h1 div{
-		font-size: inherit;
-		margin-bottom: -1px;
-		color: #ff1d4d;
+		font-size: 1.5em;
+		line-height: 0.9em;
+		margin-bottom: 4px;
+		font-weight: 700;
 	}
+
+		#banner .content h1 div span{
+			display: block;
+		}
 
 	#banner .content h1 small{
 	    color: white;
+	    font-size: 0.8em;
 	}
 
 	#landing-page section h2{
-		font-size: 2.2em;
+		font-size: 1.8em;
 	}
 
 	#landing-page .navbar .pull-right .item span{
@@ -460,26 +545,31 @@ footer .rights-bar{
 
 	#landing-page .navbar .pull-right{
 		position: absolute;
-		top: -8px;
-		right: 2px;
+		top: 1px;
+		right: 4px;
 	}
 
-	#landing-page .navbar .pull-right .item{
-		margin-left: 4px;
-	}
+		#landing-page .navbar .icon-with-text{
+			font-size: 18px;
+			margin-left: 5px;
+		}
 
-	#landing-page .navbar .pull-right .item i{
-		font-size: 24px;
-		width: 48px;
-		height: 48px;
-		display: inline-block;
-		text-align: center;
-		line-height: 49px;
+	.navbar-default img{
+		width: 90px;
+	    margin-top: 10px;
+	    margin-left: 12px;
 	}
 
 	#banner video{
 		display: none;
 	}	
+
+	#banner #mobile-image{
+    	width: 100%;
+    	height: 100%;
+    	background: url("../img/banner-mobile.jpg") no-repeat center center;
+    	background-size: cover;
+    }
 
 	#benefits{
 		padding-left: 10px;
@@ -498,6 +588,10 @@ footer .rights-bar{
 				margin-left: 0px;
 			}
 
+		#benefits .nav-tabs li > a > span{
+			display: none;
+		}
+
 
 	footer .info-bar .social-media li{
 		margin: 0 4px;
@@ -508,6 +602,32 @@ footer .rights-bar{
 			height: 45px;
 			line-height: 46px;
 		}
+
+
+	footer .icon-with-text{
+		display: block;
+		margin-bottom: 20px;
+	}
+	footer .icon-with-text:last-of-type{
+	    border-bottom: 1px solid white;
+	    width: 80%;
+	    margin: 0 auto;
+	    padding-bottom: 15px;
+	    margin-bottom: -5px;
+	}
+
+		footer .icon-with-text span{
+			display: block;
+		}
+
+	.nav-tabs>li{
+		width: 50%;
+	}
+
+	.nav-tabs{
+	    margin-left: 10px;
+    	margin-right: 10px;
+	}
 
 }
 
@@ -721,6 +841,22 @@ footer .rights-bar{
 				position: relative;
     			left: 2px;
 			}
+
+			#registrationForm .container .question-icon .icon-wrapper{
+				width: 60px;
+				height: 60px;
+				border: 3px solid #424242;
+				border-radius: 50%;
+				display: inline-block;
+			}
+
+				#registrationForm .container .question-icon .icon-wrapper i{
+				border: none;
+				position: relative;
+				left: 2px;
+				}
+
+			
 
 	#registrationForm .container h2{
 		color: #DD0A37;
@@ -1056,8 +1192,42 @@ button.vertical-icon:hover{
 
 	#barcode{
 		width: 100%;
+		max-width: 250px;
 		margin-top: 7px;
 	}
+
+	.white-row{
+		background-color: white;
+		height: 192px;
+		padding-top: 12px;
+		padding-bottom: 2px;
+		border: 1px solid #d0d0d0;
+		margin-bottom: 7px;
+	}
+
+	#registrationForm .white-row .data{
+		margin-bottom: 0px;
+	}
+
+	.white-row p:last-child{
+		border-top: 1px solid #d0d0d0;
+		margin-left: 15px;
+		width: calc(100% - 30px);
+		padding: 0;
+		padding-top: 12px;
+	}
+
+	.white-row h3{
+		margin-bottom: 6px!important;
+	}
+
+	#gran-total{
+
+	}
+
+		#gran-total p{
+		    margin: 9px 0 3px;
+		}
 
 
 /*DESKTOP--------------------------*/
@@ -1085,6 +1255,18 @@ button.vertical-icon:hover{
 	#registrationForm .wrapper{
 		width: 80%;
 		margin-left: 10%;
+	}
+
+	.col-md-6:first-child .white-row{
+		border-right: none;
+	}
+
+	.white-row h3{
+		display: none;
+	}
+
+	#registrationForm .person{
+		margin-bottom: 10px;
 	}
 
 }
@@ -1167,7 +1349,34 @@ button.vertical-icon:hover{
     	margin-bottom: 18px;
 	}
 
+	.white-row{
+		height: auto;
+		margin-bottom: 0;
+	}
+
+	.col-md-6:last-child .white-row{
+		border-top: none;
+		margin-bottom: 15px;
+	}
+
+	.block-container > .row > div > h3{
+		display: none;
+	}
+
+	#gran-total {
+		margin-bottom: 15px;
+	}
+
+
 }
+
+
+
+
+
+
+
+
 #registrationForm a.btn-link {
 	color: #9F9F9F !important;
 	line-height: 33px;
