@@ -34,7 +34,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <img src="img/usa-hockey-logo.svg">
+            <img src="img/usa-hockey-logo.png">
           </div>
 
             <h1>
@@ -63,7 +63,7 @@
           </div><!-- step -->
 
           <div class="step-bar active">
-            <div class="step-progress p-10"></div>
+            <div class="step-progress p-4"></div>
           </div><!-- step-bar -->
 
           <div class="step">
@@ -99,68 +99,110 @@
        <div class="container">
         
         <div class="row question-icon">
-          <i class="far fa-user"></i>
+          <i class="fas fa-user"></i>
         </div>
         <div class="row">
           <div class="col-md-12">
-            <h2>What's the participant's racial or ethnic heritage?</h2>
+            <h2>Parents personal information</h2>
           </div>
         </div>
 
+        <h3 class="text-left">Parent 1 information</h3>
+
         <div class="row">
-          <div class="col-md-12">
-            <p>As the National Governing Body of ice hockey, our mission is to promote a "fun and learning" environment for the growth of the sport and all its participants. USA Hockey believes that hockey is for everyone and the more diverse our sport is, the better off we'll be.</p>
-            <p>To help us more fully understand the make-up of our sport, please share with us which of the following best represents it <span class="required">*</span></p>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Legal First Name  <span class="required">*</span></label>
+              <input type="text" class="form-control input-lg" placeholder="e.g. John">
+            </div>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-offset-1 col-md-10" style="text-align: left;">
-
-            <label class="object radio">American Indian or Alaska Native
-              <input type="radio" checked="checked" name="radio">
-              <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">Asian
-              <input type="radio" name="radio">
-              <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">Black or African American
-              <input type="radio" name="radio">
-              <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">Native Hawaiian or Other Pacific Islander
-              <input type="radio" name="radio">
-              <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">Hispanic or Latino
-              <input type="radio" name="radio">
-              <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">White (not of Hispanic origin)
-              <input type="radio" name="radio">
-              <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">Two or more races
-              <input type="radio" name="radio">
-              <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">Other
-              <input type="radio" name="radio">
-              <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">I would prefer not to share this information
-              <input type="radio" name="radio">
-              <span class="checkmark"></span>
-            </label>
-
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Legal Last Name <span class="required">*</span></label>
+              <input type="text" class="form-control input-lg" placeholder="e.g. Dee">
+            </div>
           </div>
         </div>  
 
         <div class="row">
+          <div class="col-md-12" style="text-align: left;">
 
-            <a href="parents.html" class="btn btn-link">Previous</a>
-            <a href="donation.html" class="btn btn-primary">Next</a>
+            <div class="horizontal-radio-group">
+              <label>Relationship <span class="required">*</span></label>
+              <label class="object radio">Mother
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+              </label>
+              <label class="object radio">Father
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+              </label>
+              <label class="object radio">Guardian
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+              </label>
+            </div><!-- horizontal-radio-group -->
+
+          </div> 
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputPassword1">Email Address <span class="required">*</span></label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="far fa-envelope"></i></span>
+                <input type="email" class="form-control input-lg" placeholder="e.g. john.dee@mail.com">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputPassword1">Re-type Email Address <span class="required">*</span></label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="far fa-envelope"></i></span>
+                <input type="email" class="form-control input-lg" placeholder="e.g. john.dee@mail.com">
+              </div>
+            </div>
+          </div>
+
+        </div> 
+
+        <div class="row">
+          
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputPassword1">Mobile Number <span>*</span></label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fas fa-mobile-alt"></i></span>
+                <input type="email" class="form-control input-lg" placeholder="e.g. 213 456 7890">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputPassword1">Phone Number (optional)</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fas fa-phone"></i></span>
+                <input type="email" class="form-control input-lg" placeholder="e.g. 213 456 7890">
+              </div>
+            </div>
+          </div>
+
+        </div> 
+
+        <div class="text-center" style="margin: 25px 0 -2px;">
+          <button class="btn btn-link vertical-icon"><i class="fas fa-user-plus"></i> Register Another Parent</button>
+        </div>
+
+        <div class="row">
+
+            <a href="contacts.html" class="btn btn-link">Previous</a>
+            <a href="diversity.html" class="btn btn-primary">Next</a>
 
         </div>  
 
@@ -170,7 +212,7 @@
       <footer>
 
         <div class="info-bar">
-          <div><img class="usa-hokey-logo" src="img/usa-hockey-logo.svg"></div>
+          <div><img class="usa-hokey-logo" src="img/usa-hockey-logo.png"></div>
 
           <h3>Follow us</h3>
           <ul class="social-media">
@@ -203,7 +245,8 @@
           <span><a>Terms of Use</a> <a>Privacy Policy Login</a></span>
         </div>
       
-      </footer>
+      </footer>      
+      
       
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>

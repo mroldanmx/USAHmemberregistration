@@ -34,7 +34,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <img src="img/usa-hockey-logo.svg">
+            <img src="img/usa-hockey-logo.png">
           </div>
 
             <h1>
@@ -63,7 +63,7 @@
           </div><!-- step -->
 
           <div class="step-bar active">
-            <div class="step-progress p-11"></div>
+            <div class="step-progress p-4"></div>
           </div><!-- step-bar -->
 
           <div class="step">
@@ -99,72 +99,172 @@
        <div class="container">
         
         <div class="row question-icon">
-          <i class="far fa-user"></i>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <h2>Would you like to make a donation to The USA Hockey Foundation?</h2>
-          </div>
+            <i class="fas fa-undo" style="padding-left: 3px;"></i>
+            <h2>Are you a returning official?</h2>
         </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <p>This to support the growth and development of the game in America? <span class="required">*</span> <a>Learn more</a> </p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-offset-2 col-md-8" style="text-align: left;">
+        <div class="row ">
+          <div class="col-md-offset-4 col-md-4" style="text-align: left;">
 
             <label class="object radio">Yes
               <input type="radio" name="radio" onchange="checkData(1)">
               <span class="checkmark"></span>
-            </label>
-
-              <div id="donations" class="hide">
-                <label class="object radio"><span>$5.50</span> Donation
-                  <input type="radio" name="donation">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="object radio"><span>$12.50</span> Donation
-                  <input type="radio" name="donation">
-                  <span class="checkmark"></span>
-                  <div>(This donation will allow USA Hockey to gift a stick for a child to try hockey)</div>
-                   
-                </label>
-                <label class="object radio"><span>$50</span> Donation
-                  <input type="radio" name="donation">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="object radio"><span>$100</span> Donation
-                  <input type="radio" name="donation">
-                  <span class="checkmark"></span>
-                </label>
-              </div><!-- donations -->
-
-            <br>
-            <label class="object radio">No Thanks
+            </label><br>
+            <label class="object radio">No
               <input type="radio" name="radio" onchange="checkData(2)">
               <span class="checkmark"></span>
             </label>
+
           </div>
-        </div>  
- 
+        </div> 
+
+        <div id="referee-video" class="row hide">
+          <div class="iframe-container">
+            <iframe src="https://www.youtube.com/embed/tfwwLQdoZwY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="block-container hide">
+
+          <div id="referee-yes" class="hide">
+            <h3>Enter USAH Official's Number</h3>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>USAH Official's Number<span class="required">*</span></label>
+                  <input type="text" class="form-control input-lg" placeholder="e.g. John">
+                </div>
+              </div>
+            </div>
+
+            <hr style="margin-top: 8px;">
+
+            <h3>Or</h3>
+          </div><!-- yes -->
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Legal First Name  <span class="required">*</span></label>
+                <input type="text" class="form-control input-lg" placeholder="e.g. John">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Legal Last Name <span class="required">*</span></label>
+                <input type="text" class="form-control input-lg" placeholder="e.g. Dee">
+              </div>
+            </div>
+          </div>  
+
+          <div class="row">
+
+            <div class="col-sm-8 col-md-8">
+
+              <label class="label-row">Birthdate <span class="required">*</span></label>
+
+              <div class="birthdate">
+
+                <div class="form-group">
+                  <select class="form-control input-lg" placeholder="MM">
+                    <option>Month</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                  </select>
+                </div>
+
+                <span>/</span>
+
+                <div class="form-group">
+                  <select class="form-control input-lg" placeholder="MM">
+                    <option>Day</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                    <option>31</option>
+                  </select>
+                </div>
+
+                <span>/</span>
+
+                <div class="form-group">
+                  <select class="form-control input-lg" placeholder="MM">
+                    <option>Year</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
+                    <option>2016</option>
+                  </select>
+                </div>
+
+              </div><!-- birthdate -->           
+
+            </div>
+
+            <div class="col-sm-4 col-md-4">
+              <div class="form-group">
+                <label>Zip code <span class="required">*</span></label>
+                <input type="text" class="form-control input-lg" placeholder="e.g. Dee">
+              </div>
+            </div>
+
+          </div>  
+
+        </div>
 
         <div class="row">
 
-            <a href="diversity.html" class="btn btn-link">Previous</a>
-            <a href="liability.html"class="btn btn-primary">Next</a>
+            <a href="type.html" class="btn btn-link">Previous</a>
+            <a href="who.html" class="btn btn-primary">Next</a>
 
         </div>  
 
 
       </div><!-- container -->
-      
+
       <footer>
 
         <div class="info-bar">
-          <div><img class="usa-hokey-logo" src="img/usa-hockey-logo.svg"></div>
+          <div><img class="usa-hokey-logo" src="img/usa-hockey-logo.png"></div>
 
           <h3>Follow us</h3>
           <ul class="social-media">
@@ -197,7 +297,8 @@
           <span><a>Terms of Use</a> <a>Privacy Policy Login</a></span>
         </div>
       
-      </footer>
+      </footer>      
+      
       
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
@@ -206,11 +307,12 @@
 	<script>
 	   function checkData(v)
 	   {
-	       
+	       $('#referee-video').removeClass('hide');
+	       $('.block-container').removeClass('hide');
 	      if(v == 1){
-			$('#donations').removeClass('hide');
+			$('#referee-yes').removeClass('hide');
 		  }else{
-		  $('#donations').addClass('hide');
+		  $('#referee-yes').addClass('hide');
 		  }
 	   }
 	</script>
