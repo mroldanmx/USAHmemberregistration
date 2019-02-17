@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
+
+Route::get('/registration', 'API\RegistrationController@index');

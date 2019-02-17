@@ -1,33 +1,93 @@
-
 /**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-require('./bootstrap');
-
-window.Vue = require('vue');
-
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
+ * resources/js/app.js
  *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * to be ran with:
+ *      npm run dev
  */
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+window.$ = require('jquery');
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+//step 1's sections.c
+const question_wrappers = $('.question-wrapper');
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+const render_questions = (position) => {
+    $(`.question-wrapper`).hide();
+    $(`[data-order=${position}]`).show();
+};
 
-const app = new Vue({
-    el: '#app'
+const load_last_position = () => {
+    //TODO load which question was the last the user answered
+    return $(window.location.hash).data('order') || 0;
+};
+
+const is_first = (position) => {
+    return !question_wrappers[position - 1];
+};
+
+const is_last = (position) => {
+    return !question_wrappers[position + 1];
+};
+
+const update_navigation = (position) => {
+    if (is_first(position)) {
+        $('.js-prev-btn').hide();
+        $('.js-next-btn').show();
+    } else if (is_last(position)) {
+        $('.js-prev-btn').show();
+        $('.js-next-btn').hide();
+        $('.js-last-btn').show();
+    } else {
+        $('.js-prev-btn').show();
+        $('.js-next-btn').show();
+        $('.js-last-btn').hide();
+    }
+    window.location.hash = $(`[data-order=${position}]`).attr('id');
+};
+
+
+//main program
+let current_position = load_last_position();
+
+const show_position = (position) => {
+    update_navigation(position);
+    render_questions(position);
+};
+
+
+const next_question = () => {
+    if (!validate_answers(current_position)) {
+        return;
+    }
+    current_position++;
+    show_position(current_position);
+};
+
+const prev_question = () => {
+    current_position--;
+    show_position(current_position);
+};
+
+const validate_answers = (position) => {
+    //validate required input/selector in current question wrapper.
+    $('input[required], select[required]', `[data-position=${position}]`).each((index, selector) => {
+        if (!$(selector).val().trim()) {
+            alert($(this).data('errorMessage'));
+            return false;
+        }
+    });
+
+    return true;
+};
+
+
+$(document).ready(function () {
+    show_position(current_position);
+});
+
+$(document).on('click', '.js-prev-btn', function () {
+    prev_question();
+});
+
+$(document).on('click', '.js-next-btn', function () {
+    next_question();
 });

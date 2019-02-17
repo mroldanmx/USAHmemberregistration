@@ -128,10 +128,11 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'age_requirement' => [
+            'accepted' => 'You must be 18 years of age or older',
         ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -144,6 +145,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'age_requirement' => 'I am currently 18 years of age or older.',
+    ],
 
 ];
