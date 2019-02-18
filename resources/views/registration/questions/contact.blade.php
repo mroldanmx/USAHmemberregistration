@@ -14,20 +14,15 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="exampleInputPassword1">Email Address <span class="required">*</span></label>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="far fa-envelope"></i></span>
-                    <input type="email" class="form-control input-lg" placeholder="e.g. john.dee@mail.com">
-                </div>
+                <input type="email" class="form-control input-lg" placeholder="e.g. john.dee@mail.com">
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="form-group">
                 <label for="exampleInputPassword1">Re-type Email Address <span class="required">*</span></label>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="far fa-envelope"></i></span>
-                    <input type="email" class="form-control input-lg" placeholder="e.g. john.dee@mail.com">
-                </div>
+                <input type="email" class="form-control input-lg" placeholder="e.g. john.dee@mail.com">
+
             </div>
         </div>
 
@@ -38,20 +33,15 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="exampleInputPassword1">Mobile Number <span>*</span></label>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fas fa-mobile-alt"></i></span>
-                    <input type="email" class="form-control input-lg" placeholder="e.g. 213 456 7890">
-                </div>
+                <input type="text" class="form-control input-lg" placeholder="e.g. 213 456 7890">
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="form-group">
                 <label for="exampleInputPassword1">Phone Number (optional)</label>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fas fa-phone"></i></span>
-                    <input type="email" class="form-control input-lg" placeholder="e.g. 213 456 7890">
-                </div>
+                <input type="text" class="form-control input-lg" placeholder="e.g. 213 456 7890">
+
             </div>
         </div>
 

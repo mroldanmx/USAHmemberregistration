@@ -14,7 +14,13 @@
 
             @foreach($terms as $term)
                 <label class="object radio">{{$term->member->type}}
-                    <input type="radio" name="radio">
+                    <input class="js-registration-control"
+                            type="radio"
+                           name="member_type"
+                           required
+                           value="{{$term->member->id}}"
+                           data-required-message="{{trans('validation.custom.member_type.required')}}">
+                    <input type="hidden" id="member_type">
                     <span class="checkmark"></span>
                 </label><br>
             @endforeach
@@ -26,14 +32,19 @@
         <div class="col-md-12">
 
             @foreach($terms as $term)
-                <div data-term-id="{{$term->member_type_id}}" class="note">
+                <div data-term-id="{{$term->member->id}}" class="note js-membership-requirement">
                     {!! $term->html !!}
                 </div>
             @endforeach
-                <div class="object checkbox">
+                <div id="membership-requirements-checkbox" class="object checkbox">
                     <label>
-                        <input type="checkbox">  <span class="checkmark"></span>
-                        I accept this<span class="required">*</span>
+                        <input
+                                name="member_type_checkbox"
+                                type="checkbox"
+                                required
+                                data-required-message="{{trans('validation.custom.member_type.accepted')}}">
+                        <span class="checkmark"></span>
+                        I have read the requirements for this membership type <span class="required">*</span>
                     </label>
                 </div>
 

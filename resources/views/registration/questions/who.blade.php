@@ -13,15 +13,22 @@
         <div class="col-md-offset-2 col-md-8" style="text-align: left;">
 
             <label class="object radio">Myself
-                <input type="radio" name="radio">
+                <input required value="1" type="radio" name="who" class="">
                 <span class="checkmark"></span>
             </label><br>
+
+            <div class="js-child">
+                <label class="object radio">Child Family Member (Under 18)
+                    <input type="radio" value="2" name="who">
+                    <span class="checkmark"></span>
+                </label><br>
+            </div>
             <label class="object radio">Adult Family Member (18 and over)
-                <input type="radio" name="radio">
+                <input type="radio" value="3" name="who">
                 <span class="checkmark"></span>
             </label><br>
             <label class="object radio">Adult Non-family Member
-                <input type="radio" name="radio">
+                <input type="radio" value="4" name="who">
                 <span class="checkmark"></span>
             </label>
 

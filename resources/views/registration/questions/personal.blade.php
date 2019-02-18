@@ -34,7 +34,7 @@
             <div class="birthdate">
 
                 <div class="form-group">
-                    <select class="form-control input-lg" placeholder="MM">
+                    <select name="dob-day" class="form-control input-lg" placeholder="MM">
                         <option>Month</option>
                         <option>01</option>
                         <option>02</option>
@@ -54,7 +54,7 @@
                 <span>/</span>
 
                 <div class="form-group">
-                    <select class="form-control input-lg" placeholder="MM">
+                    <select name="dob-month" class="form-control input-lg" placeholder="MM">
                         <option>Day</option>
                         <option>01</option>
                         <option>02</option>
@@ -93,12 +93,10 @@
                 <span>/</span>
 
                 <div class="form-group">
-                    <select class="form-control input-lg" placeholder="MM">
-                        <option>Year</option>
-                        <option>2019</option>
-                        <option>2018</option>
-                        <option>2017</option>
-                        <option>2016</option>
+                    <select name="dob-year" class="form-control input-lg" placeholder="MM">
+                        @for($year = date('Y',strtotime('-100 year'));$year <= date('Y'); $year++)
+                            <option value="{{$year}}">{{$year}}</option>
+                        @endfor
                     </select>
                 </div>
 

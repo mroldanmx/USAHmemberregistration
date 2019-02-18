@@ -1521,6 +1521,9 @@ button.vertical-icon i {
 
 }
 
-.question-wrapper, .js-last-btn {
+#membership-requirements-checkbox,
+.question-wrapper,
+.js-last-btn,
+.js-membership-requirement{
     display: none;
 }
