@@ -1,0 +1,1529 @@
+/*GENERIC//////////////////////////////////////////////////*/
+@import url('https://fonts.googleapis.com/css?family=Palanquin:200,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Rambla:700i,400i');
+
+/*BOOTSTRAP OVERRIDES--------------------------*/
+
+body {
+    font-size: 20px;
+    color: #4D4D4D;
+    font-family: 'Palanquin', sans-serif;
+    font-weight: 200;
+}
+
+small {
+    font-family: 'Palanquin', sans-serif;
+    font-weight: 200;
+}
+
+/*Buttons*/
+.btn-primary {
+    background: #E10000;
+    padding: 10px 20px 15px;
+}
+
+.btn-primary:hover {
+    background: #fb1e1e;
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:visited {
+    background: #d60000 !important;
+}
+
+.btn {
+    border-radius: 0;
+    font-size: 24px;
+    margin-top: 20px;
+    border: none;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+.btn-link {
+    color: #9F9F9F;
+    line-height: 33px;
+}
+
+h1, h2, h3 {
+    font-family: 'Rambla', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+h3 {
+    font-family: 'Rambla', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.tooltip-inner {
+    background-color: #07213F;
+    font-size: 18px;
+    font-family: 'Palanquin', sans-serif;
+    padding-bottom: 5px;
+}
+
+.tooltip.top .tooltip-arrow {
+    border-top-color: #07213F;
+}
+
+/*NAVBAR--------------------------*/
+
+.navbar-default {
+    background-color: #262626;
+    color: white;
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+    height: 71px;
+    border-bottom: 1px solid #5a5a5a;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.navbar-default img {
+    width: 116px;
+    margin-top: 3px;
+    margin-left: 11px;
+}
+
+.navbar-default .navbar-right {
+    margin-top: 10px;
+}
+
+/*FOOTER--------------------------*/
+
+footer .info-bar {
+    /* Old browsers */
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* IE6-9 */
+    color: white;
+    text-align: center;
+    padding: 16px 0 6px;
+    background: #07213F;
+}
+
+footer .info-bar .usa-hokey-logo {
+    width: 150px;
+}
+
+footer .info-bar h3 {
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+footer .info-bar .social-media {
+    margin-bottom: 15px;
+    margin-top: 18px;
+    padding-left: 0;
+}
+
+footer .info-bar .social-media li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+footer .info-bar .social-media li i {
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 48px;
+    font-size: 21px;
+}
+
+footer .info-bar .contact {
+    /*border-top: 1px solid white;*/
+    margin-top: 22px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+footer .info-bar .contact i {
+    display: block;
+    font-size: 26px;
+    margin-bottom: 9px;
+}
+
+footer .info-bar .contact a {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 9px;
+    display: block;
+}
+
+footer .rights-bar {
+    background: #05182f;
+    color: white;
+    font-size: 14px;
+    padding: 15px 0;
+    text-align: center;
+    border-top: 1px solid #9c9b9b;
+}
+
+footer .rights-bar a {
+    text-decoration: underline;
+    color: white;
+    margin: 0 1px;
+    cursor: pointer;
+}
+
+/*LANDING PAGE//////////////////////////////////////////////////*/
+
+a.icon-with-text {
+    color: white;
+    margin: 0 10px;
+}
+
+a.icon-with-text:hover {
+    text-decoration: none;
+}
+
+a.icon-with-text i {
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 27px;
+    text-align: center;
+    font-size: .7em;
+    margin-right: 4px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+
+.pull-right a.icon-with-text {
+    margin: 0 0 0 20px;
+}
+
+/*NAVBAR--------------------------*/
+
+#landing-page .navbar {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    background: none;
+    border-bottom: 1px solid #9c9b9b;
+    background: #07213f;
+}
+
+#landing-page .navbar .pull-right {
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+#landing-page .navbar.sticky {
+    height: 50px;
+}
+
+#landing-page .navbar.sticky img {
+    width: 90px;
+    margin-top: 0px;
+}
+
+#landing-page .navbar.sticky .pull-right {
+    margin-top: 9px;
+}
+
+/*BANNER--------------------------*/
+
+#banner {
+    width: 100%;
+    height: 550px;
+    background: gray;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+#banner .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 70px;
+
+    background: -moz-linear-gradient(top, rgba(7, 33, 63, 1) 0%, rgba(7, 33, 63, 0) 54%, rgba(7, 33, 63, 0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(7, 33, 63, 1) 0%, rgba(7, 33, 63, 0) 54%, rgba(7, 33, 63, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(7, 33, 63, 1) 0%, rgba(7, 33, 63, 0) 54%, rgba(7, 33, 63, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#07213f', endColorstr='#0007213f', GradientType=0); /* IE6-9 */
+}
+
+#banner .content h1 {
+    color: white;
+    font-size: 2.3em;
+    margin: 0 0 30px;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#banner .content h1 div {
+    font-size: 1.3em;
+    margin-bottom: -9px;
+}
+
+#banner .content h1 small {
+    color: white;
+    display: block;
+    margin-top: 20px;
+    font-size: 0.7em;
+}
+
+#banner .content .buttons {
+
+}
+
+#banner .content .buttons .btn {
+    display: inline-block;
+    margin: 0 7px;
+}
+
+#banner video {
+    width: 100%;
+
+}
+
+/*SECTIONS--------------------------*/
+
+#landing-page section {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/*Titles*/
+
+#landing-page section h2 {
+    color: #e10001;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/*Register Now*/
+
+#welcome {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/*Register Now*/
+
+#register-now {
+    background: url(../img/join-background.jpg) center center no-repeat;
+    background-size: cover;
+    color: white;
+    background-attachment: fixed;
+    padding: 100px 0 !important;
+}
+
+#register-now.red-theme {
+    background: url(../img/join-background-red.jpg) center center no-repeat;
+    background-size: cover;
+    color: white;
+    background-attachment: fixed;
+    padding: 100px 0 !important;
+}
+
+#register-now.red-theme.gradient {
+    background: url(../img/join-background-red-gradient.jpg) center center no-repeat;
+    background-size: cover;
+    color: white;
+    background-attachment: fixed;
+    padding: 100px 0 !important;
+}
+
+#register-now h2 {
+    color: white !important;
+}
+
+#register-now.red-theme .btn {
+    background: white;
+    color: #E9516E;
+}
+
+/*Membership Benefits*/
+
+#benefits {
+    background: #F1F1F1;
+}
+
+#benefits img {
+    width: 100%;
+}
+
+.left-col {
+    text-align: right;
+}
+
+.benefits-list {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+
+.benefits-list > li {
+    margin-bottom: 18px;
+}
+
+.benefits-list li i {
+    font-size: 1.4em;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-top: -0.3em;
+}
+
+.benefits-list li h4 {
+    display: inline-block;
+    margin-bottom: 0;
+    font-size: inherit;
+    font-weight: 500;
+}
+
+.benefits-list li p {
+    margin-left: 42px;
+}
+
+.benefits-list li ul {
+    list-style: none;
+}
+
+.benefits-list li ul li {
+    line-height: 1.3em;
+}
+
+.benefits-list li ul li:before {
+    content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #e10001; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 21px; /* Also needed for space (tweak if needed) */
+    /* Also needed for space (tweak if needed) */
+    font-size: 1.8em;
+    position: relative;
+    top: 0.2em;
+    height: 0;
+}
+
+.tab-content > .active {
+    display: block;
+    padding-top: 25px;
+}
+
+.nav-tabs {
+    text-align: center;
+    border: none;
+}
+
+.nav-tabs > li {
+    float: none;
+    display: inline-block;
+    min-width: 10%;
+    margin: 0 -4px;
+}
+
+.nav-tabs > li > a {
+    color: #4D4D4D;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-family: 'Rambla', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #b3b3b3 !important;
+}
+
+.nav-tabs > li.active a {
+    background: transparent !important;
+    border-radius: 0;
+    border-bottom: 3px solid #07213F !important;
+    color: #4D4D4D;
+    padding-bottom: 9px;
+}
+
+/*DESKTOP--------------------------*/
+
+@media (min-width: 993px) {
+
+    #landing-page .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #benefits {
+        padding-bottom: 60px !important;
+    }
+
+    #register-now {
+        margin: 0;
+    }
+
+    footer .info-bar .contact {
+        display: none;
+    }
+
+    #banner #mobile-image {
+        display: none;
+    }
+
+}
+
+/*TABLET--------------------------*/
+
+@media (min-width: 768px) {
+
+    #landing-page .container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .nav-tabs {
+        margin: 0 10%;
+    }
+
+}
+
+/*MOBILE--------------------------*/
+
+@media (max-width: 992px) {
+
+    #banner .content {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#07213f+0,07213f+100&1+0,0.56+50,0+100 */
+        background: -moz-linear-gradient(top, rgba(7, 33, 63, 1) 0%, rgba(7, 33, 63, 0.56) 50%, rgba(7, 33, 63, 0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(7, 33, 63, 1) 0%, rgba(7, 33, 63, 0.56) 50%, rgba(7, 33, 63, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(7, 33, 63, 1) 0%, rgba(7, 33, 63, 0.56) 50%, rgba(7, 33, 63, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#07213f', endColorstr='#0007213f', GradientType=0); /* IE6-9 */
+    }
+
+    #banner .content .buttons .btn {
+        margin-bottom: 18px;
+    }
+
+    #banner .content h1 {
+        color: white;
+        font-size: 1.7em;
+        margin: 0 0 30px;
+        width: 80%;
+    }
+
+    #banner .content h1 div {
+        font-size: 1.5em;
+        line-height: 0.9em;
+        margin-bottom: 4px;
+        font-weight: 700;
+    }
+
+    #banner .content h1 div span {
+        display: block;
+    }
+
+    #banner .content h1 small {
+        color: white;
+        font-size: 0.8em;
+    }
+
+    #landing-page section h2 {
+        font-size: 1.8em;
+    }
+
+    #landing-page .navbar .pull-right .item span {
+        display: none;
+    }
+
+    #landing-page .navbar .pull-right {
+        position: absolute;
+        top: 1px;
+        right: 4px;
+    }
+
+    #landing-page .navbar .icon-with-text {
+        font-size: 18px;
+        margin-left: 5px;
+    }
+
+    .navbar-default img {
+        width: 90px;
+        margin-top: 10px;
+        margin-left: 12px;
+    }
+
+    #banner video {
+        display: none;
+    }
+
+    #banner #mobile-image {
+        width: 100%;
+        height: 100%;
+        background: url("../img/banner-mobile.jpg") no-repeat center center;
+        background-size: cover;
+    }
+
+    #benefits {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #benefits img {
+        margin-bottom: 30px;
+    }
+
+    .benefits-list li ul {
+        padding: 0;
+    }
+
+    .benefits-list li p {
+        margin-left: 0px;
+    }
+
+    #benefits .nav-tabs li > a > span {
+        display: none;
+    }
+
+    footer .info-bar .social-media li {
+        margin: 0 4px;
+    }
+
+    footer .info-bar .social-media li i {
+        width: 45px;
+        height: 45px;
+        line-height: 46px;
+    }
+
+    footer .icon-with-text {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    footer .icon-with-text:last-of-type {
+        border-bottom: 1px solid white;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 15px;
+        margin-bottom: -5px;
+    }
+
+    footer .icon-with-text span {
+        display: block;
+    }
+
+    .nav-tabs > li {
+        width: 50%;
+    }
+
+    .nav-tabs {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+}
+
+/*REGISTRATION FORM//////////////////////////////////////////////////*/
+
+#registrationForm {
+    font-size: 18px;
+}
+
+/*NAVBAR--------------------------*/
+
+#registrationForm .navbar-default .container-fluid {
+    width: 900px;
+    height: 100%;
+    position: relative;
+}
+
+#registrationForm .navbar-default h1 {
+    text-align: center;
+    font-size: 26px;
+    position: absolute;
+    margin: 0;
+    top: 12px;
+    left: 50%;
+    margin-left: -81px;
+    color: white;
+}
+
+#registrationForm .navbar-default h1 small {
+    font-size: 0.7em;
+    display: block;
+    color: white;
+}
+
+#registrationForm .navbar-default .navbar-right {
+    margin-top: 10px;
+}
+
+/*STEPS BAR--------------------------*/
+
+#steps-bar {
+    background: url(../img/form-background.jpg) #404040 top center no-repeat;
+    text-align: center;
+    position: relative;
+    background-attachment: fixed;
+}
+
+#steps-bar .steps-container {
+    width: 950px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+#steps-bar .step {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    width: 115px;
+    float: none;
+    vertical-align: middle;
+}
+
+#steps-bar .step.last {
+    margin: 0;
+}
+
+#steps-bar .step .number {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 2px;
+    /* font-style: italic; */
+    font-family: 'Rambla', sans-serif;
+}
+
+#steps-bar .step i {
+    width: 45px;
+    height: 45px;
+    background: #bbbbbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 2px;
+    font-size: 18px;
+    line-height: 44px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+#steps-bar .step.active i {
+    background: #e10001;
+}
+
+#steps-bar .step.complete i {
+    background: #0659b5;
+}
+
+#steps-bar .step .name {
+    margin-bottom: 0;
+    display: block;
+    font-weight: 200;
+    width: 150px;
+}
+
+#steps-bar .steps-progress {
+    position: absolute;
+    top: 50px;
+    height: 10px;
+    background: #B3B3B3;
+    width: 750px;
+    box-shadow: none;
+    display: block;
+    margin-left: calc(50% - 540px);
+}
+
+/*Bar*/
+
+.step-bar {
+    background: #efefef;
+    height: 15px;
+    width: 10%;
+    margin-top: -5px;
+    margin-left: -42px;
+    margin-right: -42px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.step-bar.active {
+    width: 45%;
+}
+
+.step-bar .step-progress {
+    background: #e10001;
+    width: 0%;
+    height: 100%;
+}
+
+.step-bar .step-progress.p-1 {
+    width: 0%
+}
+
+.step-bar .step-progress.p-2 {
+    width: 7.7%
+}
+
+.step-bar .step-progress.p-3 {
+    width: 15.4%
+}
+
+.step-bar .step-progress.p-4 {
+    width: 23.1%
+}
+
+.step-bar .step-progress.p-5 {
+    width: 30.8%
+}
+
+.step-bar .step-progress.p-6 {
+    width: 38.5%
+}
+
+.step-bar .step-progress.p-7 {
+    width: 46.2%
+}
+
+.step-bar .step-progress.p-8 {
+    width: 53.9%
+}
+
+.step-bar .step-progress.p-9 {
+    width: 61.6%
+}
+
+.step-bar .step-progress.p-10 {
+    width: 69.3%
+}
+
+.step-bar .step-progress.p-11 {
+    width: 77%
+}
+
+.step-bar .step-progress.p-12 {
+    width: 84.7%
+}
+
+.step-bar .step-progress.p-13 {
+    width: 92.4%
+}
+
+.step-bar .step-progress.complete {
+    width: 100%;
+    background: #0659b5;
+}
+
+/*FORM--------------------------*/
+
+#registrationForm .container {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 35px;
+    min-height: calc(100vh - 182px);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+#registrationForm .container .question-icon i {
+    color: #424242;
+    width: 60px;
+    height: 60px;
+    border: 3px solid #424242;
+    border-radius: 50%;
+    font-size: 28px;
+    line-height: 55px;
+}
+
+#registrationForm .container .question-icon h2 {
+    margin-bottom: 0;
+}
+
+#registrationForm .container .question-icon p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#registrationForm .container .question-icon .gender {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 3px solid #424242;
+}
+
+#registrationForm .container .question-icon .gender i {
+    width: initial;
+    border: initial;
+    color: #424242;
+}
+
+#registrationForm .container .question-icon .gender i.male {
+    position: relative;
+    left: 2px;
+}
+
+#registrationForm .container .question-icon .icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #424242;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#registrationForm .container .question-icon .icon-wrapper i {
+    border: none;
+    position: relative;
+    left: 2px;
+}
+
+#registrationForm .container h2 {
+    color: #e10001;
+    text-align: center;
+    margin: 10px 0 28px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+#registrationForm p {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+#registrationForm .container .form-group {
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 200;
+    margin-bottom: 2px;
+    color: #7d7d7d;
+    min-height: 20px;
+    display: inline-block;
+}
+
+.form-group .form-control,
+.form-group select {
+    border-radius: 0 !important;
+    border: 1px solid lightgray;
+    box-shadow: none;
+    background: white;
+    padding-top: 7px;
+}
+
+#registrationForm .container .input-group .form-control {
+    border-left: 0;
+    padding-left: 0px;
+}
+
+#registrationForm .container .input-group .input-group-addon {
+    border-radius: 0;
+    background: white;
+    border-right: none;
+    position: relative;
+    z-index: 3;
+}
+
+#registrationForm .container .input-group .input-group-addon i {
+    font-size: 24px;
+}
+
+#registrationForm .required {
+    color: #e10001;
+}
+
+/*Buttons*/
+
+#registrationForm .btn-primary {
+    padding: 10px 50px;
+}
+
+#registrationForm .btn {
+    font-size: 18px;
+    margin-top: 20px;
+    height: 46px;
+}
+
+/*Note*/
+#registrationForm .note {
+    background: #eaeaea;
+    text-align: left;
+    padding: 10px 22px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#registrationForm .note h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#registrationForm .container a {
+    color: #004ba5;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#registrationForm .note p {
+    text-align: left;
+}
+
+/*CUSTOM RADIO AND CHECK--------------------------*/
+
+.object {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: auto;
+    display: inline-block;
+    font-weight: 200;
+}
+
+.object input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 28px;
+    width: 28px;
+    border: 2px solid #b3b3b3;
+    background: none;
+}
+
+.object:hover input ~ .checkmark {
+    background-color: #b6b6b6;
+}
+
+.object input:checked ~ .checkmark {
+    background-color: #004ea4;
+    border-color: #004ea4;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    margin-top: 1px;
+}
+
+.object input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.object .checkmark:after {
+    left: 8px;
+    top: 2px;
+    width: 9px;
+    height: 15px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.checkbox {
+    line-height: 22px;
+    margin-bottom: 13px;
+    padding-top: 0 !important;
+}
+
+.checkbox label, .radio label {
+    padding-left: 7px;
+    font-weight: 200;
+}
+
+.object.radio .checkmark {
+    border-radius: 50%;
+}
+
+.object.radio .checkmark:after {
+    top: 6px;
+    left: 7px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+}
+
+/*Donations*/
+#donations {
+    margin-left: 30px;
+    margin-top: 0px;
+    margin-bottom: -15px;
+}
+
+#donations label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+#donations label span {
+    font-family: sans-serif;
+}
+
+/*Horizontal radio group*/
+.horizontal-radio-group {
+    margin-bottom: 5px;
+}
+
+.horizontal-radio-group .radio {
+    margin-right: 20px;
+    margin-bottom: 11px !important;
+}
+
+.horizontal-radio-group label:not(.radio) {
+    font-weight: 200;
+    margin-bottom: 4px;
+    color: #7d7d7d;
+    display: block;
+}
+
+/*Birthdate*/
+
+.birthdate {
+
+}
+
+.birthdate .form-group {
+    display: inline-block;
+    width: calc(33.333333% - 13px);
+}
+
+.birthdate select {
+    text-align: right !important;
+}
+
+.birthdate span {
+    width: 10px;
+    display: inline-block;
+}
+
+/*iFrame container*/
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#referee-video {
+    padding: 0 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/*STEP 2--------------------------*/
+
+#registrationForm .wrapper {
+    background-color: #F2F2F2;
+    padding: 30px 30px 17px;
+}
+
+#registrationForm .wrapper .divider {
+    border-top: 1px solid gray;
+}
+
+#registrationForm .data {
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+
+#registrationForm .wrapper .form-control {
+    display: none;
+}
+
+#registrationForm .wrapper .birthdate {
+    display: none;
+}
+
+#registrationForm .wrapper .horizontal-radio-group {
+    display: none;
+}
+
+#registrationForm .wrapper hr {
+    border-top: 1px solid #d0d0d0;
+    margin-top: 3px;
+    margin-bottom: 16px;
+}
+
+button.action, button.action:visited, button.action:focus {
+    color: inherit;
+    text-decoration: none !important;
+}
+
+button.action:hover {
+    color: #6d6c6c;
+}
+
+button.action i {
+    font-size: 1.3em;
+}
+
+#registrationForm .wrapper button.action {
+    margin: 7px 0 0;
+}
+
+/*Edit mode*/
+#registrationForm .wrapper.edit .data {
+    display: none;
+}
+
+#registrationForm .wrapper.edit .form-control {
+    display: block;
+}
+
+#registrationForm .wrapper.edit .birthdate {
+    display: block;
+}
+
+#registrationForm .wrapper.edit .horizontal-radio-group {
+    display: block;
+}
+
+#registrationForm .wrapper.edit .no-edit {
+    display: none;
+}
+
+#registrationForm .wrapper .save {
+    display: none;
+}
+
+#registrationForm .wrapper .cancel {
+    display: none;
+}
+
+#registrationForm .wrapper.edit .save {
+    display: inline-block;
+}
+
+#registrationForm .wrapper.edit .cancel {
+    display: inline-block;
+}
+
+#registrationForm .wrapper.edit .edit {
+    display: none;
+}
+
+#registrationForm .wrapper.edit .delete {
+    display: none;
+}
+
+#registrationForm .block-container {
+    background-color: #F2F2F2;
+    text-align: left;
+    padding: 20px 30px 9px;
+    margin-bottom: 30px;
+}
+
+#registrationForm .block-container .pull-right {
+    font-family: sans-serif;
+}
+
+#registrationForm .block-container .pull-right.red {
+    font-family: sans-serif;
+    color: #DD0A37;
+}
+
+#registrationForm .block-container h3 {
+    margin: 0 0 20px;
+}
+
+#registrationForm .block-container hr {
+    border-top: 1px solid #d0d0d0;
+}
+
+#registrationForm .narrow-gap .col-md-3,
+#registrationForm .narrow-gap .col-md-6,
+#registrationForm .narrow-gap .col-md-12 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#registrationForm .narrow-gap .row {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/*STEP 3--------------------------*/
+
+#registrationForm label.label-row {
+    width: 100%;
+    text-align: left;
+    font-weight: 200;
+    color: #7d7d7d;
+    display: block;
+}
+
+#registrationForm .narrow-gap label.label-row {
+    margin-left: 5px;
+}
+
+.payment .step-progress.p-1 {
+    width: 0%
+}
+
+.payment .step-progress.p-2 {
+    width: 25%
+}
+
+.payment .step-progress.p-3 {
+    width: 50%
+}
+
+.payment .step-progress.p-4 {
+    width: 75%
+}
+
+/*STEP 4--------------------------*/
+
+button.vertical-icon, button.vertical-icon:visited, button.vertical-icon:focus {
+    color: inherit;
+    text-decoration: none !important;
+    height: initial !important;
+    margin-top: 0 !important;
+}
+
+button.vertical-icon:hover {
+    color: #6d6c6c;
+}
+
+button.vertical-icon i {
+    font-size: 2.5em;
+    display: block;
+}
+
+#registrationForm .wrapper button.vertical-icon {
+    margin: 7px 0 0;
+}
+
+#barcode {
+    width: 100%;
+    max-width: 250px;
+    margin-top: 7px;
+}
+
+.white-row {
+    background-color: white;
+    height: 192px;
+    padding-top: 12px;
+    padding-bottom: 2px;
+    border: 1px solid #d0d0d0;
+    margin-bottom: 7px;
+}
+
+#registrationForm .white-row .data {
+    margin-bottom: 0px;
+}
+
+.white-row p:last-child {
+    border-top: 1px solid #d0d0d0;
+    margin-left: 15px;
+    width: calc(100% - 30px);
+    padding: 0;
+    padding-top: 12px;
+}
+
+.white-row h3 {
+    margin-bottom: 6px !important;
+}
+
+#gran-total {
+
+}
+
+#gran-total p {
+    margin: 9px 0 3px;
+}
+
+/*DESKTOP--------------------------*/
+
+@media (min-width: 993px) {
+
+    #registrationForm .container:not(.expanded) {
+        width: 600px;
+    }
+
+    #registrationForm .container.medium {
+        width: 900px;
+    }
+
+    #registrationForm footer .info-bar .contact {
+        display: block;
+    }
+
+    footer .info-bar .contact .item {
+        display: inline-block;
+        margin: 0 20px;
+        margin-top: -2px;
+    }
+
+    #registrationForm .wrapper {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .col-md-6:first-child .white-row {
+        border-right: none;
+    }
+
+    .white-row h3 {
+        display: none;
+    }
+
+    #registrationForm .person {
+        margin-bottom: 10px;
+    }
+
+}
+
+/*MOBILE--------------------------*/
+
+.navbar-default .navbar-toggle {
+    margin-top: 18px;
+    margin-right: 16px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background: white;
+}
+
+@media (max-width: 992px) {
+
+    #registrationForm .navbar-default .container-fluid {
+        width: 100%;
+    }
+
+    #registrationForm .navbar-default img {
+        width: 100px;
+        margin-top: 7px;
+    }
+
+    #registrationForm h1 {
+        font-size: 26px;
+        margin-left: -68px;
+    }
+
+    #steps-bar .steps-container {
+        width: 100%;
+    }
+
+    #steps-bar .step {
+        width: 80px;
+    }
+
+    #steps-bar .step.active {
+    }
+
+    #steps-bar .step .name {
+        font-size: 14px;
+    }
+
+    #steps-bar .steps-progress {
+        width: 300px;
+        margin-left: calc(50% - 150px);
+    }
+
+    .step-bar {
+        width: 10%;
+        margin-top: 0px;
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+
+    .step-bar.active {
+        width: 20%;
+    }
+
+    #registrationForm .btn-primary {
+        min-width: 170px;
+        padding: 10px 20px;
+    }
+
+    footer .rights-bar span {
+        display: block;
+    }
+
+    footer .info-bar .contact {
+        display: block;
+    }
+
+    .single-line-mobile {
+        display: block;
+    }
+
+    #barcode {
+        margin-top: 0;
+        margin-bottom: 18px;
+    }
+
+    .white-row {
+        height: auto;
+        margin-bottom: 0;
+    }
+
+    .col-md-6:last-child .white-row {
+        border-top: none;
+        margin-bottom: 15px;
+    }
+
+    .block-container > .row > div > h3 {
+        display: none;
+    }
+
+    #gran-total {
+        margin-bottom: 15px;
+    }
+
+    .horizontal-radio-group .radio {
+        margin-bottom: 25px;
+        display: block;
+    }
+
+}
+
+#membership-requirements-checkbox,
+.question-wrapper,
+.js-last-btn,
+.js-membership-requirement{
+    display: none;
+}

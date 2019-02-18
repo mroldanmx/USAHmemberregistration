@@ -16,3 +16,18 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Registration api exposure
+Route::apiResources([
+    'register' => 'Api\RegistrationController',
+]);
+
+// AJAX as API for now
+Route::middleware(['auth'])->group(function () {
+
+    // members
+    //Route::resource('members', 'MembersController', ['as' => 'api']);
+    Route::get('members', 'MembersController@index')->name('api.members.test');
+    Route::post('members', 'MembersController@index')->name('api.members.index');
+
+});
