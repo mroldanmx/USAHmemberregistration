@@ -47,7 +47,7 @@ class Member extends Model
      */
     public function address()
     {
-        return $this->hasOne(Address::class);
+        return $this->hasOne(\App\Models\Address::class);
     }
 
     /**

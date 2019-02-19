@@ -28,7 +28,7 @@ class UpdateMemberRequest extends FormRequest
             'last_name' => 'required',
             'email' => 'required',
             'phone_1' => 'required',
-            'address_line_1' => 'required',
+            'line_1' => 'required',
             'city' => 'required',
             'state' => 'required',
             'country' => 'required'
