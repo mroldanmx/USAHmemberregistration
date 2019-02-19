@@ -6,6 +6,7 @@ use App\Models\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\MembersCollection;
+use App\Http\Requests\UpdateMemberRequest;
 
 class MembersController extends Controller
 {
@@ -64,7 +65,7 @@ class MembersController extends Controller
      */
     public function edit($id)
     {
-        //
+        return Member::findOrFail($id);
     }
 
     /**
@@ -74,9 +75,22 @@ class MembersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateMemberRequest $request, $id)
     {
-        //
+        $member = Member::with('address')->findOrFail($id);
+
+        try {
+            $input = $request->all();
+
+            $member->fill($input)->save();
+            $member->address->update($input);
+
+            return response()->json(['success' => true, 'message' => 'Member data saved', 'data' => ['member' => $member]]);
+        }
+        catch(Excception $e) {
+            Log::info('Error updating member: '.$e->getMessage());
+            return response()->json(['errors' => $e->getMessage(), 'message' => 'Could not update the member']);
+        }
     }
 
     /**

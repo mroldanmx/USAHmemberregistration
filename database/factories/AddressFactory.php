@@ -15,17 +15,16 @@ use Illuminate\Support\Facades\Log;
 |
 */
 
-$countries = ['USA', 'Canada'];
+$countries = ['US', 'CA'];
 $zips = range(99501, 99524);
 
 $factory->define(App\Models\Address::class, function (Faker $faker) use ($countries, $zips) {
     return [
-        'address_line_1' => $faker->buildingNumber . ' ' . $faker->streetName,
-        'address_line_2' => $faker->secondaryAddress,
-        'address_city' => $faker->city,
-        'address_state' => $faker->stateAbbr,
-        'address_zip' => $faker->randomElement($zips),
-        'address_country' => $faker->randomElement($countries),
-        'address_foreign_postal' => '',
+        'line_1' => $faker->buildingNumber . ' ' . $faker->streetName,
+        'line_2' => $faker->secondaryAddress,
+        'city' => $faker->city,
+        'state' => $faker->stateAbbr,
+        'country' => $faker->randomElement($countries),
+        'zip' => $faker->randomElement($zips),
     ];
 });

@@ -9,6 +9,7 @@
 @stack('scripts')
 <!-- AdminLTE App -->
 <script src="{{ asset('js/adminlte.min.js') }}"></script>
+<script src="{{ asset('js/portal.js') }}"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {

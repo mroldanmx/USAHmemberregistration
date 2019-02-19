@@ -16,12 +16,18 @@ use Faker\Generator as Faker;
 */
 
 $genders = ['Male', 'Female'];
+
+$factory->afterCreating(App\Models\Member::class, function ($member, $faker) {
+    $member->address()->save(factory(App\Models\Address::class)->make());
+});
+
 $factory->define(App\Models\Member::class, function (Faker $faker) use ($genders) {
 	$gender = $faker->randomElement($genders);
     return [
-    	'address_id' => function () {
+    	/*'address_id' => function () {
             return factory(App\Models\Address::class)->create()->id;
-        },
+        },*/
+        'member_id' => $faker->unique()->randomNumber($nbDigits = 8),
         'first_name' => $faker->firstName(strtolower($gender)),
         'last_name' => $faker->lastName,
         'gender' => $gender[0],

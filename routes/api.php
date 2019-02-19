@@ -26,5 +26,6 @@ Route::middleware(['auth'])->group(function () {
     //Route::resource('members', 'MembersController', ['as' => 'api']);
     Route::get('members', 'MembersController@index')->name('api.members.test');
     Route::post('members', 'MembersController@index')->name('api.members.index');
+    Route::put('members/{id}', 'MembersController@update')->name('api.members.update');
 
 });

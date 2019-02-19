@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdateMemberRequest;
 
 class MembersController extends Controller
 {
@@ -62,8 +61,8 @@ class MembersController extends Controller
     {
         $member = Member::with('address')->findOrFail($id);
         $states = [
-            'USA' => json_decode(file_get_contents(storage_path('app/data/us_states_titlecase.json'))),
-            'Canada' => json_decode(file_get_contents(storage_path('app/data/canada_states_titlecase.json'))),
+            'US' => json_decode(file_get_contents(storage_path('app/data/us_states_titlecase.json'))),
+            'CA' => json_decode(file_get_contents(storage_path('app/data/canada_states_titlecase.json'))),
         ];
         return view('admin.members.edit', compact('member', 'states'));
     }
@@ -75,9 +74,9 @@ class MembersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMemberRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
