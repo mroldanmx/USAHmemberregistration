@@ -15,17 +15,21 @@
 
             <div class="object checkbox">
                 <label>
-                    <input  data-required-message="{{
+                    <input data-required-message="{{
                             trans('validation.custom.age_requirement.accepted')
                             }}"
-                            name="age_checkbox"
-                            type="checkbox"
-                            value="1"
-                            required> <span class="checkmark"></span> I am 18 years old or greater <span
+                           name="age"
+                           type="checkbox"
+                           value="1"
+                           {{old('age')?'checked':''}}
+                           required> <span class="checkmark"></span> I am 18 years old or greater <span
                             class="required">*</span>
                 </label>
             </div>
 
         </div>
+    </div>
+    <div id="form-buttons" class="row ">
+        <input type="submit" class="btn btn-primary " value="Next">
     </div>
 </div>

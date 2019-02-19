@@ -20,39 +20,39 @@
         <div class="col-md-offset-1 col-md-10" style="text-align: left;">
 
             <label class="object radio">American Indian or Alaska Native
-                <input type="radio" name="radio">
+                <input type="radio" name="diversity_type_id">
                 <span class="checkmark"></span>
             </label><br>
             <label class="object radio">Asian
-                <input type="radio" name="radio">
+                <input type="radio" name="diversity_type_id">
                 <span class="checkmark"></span>
             </label><br>
             <label class="object radio">Black or African American
-                <input type="radio" name="radio">
+                <input type="radio" name="diversity_type_id">
                 <span class="checkmark"></span>
             </label><br>
             <label class="object radio">Native Hawaiian or Other Pacific Islander
-                <input type="radio" name="radio">
+                <input type="radio" name="diversity_type_id">
                 <span class="checkmark"></span>
             </label><br>
             <label class="object radio">Hispanic or Latino
-                <input type="radio" name="radio">
+                <input type="radio" name="diversity_type_id">
                 <span class="checkmark"></span>
             </label><br>
             <label class="object radio">White (not of Hispanic origin)
-                <input type="radio" name="radio">
+                <input type="radio" name="diversity_type_id">
                 <span class="checkmark"></span>
             </label><br>
             <label class="object radio">Two or more races
-                <input type="radio" name="radio">
+                <input type="radio" name="diversity_type_id">
                 <span class="checkmark"></span>
             </label><br>
             <label class="object radio">Other
-                <input type="radio" name="radio">
+                <input type="radio" name="diversity_type_id">
                 <span class="checkmark"></span>
             </label><br>
             <label class="object radio">I would prefer not to share this information
-                <input type="radio" name="radio">
+                <input type="radio" name="diversity_type_id">
                 <span class="checkmark"></span>
             </label>
 
@@ -61,8 +61,8 @@
 
     <div class="row">
 
-        <div class="btn btn-link">Previous</div>
-        <div class="btn btn-primary">Next</div>
+        <a href="#" class="btn btn-link js-go-back">Previous</a>
+        <input type="submit" class="btn btn-primary" value="Next">
 
     </div>
 

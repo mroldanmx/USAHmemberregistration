@@ -22,12 +22,19 @@
 
             <div class="object checkbox">
                 <label>
-                    <input type="checkbox"> <span class="checkmark"></span> I have read and accept the USA Hockey
+                    <input value="1" name="concussion_waiver" type="checkbox"> <span class="checkmark"></span> I have read and accept the USA Hockey
                     Concussion Information and Acknowledgement <span class="required">*</span>
                 </label>
             </div>
 
         </div>
+    </div>
+
+    <div class="row">
+
+        <a href="#" class="btn btn-link js-go-back">Previous</a>
+        <input type="submit" class="btn btn-primary" value="Next">
+
     </div>
 
 

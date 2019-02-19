@@ -17,7 +17,7 @@ class Terms extends Model
      */
     public function member()
     {
-        return $this->belongsTo(App\Models\MemberType::class, 'member_type_id', 'id');
+        return $this->belongsTo(MemberType::class, 'member_type_id', 'id');
     }
 
 

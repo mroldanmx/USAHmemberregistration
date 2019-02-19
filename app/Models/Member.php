@@ -15,12 +15,24 @@ class Member extends Model
     //const REFEREE_TYPE = 3;
     const PARENT_TYPE = 99;
 
+    protected $fillable = [
+        'first_name',
+        'middle_name',
+        'last_name',
+        'dob',
+        'gender',
+        'citizenship',
+        'email',
+        'phone_1',
+        'phone_2',
+    ];
+
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'member_id';
+    protected $primaryKey = 'id';
 
     /**
      * The table associated with the model.
@@ -29,26 +41,13 @@ class Member extends Model
      */
     protected $table = 'member';
 
-    /**
-     * The name of the "created at" column.
-     *
-     * @var string
-     */
-    const CREATED_AT = 'member_created_at';
-
-    /**
-     * The name of the "updated at" column.
-     *
-     * @var string
-     */
-    const UPDATED_AT = 'member_updated_at';
 
     /**
      * The address of this member.
      */
     public function address()
     {
-        return $this->hasOne(\App\Models\Address::class, 'address_id', 'member_address_id');
+        return $this->hasOne(Address::class);
     }
 
     /**
@@ -56,6 +55,6 @@ class Member extends Model
      */
     public function getAgeAttribute()
     {
-        return Carbon::parse($this->attributes['member_dob'])->age;
+        return Carbon::parse($this->attributes['dob'])->age;
     }
 }

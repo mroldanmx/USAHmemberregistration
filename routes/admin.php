@@ -24,7 +24,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('subscriptions/{id}', 'SubscriptionsController@show')->name('admin.subscriptions.view');
 
     // pricing
-    Route::get('pricing', 'PriingController@index')->name('admin.pricing.index');
+    Route::get('pricing', 'PricingController@index')->name('admin.pricing.index');
 
     // coupons
     Route::resource('coupons', 'CouponsController', ['as' => 'admin']);

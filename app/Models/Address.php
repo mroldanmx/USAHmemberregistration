@@ -13,6 +13,16 @@ class Address extends Model
      */
     protected $table = 'address';
 
+    protected $fillable = [
+        'line_1',
+        'zip' ,
+        'city' ,
+        'state' ,
+        'country' ,
+        'member_id',
+
+    ];
+
     /**
      * Indicates if the model should be timestamped.
      *

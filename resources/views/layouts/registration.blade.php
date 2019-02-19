@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
           integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="{{@asset("css/fontawesome-5.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/fontawesome-5.css")}}">
 
-    <link rel="stylesheet" type="text/css" href="{{@asset("css/templates.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/templates.css")}}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,7 +37,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img src="{{@asset("img/usa-hockey-logo.png")}}">
+            <img src="{{ asset("img/usa-hockey-logo.png")}}">
         </div>
 
         <h1>

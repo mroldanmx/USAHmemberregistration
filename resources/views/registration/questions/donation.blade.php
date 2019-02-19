@@ -55,8 +55,8 @@
 
     <div class="row">
 
-        <div class="btn btn-link">Previous</div>
-        <div class="btn btn-primary">Next</div>
+        <a href="#" class="btn btn-link js-go-back">Previous</a>
+        <input type="submit" class="btn btn-primary" value="Next">
 
     </div>
 

@@ -1,4 +1,4 @@
-<?php
+´<?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -21,8 +21,8 @@ class CreateTermsTable extends Migration
             $table->text('default')->comment("Default HTML content");
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('member_type_id')->references('id')->on('member_type');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('member_type_id')->references('id')->on('member_type')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

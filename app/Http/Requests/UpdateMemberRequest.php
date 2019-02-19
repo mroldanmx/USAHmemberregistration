@@ -24,10 +24,10 @@ class UpdateMemberRequest extends FormRequest
     public function rules()
     {
         return [
-            'member_first_name' => 'required',
-            'member_last_name' => 'required',
-            'member_email' => 'required',
-            'member_phone_1' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'phone_1' => 'required',
             'address_line_1' => 'required',
             'city' => 'required',
             'state' => 'required',

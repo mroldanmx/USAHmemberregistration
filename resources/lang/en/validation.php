@@ -135,7 +135,11 @@ return [
             'accepted' => 'You must accept the requirements for this membership type',
             'required' => 'You must select a membership type',
         ],
-        'who' => [
+        'member_type_checkbox'=>[
+            'accepted' => 'You must accept the requirements for this membership type',
+        ],
+        'registration_type_id' => [
+            "required" => "Please, tell us who are you registering.",
             "adult_family" => 'Each registrant must be present to acknowledge waivers.',
             "adult_non_family" => "Each person being registered needs to be present to accept the USA Hockey Waiver of Liability and the USA Hockey Concussion Information and Acknowledgement. Also, be sure to provide each person's correct mailing address and personal email address so that confirmation of registration can be delivered. ",
         ],
@@ -156,6 +160,9 @@ return [
 
     'attributes' => [
         'age_requirement' => 'I am currently 18 years of age or older.',
+        'dob_day' => 'day',
+        'dob_month' => 'month',
+        'dob_year' => 'year',
     ],
 
 ];

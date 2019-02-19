@@ -16,13 +16,13 @@ class Member extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->member_id,
-            'name' => $this->member_first_name . ' ' . $this->member_last_name,
+            'id' => $this->id,
+            'name' => $this->first_name . ' ' . $this->last_name,
             'type' => '',
-            'gender' => $this->member_gender,
+            'gender' => $this->gender,
             'age'   => $this->age,
             'country' => 'USA',
-            'registered_date' => $this->member_created_at->format('Y-m-d'),
+            'registered_date' => $this->created_at->format('Y-m-d'),
         ];
     }
 }

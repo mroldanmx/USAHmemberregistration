@@ -1521,9 +1521,28 @@ button.vertical-icon i {
 
 }
 
+
+
+#registrationForm a.btn-link {
+    color: #9F9F9F !important;
+    line-height: 33px;
+    text-decoration:none !important;
+}
+
+#registrationForm a.btn-primary{
+    color:#ffffff !important;
+    background: #DD0A37;
+    padding: 10px 50px;
+    text-decoration:none !important;
+}
+
+
+
 #membership-requirements-checkbox,
-.question-wrapper,
-.js-last-btn,
 .js-membership-requirement{
     display: none;
+}
+
+::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
 }

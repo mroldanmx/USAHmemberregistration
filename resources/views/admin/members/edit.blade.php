@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="content">
-    <form class="form-horizontal" method="POST" action="{{ route('admin.members.update', $member->member_id) }}">
+    <form class="form-horizontal" method="POST" action="{{ route('admin.members.update', $member->id) }}">
         @csrf
         @method('PUT')
         <div class="col-md-6">
@@ -13,36 +13,36 @@
                 <!-- /.box-header -->
                 <!-- form start -->
                 <div class="box-body">
-                    <div class="form-group @if($errors->has('member_first_name')) has-error @endif">
-                        <label for="member_first_name" class="col-sm-3 control-label">First Name</label>
+                    <div class="form-group @if($errors->has('first_name')) has-error @endif">
+                        <label for="first_name" class="col-sm-3 control-label">First Name</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="member_first_name" name="member_first_name" placeholder="First Name" value="{{ old('member_first_name', $member->member_first_name) }}">
+                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="{{ old('first_name', $member->first_name) }}">
                         </div>
                     </div>
-                    <div class="form-group @if($errors->has('member_last_name')) has-error @endif">
-                        <label for="member_last_name" class="col-sm-3 control-label">Last Name</label>
+                    <div class="form-group @if($errors->has('last_name')) has-error @endif">
+                        <label for="last_name" class="col-sm-3 control-label">Last Name</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="member_last_name" name="member_last_name" placeholder="Last Name" value="{{ old('member_last_name', $member->member_last_name) }}">
+                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" value="{{ old('last_name', $member->last_name) }}">
                         </div>
                     </div>
-                    <div class="form-group @if($errors->has('member_dob')) has-error @endif">
-                        <label for="member_dob" class="col-sm-3 control-label">Date of Birth</label>
+                    <div class="form-group @if($errors->has('dob')) has-error @endif">
+                        <label for="dob" class="col-sm-3 control-label">Date of Birth</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="member_dob" name="member_dob" value="{{ old('member_last_name', $member->member_dob) }}">
+                            <input type="text" class="form-control" id="dob" name="dob" value="{{ old('last_name', $member->dob) }}">
                         </div>
                     </div>
-                    <div class="form-group @if($errors->has('member_gender')) has-error @endif">
+                    <div class="form-group @if($errors->has('gender')) has-error @endif">
                         <label class="col-sm-3 control-label">Gender</label>
                         <div class="col-sm-9">
                             <div class="radio">
                                 <label>
-                                <input type="radio" name="member_gender" id="member_male" value="M" @if($member->member_gender === 'M') checked @endif>
+                                <input type="radio" name="gender" id="member_male" value="M" @if($member->gender === 'M') checked @endif>
                                 Male
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                <input type="radio" name="member_gender" id="member_female" value="F" @if($member->member_gender === 'F') checked @endif>
+                                <input type="radio" name="gender" id="member_female" value="F" @if($member->gender === 'F') checked @endif>
                                 Female
                                 </label>
                             </div>
@@ -86,22 +86,22 @@
                     <h3 class="box-title">Contact Information</h3>
                 </div>
                 <div class="box-body">
-                    <div class="form-group @if($errors->has('member_email')) has-error @endif">
-                        <label for="member_email" class="col-sm-3 control-label">Email</label>
+                    <div class="form-group @if($errors->has('email')) has-error @endif">
+                        <label for="email" class="col-sm-3 control-label">Email</label>
                         <div class="col-sm-9">
-                            <input type="email" class="form-control" id="member_email" name="member_email" value="{{ old('member_email', $member->member_email) }}">
+                            <input type="email" class="form-control" id="email" name="email" value="{{ old('email', $member->email) }}">
                         </div>
                     </div>
-                    <div class="form-group @if($errors->has('member_phone_1')) has-error @endif">
-                        <label for="member_phone_1" class="col-sm-3 control-label">Phone</label>
+                    <div class="form-group @if($errors->has('phone_1')) has-error @endif">
+                        <label for="phone_1" class="col-sm-3 control-label">Phone</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="member_phone_1" name="member_phone_1" value="{{ old('member_phone_1', $member->member_phone_1) }}">
+                            <input type="text" class="form-control" id="phone_1" name="phone_1" value="{{ old('phone_1', $member->phone_1) }}">
                         </div>
                     </div>
-                    <div class="form-group @if($errors->has('member_phone_2')) has-error @endif">
-                        <label for="member_phone_2" class="col-sm-3 control-label">Alternative Phone</label>
+                    <div class="form-group @if($errors->has('phone_2')) has-error @endif">
+                        <label for="phone_2" class="col-sm-3 control-label">Alternative Phone</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="member_phone_2" name="member_phone_2" value="{{ old('member_phone_2', $member->member_phone_2) }}">
+                            <input type="text" class="form-control" id="phone_2" name="phone_2" value="{{ old('phone_2', $member->phone_2) }}">
                         </div>
                     </div>
                     <div class="form-group @if($errors->has('address_line_1')) has-error @endif">

@@ -19,16 +19,16 @@ $genders = ['Male', 'Female'];
 $factory->define(App\Models\Member::class, function (Faker $faker) use ($genders) {
 	$gender = $faker->randomElement($genders);
     return [
-    	'member_address_id' => function () {
+    	'address_id' => function () {
             return factory(App\Models\Address::class)->create()->id;
         },
-        'member_first_name' => $faker->firstName(strtolower($gender)),
-        'member_last_name' => $faker->lastName,
-        'member_gender' => $gender[0],
-        'member_dob' => $faker->dateTime,
-        'member_phone_1' => $faker->numerify('###-###-###'),
-        'member_phone_2' => $faker->numerify('###-###-###'),
-        'member_email' => $faker->unique()->safeEmail,
-        'member_citizen' => 1,
+        'first_name' => $faker->firstName(strtolower($gender)),
+        'last_name' => $faker->lastName,
+        'gender' => $gender[0],
+        'dob' => $faker->dateTime,
+        'phone_1' => $faker->numerify('###-###-###'),
+        'phone_2' => $faker->numerify('###-###-###'),
+        'email' => $faker->unique()->safeEmail,
+        'citizenship' => 1,
     ];
 });

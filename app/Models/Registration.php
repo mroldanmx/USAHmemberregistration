@@ -6,12 +6,33 @@ use Illuminate\Database\Eloquent\Model;
 
 class Registration extends Model
 {
+    protected $fillable = [
+        'cart_id',
+        'status',
+        'step',
+        'member_type_id',
+        'registration_type_id',
+        'member_id',
+        'citizenship',
+    ];
 
-    const MYSELF = 1;
-    const CHILD = 2;
-    const ADULT_FAMILY = 3;
-    const ADULT_NON_FAMILY = 4;
+    public function cart()
+    {
+        $this->belongsTo(Cart::class);
+    }
 
-    protected $table = 'registration';
+    public function memberType()
+    {
+        return $this->belongsTo(MemberType::class);
+    }
 
+    public function registrationType()
+    {
+        return $this->belongsTo(RegistrationType::class);
+    }
+
+    public function member()
+    {
+        return $this->belongsTo(Member::class);
+    }
 }

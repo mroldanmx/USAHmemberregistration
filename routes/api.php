@@ -17,10 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Registration api exposure
-Route::apiResources([
-    'register' => 'Api\RegistrationController',
-]);
+
 
 // AJAX as API for now
 Route::middleware(['auth'])->group(function () {
