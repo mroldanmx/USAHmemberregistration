@@ -1,28 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Member;
 use Illuminate\Http\Request;
+use App\Models\Registration;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\MembersCollection;
-use App\Http\Requests\UpdateMemberRequest;
 
-class MembersController extends Controller
+class RegistrationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {
-        $perPage = $request->input('length', 20);
-
-        //$startPage = $request->input('start', 0);
-        //$startPage = $startPage / $perPage;
-
-        return new MembersCollection(Member::orderBy('created_at', 'desc')->paginate($perPage));
+    public function index()
+    {        
+        return view('admin.registration.index');
     }
 
     /**
@@ -54,7 +47,8 @@ class MembersController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['member'] = Member::findOrFail($id);
+        return view('admin.members.view', compact($data));
     }
 
     /**
@@ -65,32 +59,25 @@ class MembersController extends Controller
      */
     public function edit($id)
     {
-        return Member::findOrFail($id);
+        $registration = Registration::with(['member.address', 'memberType'])->findOrFail($id);
+        $states = [
+            'US' => json_decode(file_get_contents(storage_path('app/data/us_states_titlecase.json'))),
+            'CA' => json_decode(file_get_contents(storage_path('app/data/canada_states_titlecase.json'))),
+        ];
+        $memberTypes = \App\Models\MemberType::pluck('type', 'id')->all();
+        return view('admin.registration.edit', compact('registration', 'states', 'memberTypes'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Requests\UpdateMemberRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMemberRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $member = Member::with('address')->findOrFail($id);
 
-        try {
-            $input = $request->all();
-
-            $member->fill($input)->save();
-            $member->address->update($input);
-
-            return response()->json(['success' => true, 'message' => 'Member data saved', 'data' => ['member' => $member]]);
-        }
-        catch(Excception $e) {
-            Log::info('Error updating member: '.$e->getMessage());
-            return response()->json(['errors' => $e->getMessage(), 'message' => 'Could not update the member']);
-        }
     }
 
     /**
