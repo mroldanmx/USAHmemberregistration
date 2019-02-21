@@ -1,7 +1,40 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
+<div class="login-logo">
+    <img src="{{ asset('img/logo-set.png') }}">
+    <h2 style="color: #fff0ff;margin-top: 25px; margin-bottom: 25px;">Member Portal</h2>
+</div>
+<div class="login-box-body">
+    <div class="clearfix"></div>
+    <form method="POST" action="{{ route('login') }}" class="login-form">
+        @csrf
+        <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
+            <input id="email" type="email" required class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email" name="email" value="" autofocus autocomplete="off">
+            @if ($errors->has('email'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+            @endif
+        </div>
+        <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
+            <input id="password" type="password" placeholder="Password" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="password" required>
+            @if ($errors->has('password'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+            @endif
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+    </form>
+</div>
+<div class="row bottom-links">
+    <p>By logging in or registering, you agree with the <a href="#" target="_blank">USA Hockey Terms of
+        Service</a> and <a href="#" target="_blank">Privacy Policy.</a>
+    </p>
+    <p>©2019 USA Hockey. All rights reserved.</p>
+</div>
+<!--div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,5 +102,5 @@
             </div>
         </div>
     </div>
-</div>
+</div-->
 @endsection

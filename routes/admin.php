@@ -19,6 +19,9 @@ Route::middleware(['auth'])->group(function () {
     // members
     Route::resource('members', 'MembersController', ['as' => 'admin']);
 
+    // registrations
+    Route::resource('registrations', 'RegistrationController', ['as' => 'admin']);
+
     // subscriptions
     Route::get('subscriptions', 'SubscriptionsController@index')->name('admin.subscriptions.index');
     Route::get('subscriptions/{id}', 'SubscriptionsController@show')->name('admin.subscriptions.view');

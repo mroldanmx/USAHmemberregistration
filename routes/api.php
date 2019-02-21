@@ -28,4 +28,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('members', 'MembersController@index')->name('api.members.index');
     Route::put('members/{id}', 'MembersController@update')->name('api.members.update');
 
+    // registration
+    Route::post('registrations', 'RegistrationController@index')->name('api.registrations.index');
+    Route::put('registrations/{id}', 'RegistrationController@update')->name('api.registrations.update');
 });
