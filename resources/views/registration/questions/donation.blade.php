@@ -20,34 +20,25 @@
         <div class="col-md-offset-2 col-md-8" style="text-align: left;">
 
             <label class="object radio">Yes
-                <input type="radio" name="radio">
+                <input type="radio" value="true" name="will_donate">
                 <span class="checkmark"></span>
             </label>
 
             <div id="donations">
-                <label class="object radio"><span>$5.50</span> Donation
-                    <input type="radio" name="donation">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="object radio"><span>$12.50</span> Donation
-                    <input type="radio" name="donation">
-                    <span class="checkmark"></span>
-                    <div>(This donation will allow USA Hockey to gift a stick for a child to try hockey)</div>
-
-                </label>
-                <label class="object radio"><span>$50</span> Donation
-                    <input type="radio" name="donation">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="object radio"><span>$100</span> Donation
-                    <input type="radio" name="donation">
-                    <span class="checkmark"></span>
-                </label>
+                @foreach($donationTypes as $donationType)
+                    <label class="object radio"><span>${{number_format($donationType->cost,2)}}</span>
+                        <input type="radio" name="donation_cost" value="{{$donationType->cost}}">
+                        <span class="checkmark"></span>
+                        @if($donationType->description)
+                            <div>{{$donationType->description}}</div>
+                        @endif
+                    </label>
+                @endforeach
             </div><!-- donations -->
 
             <br>
             <label class="object radio">No Thanks
-                <input type="radio" name="radio">
+                <input type="radio" name="will_donate">
                 <span class="checkmark"></span>
             </label>
         </div>

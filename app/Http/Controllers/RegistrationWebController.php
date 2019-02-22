@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DonationType;
 use App\Http\Requests\Registration\AddressRequest;
 use App\Http\Requests\Registration\AgeRequest;
 use App\Http\Requests\Registration\ConcussionRequest;
@@ -17,17 +18,31 @@ use App\Http\Requests\Registration\WhoRequest;
 use App\Http\Requests\RegistrationRequest;
 use App\Models\Address;
 use App\Models\Cart;
+use App\Models\Concussion;
 use App\Models\Member;
 use App\Models\RegistrationType;
 use App\Models\Terms;
+use App\Models\Waiver;
 
 class RegistrationWebController extends Controller
 {
     /* @var Cart $cart */
     protected $cart;
 
+    /**
+     * Display a listing of the resource.
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $questions = $this->questions();
+        $step = array_shift($questions);
+        return redirect('register/' . $step);
+    }
+
     public function questions()
     {
+        //TODO refactor the questions array for each member type, avoid duplicating code.
         $questions = [
             'age',
             'member_type',
@@ -45,7 +60,7 @@ class RegistrationWebController extends Controller
             'confirmation',
         ];
 
-        //TODO refactor this
+
         if ($this->cart && $registration = $this->cart->activeRegistration()) {
             if ($registration->memberType) {
                 switch ($registration->memberType->id) {
@@ -99,18 +114,6 @@ class RegistrationWebController extends Controller
         return $questions;
     }
 
-
-    /**
-     * Display a listing of the resource.
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $questions = $this->questions();
-        $step = array_shift($questions);
-        return redirect('register/' . $step);
-    }
-
     /**
      * Call a view matching $step
      *
@@ -154,6 +157,27 @@ class RegistrationWebController extends Controller
         ];
     }
 
+    protected function loadView($question, $order, RegistrationRequest $request)
+    {
+        $terms = Terms::with('member')->get();
+        $cart = $request->getCartBySession();
+
+        $params = compact('question', 'order', 'terms', 'cart');
+
+        if (method_exists($this, $question . "View")) {
+            return $this->{$question . "View"}($params);
+        }
+
+        return view('registration.form', $params);
+    }
+
+    //region Process POST for each question/step
+
+    public function ageStep(AgeRequest $request)
+    {
+        return $this->saveAndRedirect($request);
+    }
+
     /**
      * @param RegistrationRequest $request
      *
@@ -171,11 +195,6 @@ class RegistrationWebController extends Controller
         $next = $this->nextQuestion($params['step']);
         $to = '/register/' . $next['view'];
         return redirect($to);
-    }
-
-    public function ageStep(AgeRequest $request)
-    {
-        return $this->saveAndRedirect($request);
     }
 
     public function memberTypeStep(MemberTypeRequest $request)
@@ -264,18 +283,19 @@ class RegistrationWebController extends Controller
     {
         return $this->saveAndRedirect($request);
     }
+    //endregion
 
-    protected function loadView($question, $order, RegistrationRequest $request)
+    //region Pre-Process for each question/step
+
+    protected function waiverView($params)
     {
-        $terms = Terms::with('member')->get();
-        $cart = $request->getCartBySession();
+        $params['waiver'] = Waiver::where(['status' => true])->first();
+        return view('registration.form', $params);
+    }
 
-        $params = compact('question', 'order', 'terms', 'cart');
-
-        if (method_exists($this, $question . "View")) {
-            return $this->{$question . "View"}($params);
-        }
-
+    protected function concussionView($params)
+    {
+        $params['waiver'] = Concussion::where(['status' => true])->first();
         return view('registration.form', $params);
     }
 
@@ -284,5 +304,12 @@ class RegistrationWebController extends Controller
         $params['registrationTypes'] = RegistrationType::all();
         return view('registration.form', $params);
     }
+
+    protected function donationView($params)
+    {
+        $params['donationTypes'] = DonationType::where(['status'=>true])->get();
+        return view('registration.form', $params);
+    }
+    //endregion
 
 }

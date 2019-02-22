@@ -143,6 +143,9 @@ return [
             "adult_family" => 'Each registrant must be present to acknowledge waivers.',
             "adult_non_family" => "Each person being registered needs to be present to accept the USA Hockey Waiver of Liability and the USA Hockey Concussion Information and Acknowledgement. Also, be sure to provide each person's correct mailing address and personal email address so that confirmation of registration can be delivered. ",
         ],
+        'donation_cost' => [
+            "invalid" => 'The donation cost is invalid.'
+        ]
     ],
 
 

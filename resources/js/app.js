@@ -48,7 +48,7 @@ $(document).on('change', 'input[name="who"]', function () {
     }
 });
 
-$(document).on('click', '.js-go-back', function(e){
+$(document).on('click', '.js-go-back', function (e) {
     e.preventDefault();
     window.history.back();
 });
@@ -57,11 +57,7 @@ $(document).on('click', '.js-go-back', function(e){
 $(document).on('focusout', '.js-zipcode', async function () {
     const location = await address_autocomplete($(this).val());
 
-    if(!location){
-
-    }
-
-    for(let key in location){
+    for (let key in location) {
         console.log(key, location[key]);
         $(`[name="${key}"]`).val(location[key]);
     }

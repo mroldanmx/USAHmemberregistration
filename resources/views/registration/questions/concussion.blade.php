@@ -13,7 +13,9 @@
 
     <div class="row">
         <div class="col-md-12">
-            <p>Please read and accept <a>USA Hockey Concussion Information and Acknowledgement</a></p>
+            <div class="text-justify">
+                {{$concussion->html}}
+            </div>
         </div>
     </div>
 

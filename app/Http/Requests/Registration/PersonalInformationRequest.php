@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Registration;
 
 use App\Http\Requests\RegistrationRequest;
+use App\Rules\Birthdate;
 
 class PersonalInformationRequest extends RegistrationRequest
 {

@@ -11366,14 +11366,12 @@ _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function 
         case 2:
           location = _context.sent;
 
-          if (!location) {}
-
           for (key in location) {
             console.log(key, location[key]);
             jquery__WEBPACK_IMPORTED_MODULE_1___default()("[name=\"".concat(key, "\"]")).val(location[key]);
           }
 
-        case 5:
+        case 4:
         case "end":
           return _context.stop();
       }

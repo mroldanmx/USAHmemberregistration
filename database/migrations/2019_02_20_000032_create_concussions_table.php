@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWaiversTable extends Migration
+class CreateConcussionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateWaiversTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('waivers');
-        Schema::create('waivers', function (Blueprint $table) {
+        Schema::dropIfExists('concussions');
+        Schema::create('concussions', function (Blueprint $table) {
             $table->increments('id');
             $table->text('html');
-            $table->boolean('status')->default(false);
+            $table->enum('status', [
+                'ACTIVE',
+                'INACTIVE',
+            ]);
             $table->softDeletes();
             $table->timestamps();
         });
@@ -30,6 +33,6 @@ class CreateWaiversTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('waivers');
+        Schema::dropIfExists('concussions');
     }
 }
