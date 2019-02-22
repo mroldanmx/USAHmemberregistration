@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label for="exampleInputPassword1">Address  <span class="required">*</span></label>
+                <label for="exampleInputPassword1">Mailing Address  <span class="required">*</span></label>
                 <input type="hidden" name="id" value="{{old('id')}}" >
                 <input type="text" name="line_1" value="{{old('line_1')}}" class="form-control input-lg" placeholder="e.g. 580 Whiff Oaf Lane">
             </div>

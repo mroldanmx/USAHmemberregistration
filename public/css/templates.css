@@ -1546,3 +1546,7 @@ button.vertical-icon i {
 ::-webkit-credentials-auto-fill-button {
     visibility: hidden;
 }
+
+.text-justify {
+    text-align: justify;
+}

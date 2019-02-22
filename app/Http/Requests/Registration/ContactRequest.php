@@ -24,7 +24,7 @@ class ContactRequest extends RegistrationRequest
     public function rules()
     {
         return [
-            'email' => 'required|confirmed',
+            'email' => 'required|confirmed|email',
             'phone_1' => 'required',
             'phone_2' => 'nullable',
         ];

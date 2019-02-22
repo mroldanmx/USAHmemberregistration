@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
+    use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model

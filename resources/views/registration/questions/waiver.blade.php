@@ -13,7 +13,9 @@
 
     <div class="row">
         <div class="col-md-12">
-            <p>Please read and accept the <a>Waiver of Liability, Release Assumption of Risk & Indemnity Agreement</a> </p>
+            <div class="text-justify">
+                {{$waiver->html}}
+            </div>
         </div>
     </div>
 
