@@ -78,14 +78,6 @@
                     </div>
                 </div>
 
-                <div class="col-md-12 text-left">
-                    <div class="object checkbox" style="margin-bottom: 25px">
-                        <label>
-                            <input type="checkbox"> <span class="checkmark"></span> Save this card
-                        </label>
-                    </div>
-                </div>
-
             </div>
 
 
