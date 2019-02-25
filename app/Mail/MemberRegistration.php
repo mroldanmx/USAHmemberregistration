@@ -11,7 +11,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class MemberRegistration extends Mailable
 {
     use Queueable, SerializesModels;
-    private $registration;
+    public $registration;
 
     /**
      * Create a new message instance.

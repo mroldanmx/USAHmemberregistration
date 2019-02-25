@@ -355,17 +355,22 @@ class RegistrationWebController extends Controller
 
     public function paymentStep(RegistrationRequest $request)
     {
-        foreach ($request->getCartBySession()->registrations as $registration) {
-            Mail::to($registration->member->email)
-                ->send(new MemberRegistration($registration));
-            $registration->status = config('constants.registration.PAID');
-            $registration->save();
+        try {
+            foreach ($request->getCartBySession()->registrations as $registration) {
+                Mail::to($registration->member->email)
+                    ->send(new MemberRegistration($registration));
+                $registration->status = config('constants.registration.PAID');
+                $registration->save();
+            }
+
+            //stash current registration
+            $cart = $request->getCartBySession();
+            $cart->status = config('constants.cart.COMPLETE');
+            $cart->save();
+        } catch (\Exception $exception) {
+            error_log($exception->getMessage());
         }
 
-        //stash current registration
-        $cart = $request->getCartBySession();
-        $cart->status = config('constants.cart.COMPLETE');
-        $cart->save();
 
         return $this->saveAndRedirect($request);
 
