@@ -192,20 +192,27 @@ class RegistrationWebController extends Controller
 
     protected function loadView($question, $order, RegistrationRequest $request)
     {
-        $cart = $request->getCartBySession();
-        $reg = $cart->activeRegistration();
+        try {
 
-        $params = compact('question', 'order', 'cart', 'reg');
 
-        $request->saveRegistrationProgress([
-            'step' => $question,
-        ]);
-        $method = Str::camel($question);
-        if (method_exists($this, $method . "View")) {
-            return $this->{$method . "View"}($params);
+            $cart = $request->getCartBySession();
+            $reg = $cart->activeRegistration();
+
+            $params = compact('question', 'order', 'cart', 'reg');
+
+            $request->saveRegistrationProgress([
+                'step' => $question,
+            ]);
+            $method = Str::camel($question);
+            if (method_exists($this, $method . "View")) {
+                return $this->{$method . "View"}($params);
+            }
+
+            return view('registration.form', $params);
+        } catch (\Exception $exception) {
+            error_log($exception->getMessage());
+            return $this->index();
         }
-
-        return view('registration.form', $params);
     }
 
     public function prevQuestion(RegistrationRequest $request)
@@ -371,6 +378,8 @@ class RegistrationWebController extends Controller
         } catch (\Exception $exception) {
             error_log($exception->getMessage());
         }
+
+        return redirect('login');
     }
 
     /**

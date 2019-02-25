@@ -153,7 +153,7 @@
 
     <div class="row">
 
-        <div class="btn btn-primary">Continue to Login</div>
+        <input type="submit" class="btn btn-primary">Continue to Login</input>
 
     </div>
 
