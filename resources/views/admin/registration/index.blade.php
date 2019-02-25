@@ -93,12 +93,12 @@
             { "data": "country" },
             { "data": "registered_date" },
             {
-                "data": "member_id",
+                "data": "id",
                 "render": function(data) {
                     return `
-                        <a href="{{ url('admin/members/${data}/edit') }}"><i class="fa fa-eye"></i></a> &nbsp;
-                        <a href="{{ url('admin/members/${data}/edit') }}"><i class="fa fa-pencil-square-o"></i></a> &nbsp;
-                        <a href="{{ url('admin/members/${data}/edit') }}"><i class="fa fa-trash"></i></a>
+                        <a href="{{ url('admin/registrations/${data}') }}"><i class="fa fa-eye"></i></a> &nbsp;
+                        <a href="{{ url('admin/registrations/${data}/edit') }}"><i class="fa fa-pencil-square-o"></i></a> &nbsp;
+                        <!--a href="{{ url('admin/members/${data}/edit') }}"><i class="fa fa-trash"></i></a-->
                     `;
                 }
             }

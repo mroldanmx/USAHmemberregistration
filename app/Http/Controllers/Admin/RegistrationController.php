@@ -47,8 +47,13 @@ class RegistrationController extends Controller
      */
     public function show($id)
     {
-        $data['member'] = Member::findOrFail($id);
-        return view('admin.members.view', compact($data));
+        $registration = Registration::with(['member.address', 'memberType'])->findOrFail($id);
+        $states = [
+            'US' => json_decode(file_get_contents(storage_path('app/data/us_states_titlecase.json'))),
+            'CA' => json_decode(file_get_contents(storage_path('app/data/canada_states_titlecase.json'))),
+        ];
+        $memberTypes = \App\Models\MemberType::pluck('type', 'id')->all();
+        return view('admin.registration.view', compact('registration', 'states', 'memberTypes'));
     }
 
     /**

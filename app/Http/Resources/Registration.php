@@ -14,14 +14,17 @@ class Registration extends JsonResource
      */
     public function toArray($request)
     {
+        $firstName = data_get($this, 'member.first_name', '');
+        $lastName = data_get($this, 'member.last_name', '');
+
         return [
             'id' => $this->id,
-            'member_id' => $this->member->id,
-            'name' => $this->member->first_name . ' ' . $this->member->last_name,
-            'type' => $this->memberType->type,
-            'gender' => $this->member->gender,
-            'age'   => $this->member->age,
-            'country' => $this->member->address->country,
+            'member_id' => data_get($this, 'member.id', 'NA'),    //$this->member->id
+            'name' => $firstName . ' ' . $lastName,
+            'type' => data_get($this, 'memberType.type', 'NA'),
+            'gender' => data_get($this, 'member.gender', 'NA'),
+            'age'   => data_get($this, 'member.age', 'NA'),
+            'country' => data_get($this, 'member.address.country', 'NA'),
             'registered_date' => $this->created_at->format('Y-m-d'),
         ];
     }
