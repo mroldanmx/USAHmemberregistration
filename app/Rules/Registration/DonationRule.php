@@ -33,11 +33,10 @@ class DonationRule implements Rule
             'donation_cost' => [
                 'required_if:will_donate,true',
                 \Illuminate\Validation\Rule::exists('donation_types')->where(function ($query) use (
-                    $attribute,
                     $value
                 ) {
                     $query->where([
-                        'cost' => $value,
+                        'costed' => $value,
                         'status' => true,
                     ]);
                 }),

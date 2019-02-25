@@ -11,8 +11,8 @@ class TermsTableSeeder extends Seeder
      */
     public function run()
     {
-        $player_html = '<h3>USA Hockey Registration fee – $40</h3>
-                <p>The USA Hockey Registration fee is $40 per person (exception, birth year 2012 and after). <a>Affiliate
+        $player_html = '<h3>USA Hockey Registration fee – $ <span class="player-price-holder"></span></h3>
+                <p>The USA Hockey Registration fee is $<span class="player-price-holder"></span> per person (exception, birth year 2012 and after). <a>Affiliate
                         fee</a> (if applicable) varies by Affiliate. If a participant plays and coaches he/she pays only
                     one registration fee.</p>
 

@@ -7,5 +7,6 @@ return [
         'line_2' => 'If you are not, a parent or guardian must complete this registration for you.',
         'check' => 'I am 18 years of age or older',
     ],
-    '18_or_older' => 'You must be 18 years of age or older',
+    '18_or_older' => 'The participant must be 18 years of age or older',
+    '18_or_younger' => 'The participant must less than 18 years of age to be registered as child',
 ];

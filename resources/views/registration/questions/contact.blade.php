@@ -1,3 +1,8 @@
+<?php
+/** @var \App\Models\Registration $reg */
+$member = $reg->member;
+
+?>
 <div id="contact" data-order="{{$order}}" class="question-wrapper">
 
     <div class="row question-icon">
@@ -12,16 +17,16 @@
     <div class="row">
 
         <div class="col-md-6">
-            <div class="form-group">
+            <div class="form-group {{$errors->has('email')?'has-error':''}}">
                 <label for="exampleInputPassword1">Email Address <span class="required">*</span></label>
-                <input name="email" value="{{old('email')}}" type="email" class="form-control input-lg" placeholder="e.g. john.dee@mail.com">
+                <input name="email" value="{{old('email',$member->email)}}" type="email" class="form-control input-lg" placeholder="e.g. john.dee@mail.com">
             </div>
         </div>
 
         <div class="col-md-6">
-            <div class="form-group">
+            <div class="form-group {{$errors->has('email_confirmation')?'has-error':''}}">
                 <label for="exampleInputPassword1">Re-type Email Address <span class="required">*</span></label>
-                <input name="email_confirmation" type="email" class="form-control input-lg" placeholder="e.g. john.dee@mail.com">
+                <input name="email_confirmation" type="email"  class="form-control input-lg" placeholder="e.g. john.dee@mail.com">
 
             </div>
         </div>
@@ -31,16 +36,16 @@
     <div class="row">
 
         <div class="col-md-6">
-            <div class="form-group">
+            <div class="form-group {{$errors->has('phone_1')?'has-error':''}}">
                 <label for="exampleInputPassword1">Mobile Number <span>*</span></label>
-                <input name="phone_1" type="text" value="{{old('phone_1')}}" class="form-control input-lg" placeholder="e.g. 213 456 7890">
+                <input maxlength="12" name="phone_1" type="text" value="{{old('phone_1',$member->phone_1)}}" class="form-control input-lg" placeholder="e.g. 213 456 7890">
             </div>
         </div>
 
         <div class="col-md-6">
-            <div class="form-group">
+            <div class="form-group {{$errors->has('phone_2')?'has-error':''}}">
                 <label for="exampleInputPassword1">Phone Number (optional)</label>
-                <input name="phone_2" type="text" value="{{old('phone_2')}}" class="form-control input-lg" placeholder="e.g. 213 456 7890">
+                <input maxlength="12" name="phone_2" type="text" value="{{old('phone_2',$member->phone_2)}}" class="form-control input-lg" placeholder="e.g. 213 456 7890">
 
             </div>
         </div>
@@ -49,7 +54,7 @@
 
     <div class="row">
 
-        <a href="#" class="btn btn-link js-go-back">Previous</a>
+        <a href="{{url('register/prevQuestion')}}" class="btn btn-link js-go-back">Previous</a>
         <input type="submit" class="btn btn-primary" value="Next">
 
     </div>

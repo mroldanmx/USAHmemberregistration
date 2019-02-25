@@ -18,8 +18,15 @@
         <div class="col-md-offset-2 col-md-8" style="text-align: left;">
 
             @foreach($registrationTypes as $registrationType)
+                @php
+                    $checked = $registrationType->id == $cart->activeRegistration()->registration_type_id ? 'checked':'';
+                @endphp
+
                 <label class="object radio">{{$registrationType->type}}
-                    <input type="radio" value="{{$registrationType->id}}" name="registration_type_id">
+                    <input {{$checked}}
+                           type="radio"
+                           value="{{$registrationType->id}}"
+                           name="registration_type_id">
                     <span class="checkmark"></span>
                 </label><br>
             @endforeach
@@ -29,7 +36,7 @@
 
     <div class="row">
 
-        <a href="#" class="btn btn-link js-go-back">Previous</a>
+        <a href="{{url('register/prevQuestion')}}" class="btn btn-link js-go-back">Previous</a>
         <input type="submit" class="btn btn-primary" value="Next">
 
     </div>

@@ -23,5 +23,62 @@ return [
       'Canada'=>2,
       'Other'=>3
     ],
+    "gender"=>[
+      'Male'=>'M',
+      'Female'=>'F',
+    ],
+    "age_for_adults" => 18,
+    "diversityTypes"=>[
+        "American Indian or Alaska Native",
+        "Asian",
+        "Black or African American",
+        "Native Hawaiian or Other Pacific Islander",
+        "Hispanic or Latino",
+        "White (not of Hispanic origin)",
+        "Two or more races",
+        "I would prefer not to share this information",
+        "Other",
+    ],
+    "registration"=>[
+        "CREATED" => "CREATED",
+        "IN-CART" => 'IN-CART',
+        "PAID" => "PAID",
+
+    ],
+    "cart"=>[
+        "CREATED" => "CREATED",
+        "COMPLETE" => 'COMPLETE',
+    ],
+    "member_pricing"=>[
+        "Player" => [
+            "Regular" => 90.00,
+        ],
+        "Manager" => [
+            "Regular" => 0.00,
+        ],
+        "Official" => [
+            "Level_1" => 45.00,
+            "Affiliated" => 30.00,
+        ],
+        "1" => [
+            "Regular" => 90.00,
+        ],
+        2 => [
+            "Regular" => 0.00,
+        ],
+        3 => [
+            "Level_1" => 45.00,
+            "Affiliated" => 30.00,
+        ],
+    ],
+    "affiliate_pricing"=>[
+        "Mid-American District" => [
+            "Regular" => 10.00,
+        ],
+    ],
+    "emails"=>[
+        "registration" => 'welcome@usahockey.com',
+
+    ]
 
 ];

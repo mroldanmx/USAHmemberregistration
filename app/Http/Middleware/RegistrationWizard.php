@@ -18,10 +18,4 @@ class RegistrationWizard
         return $next($request);
     }
 
-    public function getCartBySession()
-    {
-
-    }
-
-
 }

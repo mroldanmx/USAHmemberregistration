@@ -17,12 +17,12 @@ class CreateAddressTable extends Migration
         Schema::create('address', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('member_id');
-            $table->string('line_1');
+            $table->string('line_1')->default('');
             $table->string('line_2')->default('');
-            $table->string('city',40);
-            $table->string('state',2);
-            $table->string('country',2);
-            $table->string('zip',10);
+            $table->string('city',40)->default('');
+            $table->string('state',2)->default('');
+            $table->string('country',2)->default('');
+            $table->string('zip',10)->default('');
             $table->timestamps();
             $table->foreign('member_id')->references('id')->on('member')->onDelete('cascade');
         });

@@ -29,7 +29,6 @@ class AddressRequest extends RegistrationRequest
             'city' => 'required',
             'state' => 'required',
             'country' => 'required',
-
         ];
     }
 

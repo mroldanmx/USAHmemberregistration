@@ -2,18 +2,23 @@
 
 namespace App\Rules;
 
+use App\Http\Requests\RegistrationRequest;
+use Carbon\Carbon;
 use Illuminate\Contracts\Validation\Rule;
 
 class Birthdate implements Rule
 {
+    protected $request;
+    private $_message;
+
     /**
      * Create a new rule instance.
      *
-     * @return void
+     * @param RegistrationRequest $request
      */
-    public function __construct()
+    public function __construct(RegistrationRequest $request)
     {
-        //
+        $this->request = $request;
     }
 
     /**
@@ -25,7 +30,19 @@ class Birthdate implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
+
+        $age = (new Carbon($value))->age;
+
+        if ($this->request->currentRegistration()->registration_type_id == config('constants.registration_type.Child')) {
+            $this->_message = trans('registration.17_or_younger');
+            $validation = $age < config('constants.age_for_adults');
+        }else{
+            $this->_message = trans('registration.18_or_older');
+            $validation = $age >= config('constants.age_for_adults');
+        }
+
+        return $validation;
+
     }
 
     /**
@@ -35,6 +52,6 @@ class Birthdate implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return $this->_message;
     }
 }

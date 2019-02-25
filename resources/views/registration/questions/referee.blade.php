@@ -155,4 +155,11 @@
 
     </div>
 
+    <div class="row">
+
+        <a href="{{url('register/prevQuestion')}}" class="btn btn-link js-go-back">Previous</a>
+        <input type="submit" class="btn btn-primary" value="Next">
+
+    </div>
+
 </div><!-- container -->

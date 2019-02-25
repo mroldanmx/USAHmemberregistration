@@ -18,9 +18,9 @@ class CreateMemberTable extends Migration
             $table->increments('id');
             $table->string('official_number')->nullable()->comment("Special numbers for Referees");
             $table->string('member_id')->default(0)->comment("This is the special MEMBERID with 2 letters and X Numbers");
-            $table->string('first_name');
+            $table->string('first_name')->default('');
             $table->string('middle_name')->nullable(true);
-            $table->string('last_name');
+            $table->string('last_name')->default('');
             $table->string('gender',1)->nullable();
             $table->date('dob')->nullable();
             $table->string('phone_1',12)->nullable();
