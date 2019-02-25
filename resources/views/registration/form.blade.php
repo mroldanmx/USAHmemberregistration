@@ -1,7 +1,7 @@
 @extends('layouts.registration')
 
 @section('content')
-    @if ($errors->any())
+    @if ($errors->any() && !isset($hideErrorSummary))
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -11,9 +11,10 @@
         </div><br />
     @endif
 
-    <form id="registrationForm" action="{{url("register/$question")}}" method="POST" autocomplete="off">
+    <form id="registrationForm" action="{{url("register/nextQuestion")}}" method="POST" autocomplete="off">
         @csrf
-        <input type="hidden" name="reg_id" value="{{$cart->activeRegistration()->id}}">
+
         @includeIf("registration.questions.$question")
+
     </form>
 @endsection

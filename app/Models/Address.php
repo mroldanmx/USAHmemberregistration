@@ -20,8 +20,9 @@ class Address extends Model
         'state' ,
         'country' ,
         'member_id',
-
     ];
+
+
 
     /**
      * Indicates if the model should be timestamped.

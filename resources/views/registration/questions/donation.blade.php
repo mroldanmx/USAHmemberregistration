@@ -20,34 +20,28 @@
         <div class="col-md-offset-2 col-md-8" style="text-align: left;">
 
             <label class="object radio">Yes
-                <input type="radio" name="radio">
+                <input type="radio" value="1" {{$selected = old('donation_type_id',$reg->donation_type_id) ? 'checked':''}} name="will_donate">
                 <span class="checkmark"></span>
             </label>
 
-            <div id="donations">
-                <label class="object radio"><span>$5.50</span> Donation
-                    <input type="radio" name="donation">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="object radio"><span>$12.50</span> Donation
-                    <input type="radio" name="donation">
-                    <span class="checkmark"></span>
-                    <div>(This donation will allow USA Hockey to gift a stick for a child to try hockey)</div>
-
-                </label>
-                <label class="object radio"><span>$50</span> Donation
-                    <input type="radio" name="donation">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="object radio"><span>$100</span> Donation
-                    <input type="radio" name="donation">
-                    <span class="checkmark"></span>
-                </label>
+            <div id="donations" style="display: none">
+                @foreach($donationTypes as $donationType)
+                    @php
+                        $selected = old('donation_type_id',$reg->donation_type_id) == $donationType->id?'checked':'';
+                    @endphp
+                    <label class="object radio"><span>${{number_format($donationType->cost,2)}}</span>
+                        <input type="radio" {{$selected}} name="donation_type_id" value="{{$donationType->id}}">
+                        <span class="checkmark"></span>
+                        @if($donationType->description)
+                            <div>{{$donationType->description}}</div>
+                        @endif
+                    </label>
+                @endforeach
             </div><!-- donations -->
 
             <br>
             <label class="object radio">No Thanks
-                <input type="radio" name="radio">
+                <input type="radio" value=0 name="will_donate">
                 <span class="checkmark"></span>
             </label>
         </div>
@@ -55,7 +49,7 @@
 
     <div class="row">
 
-        <a href="#" class="btn btn-link js-go-back">Previous</a>
+        <a href="{{url('register/prevQuestion')}}" class="btn btn-link js-go-back">Previous</a>
         <input type="submit" class="btn btn-primary" value="Next">
 
     </div>

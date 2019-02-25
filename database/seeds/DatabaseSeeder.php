@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             MembersTableSeeder::class,
             TermsTableSeeder::class,
+            WaiversTableSeeder::class,
+            ConcussionTableSeeder::class,
+            DonationTypeSeeder::class,
         ]);
     }
 }

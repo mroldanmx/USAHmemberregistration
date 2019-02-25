@@ -1013,12 +1013,13 @@ a.icon-with-text i {
 
 .checkmark {
     position: absolute;
-    top: -2px;
+    top: 50%;
     left: 0;
     height: 28px;
     width: 28px;
     border: 2px solid #b3b3b3;
     background: none;
+    transform: translateY(-50%);
 }
 
 .object:hover input ~ .checkmark {
@@ -1053,11 +1054,7 @@ a.icon-with-text i {
     transform: rotate(45deg);
 }
 
-.checkbox {
-    line-height: 22px;
-    margin-bottom: 13px;
-    padding-top: 0 !important;
-}
+
 
 .checkbox label, .radio label {
     padding-left: 7px;
@@ -1536,13 +1533,32 @@ button.vertical-icon i {
     text-decoration:none !important;
 }
 
-
-
 #membership-requirements-checkbox,
 .js-membership-requirement{
     display: none;
 }
 
-::-webkit-credentials-auto-fill-button {
-    visibility: hidden;
+
+.text-justify {
+    text-align: justify;
+}
+
+input.sign-with-initials{
+      width: 3em;
+      opacity: 1;
+      height: initial;
+      border: 2px solid #b3b3b3
+  }
+
+.sign-with-initials + label{
+    padding-left: 4em;
+}
+
+.has-error {
+    padding: 0.5em 1em;
+    box-shadow: 0 0 3px 1px #a94442;
+}
+
+.has-error .checkmark{
+    border-color: #a94442;
 }

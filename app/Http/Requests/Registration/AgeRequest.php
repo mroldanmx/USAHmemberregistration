@@ -25,7 +25,6 @@ class AgeRequest extends RegistrationRequest
     {
         return [
             'age' => 'accepted',
-            'reg_id' => 'required',
         ];
     }
 

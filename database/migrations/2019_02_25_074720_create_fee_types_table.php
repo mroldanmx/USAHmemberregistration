@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWaiversTable extends Migration
+class CreateFeeTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateWaiversTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('waivers');
-        Schema::create('waivers', function (Blueprint $table) {
+        Schema::create('fee_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('html');
-            $table->boolean('status')->default(false);
-            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateWaiversTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('waivers');
+        Schema::dropIfExists('fee_types');
     }
 }

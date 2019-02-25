@@ -2,8 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use App\Http\Requests\RegistrationRequest;
-use App\Models\Cart;
 use Closure;
 
 class RegistrationWizard
@@ -19,4 +17,5 @@ class RegistrationWizard
     {
         return $next($request);
     }
+
 }

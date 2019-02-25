@@ -24,7 +24,8 @@ class WaiverRequest extends RegistrationRequest
     public function rules()
     {
         return [
-            'waiver_agree' => 'accepted'
+            'waiver_check' => 'accepted',
+            'waiver_agree' => 'required',
         ];
     }
 

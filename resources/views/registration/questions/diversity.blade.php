@@ -18,50 +18,23 @@
 
     <div class="row">
         <div class="col-md-offset-1 col-md-10" style="text-align: left;">
+            @foreach($diversityTypes as $id => $diversity)
+                @php
+                    $selected = old('diversity_type_id',$reg->diversity_type_id) == $id ?'checked':'';
+                @endphp
 
-            <label class="object radio">American Indian or Alaska Native
-                <input type="radio" name="diversity_type_id">
-                <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">Asian
-                <input type="radio" name="diversity_type_id">
-                <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">Black or African American
-                <input type="radio" name="diversity_type_id">
-                <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">Native Hawaiian or Other Pacific Islander
-                <input type="radio" name="diversity_type_id">
-                <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">Hispanic or Latino
-                <input type="radio" name="diversity_type_id">
-                <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">White (not of Hispanic origin)
-                <input type="radio" name="diversity_type_id">
-                <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">Two or more races
-                <input type="radio" name="diversity_type_id">
-                <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">Other
-                <input type="radio" name="diversity_type_id">
-                <span class="checkmark"></span>
-            </label><br>
-            <label class="object radio">I would prefer not to share this information
-                <input type="radio" name="diversity_type_id">
-                <span class="checkmark"></span>
-            </label>
+                <label class="object radio">{{$diversity}}
+                    <input type="radio" {{$selected}} value="{{$id}}" name="diversity_type_id">
+                    <span class="checkmark"></span>
+                </label><br>
+            @endforeach
 
         </div>
     </div>
 
     <div class="row">
 
-        <a href="#" class="btn btn-link js-go-back">Previous</a>
+        <a href="{{url('register/prevQuestion')}}" class="btn btn-link js-go-back">Previous</a>
         <input type="submit" class="btn btn-primary" value="Next">
 
     </div>

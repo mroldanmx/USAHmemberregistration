@@ -2,33 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Registration\AddressRequest;
-use App\Http\Requests\Registration\AgeRequest;
-use App\Http\Requests\Registration\ConcussionRequest;
-use App\Http\Requests\Registration\ContactRequest;
-use App\Http\Requests\Registration\DiversityRequest;
-use App\Http\Requests\Registration\DonationRequest;
-use App\Http\Requests\Registration\MemberTypeRequest;
-use App\Http\Requests\Registration\PaymentRequest;
-use App\Http\Requests\Registration\PersonalInformationRequest;
-use App\Http\Requests\Registration\VerifyRequest;
-use App\Http\Requests\Registration\WaiverRequest;
-use App\Http\Requests\Registration\WhoRequest;
+use App\DonationType;
 use App\Http\Requests\RegistrationRequest;
-use App\Models\Address;
+use App\Mail\MemberRegistration;
 use App\Models\Cart;
-use App\Models\Member;
+use App\Models\Concussion;
+use App\Models\Pricing;
 use App\Models\RegistrationType;
 use App\Models\Terms;
+use App\Models\Waiver;
+use App\Rules\Birthdate;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
+use Validator;
 
 class RegistrationWebController extends Controller
 {
     /* @var Cart $cart */
     protected $cart;
 
-    public function questions()
+    /**
+     * Display a listing of the resource.
+     * @return RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function index()
     {
-        $questions = [
+        $questions = $this->questions();
+        $step = array_shift($questions);
+        return $this->redirectToStep($step);
+    }
+
+    protected function getQuestionsForAll()
+    {
+        return [
             'age',
             'member_type',
             'who',
@@ -44,28 +51,58 @@ class RegistrationWebController extends Controller
             'payment',
             'confirmation',
         ];
+    }
 
-        //TODO refactor this
+    protected function getQuestionsForAdults()
+    {
+        return [
+            'age',
+            'member_type',
+            'who',
+            'personal',
+            'address',
+            'contact',
+            'diversity',
+            'donation',
+            'waiver',
+            'concussion',
+            'verify',
+            'payment',
+            'confirmation',
+        ];
+    }
+
+    protected function getQuestionsForChildren()
+    {
+        return [
+            'age',
+            'member_type',
+            'who',
+            'personal',
+            'parents',
+            'address',
+            'contact',
+            'diversity',
+            'donation',
+            'waiver',
+            'concussion',
+            'verify',
+            'payment',
+            'confirmation',
+        ];
+    }
+
+    public function questions()
+    {
+        $questions = $this->getQuestionsForAll();
+
+
         if ($this->cart && $registration = $this->cart->activeRegistration()) {
             if ($registration->memberType) {
                 switch ($registration->memberType->id) {
                     case config('constants.member_types.Player'):
-                    case config('constants.member_types.Manager'):
-                        $questions = [
-                            'age',
-                            'member_type',
-                            'who',
-                            'personal',
-                            'address',
-                            'contact',
-                            'diversity',
-                            'donation',
-                            'waiver',
-                            'concussion',
-                            'verify',
-                            'payment',
-                            'confirmation',
-                        ];
+                    case config('constants.member_types.Official'):
+                        $questions = $this->getQuestionsForAdults();
                         break;
                 }
             }
@@ -74,22 +111,7 @@ class RegistrationWebController extends Controller
 
                 switch ($registration->registrationType->id) {
                     case config('constants.registration_type.Child'):
-                        $questions = [
-                            'age',
-                            'member_type',
-                            'who',
-                            'personal',
-                            'parents',
-                            'address',
-                            'contact',
-                            'diversity',
-                            'donation',
-                            'waiver',
-                            'concussion',
-                            'verify',
-                            'payment',
-                            'confirmation',
-                        ];
+                        $questions = $this->getQuestionsForChildren();
                         break;
                 }
 
@@ -99,16 +121,15 @@ class RegistrationWebController extends Controller
         return $questions;
     }
 
-
     /**
-     * Display a listing of the resource.
-     * @return \Illuminate\Http\Response
+     * @param $step
+     *
+     * @return RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function index()
+    protected function redirectToStep($step)
     {
-        $questions = $this->questions();
-        $step = array_shift($questions);
-        return redirect('register/' . $step);
+        $to = '/register/' . $step;
+        return redirect($to);
     }
 
     /**
@@ -120,82 +141,281 @@ class RegistrationWebController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function loadStep(RegistrationRequest $request, $step)
+    public function getStep(RegistrationRequest $request, $step)
     {
-        $step = $this->nextQuestion($step, true);
+        $step = $this->loadQuestion($step, true, $request);
         return $this->loadView($step['view'], $step['order'], $request);
     }
 
-
-    protected function nextQuestion($currentStep = false, $same = false)
+    /**
+     * Load next or previous question, depending on the $prev flag
+     *
+     * @param bool $currentStep
+     * @param bool $same
+     * @param bool $prev
+     *
+     * @return array
+     */
+    protected function loadQuestion($currentStep = false, $same = false, $prev = false)
     {
-        $nextQuestion = 'age';
+        $questions = $this->questions();
+        $question = $questions[0];
 
         if (!$currentStep) {
             $currentStep = -1;
         }
 
-        $questions = $this->questions();
-
         $currentIndex = array_search($currentStep, $questions);
         $nextIndex = $currentIndex;
 
-        if (!$same && isset($questions[$currentIndex + 1])) {
-            $nextIndex = $currentIndex + 1;
+        //load next or previous step from $questions.
+        if (!$prev) {
+            if (!$same && isset($questions[$currentIndex + 1])) {
+                $nextIndex = $currentIndex + 1;
+            }
+        } else {
+            if (!$same && isset($questions[$currentIndex - 1])) {
+                $nextIndex = $currentIndex - 1;
+            }
         }
 
+        //if step exists, set it.
         if (!empty($questions[$nextIndex])) {
-            $nextQuestion = $questions[$nextIndex];
+            $question = $questions[$nextIndex];
         }
 
         return [
-            "view" => $nextQuestion,
+            "view" => $question,
             "order" => $nextIndex,
         ];
+    }
+
+    protected function loadView($question, $order, RegistrationRequest $request)
+    {
+        $cart = $request->getCartBySession();
+        $reg = $cart->activeRegistration();
+
+        $params = compact('question', 'order', 'cart', 'reg');
+
+        $request->saveRegistrationProgress([
+            'step' => $question,
+        ]);
+        $method = Str::camel($question);
+        if (method_exists($this, $method . "View")) {
+            return $this->{$method . "View"}($params);
+        }
+
+        return view('registration.form', $params);
+    }
+
+    public function prevQuestion(RegistrationRequest $request)
+    {
+        $currentStep = $request->currentRegistration()->step;
+        $prevQuestion = $this->loadQuestion($currentStep, false, true)['view'];
+        return $this->redirectToStep($prevQuestion);
+    }
+
+    public function nextQuestion(RegistrationRequest $request)
+    {
+        $currentStep = $request->currentRegistration()->step;
+
+        //TODO refactor $rules.
+        $rules = [];
+        switch ($currentStep) {
+            case 'age':
+                $rules = [
+                    'age' => 'accepted',
+                ];
+                break;
+            case 'who':
+                $rules = [
+                    "registration_type_id" => "required",
+                ];
+                break;
+            case 'member_type':
+                $rules = [
+                    'member_type_id' => 'required',
+                    'member_type_checkbox' => 'accepted',
+                ];
+                break;
+            case 'personal':
+                $rules = [
+                    'first_name' => 'required',
+                    'middle_name' => 'optional',
+                    'last_name' => 'required',
+                    'dob_day' => 'required',
+                    'dob_month' => 'required',
+                    'dob_year' => 'required',
+                    'dob' => [new Birthdate($request)],
+                    'gender' => 'required',
+                    'citizenship' => 'required',
+                ];
+                break;
+            case 'address':
+                $rules = [
+                    'line_1' => 'required',
+                    'zip' => 'required',
+                    'city' => 'required',
+                    'state' => 'required',
+                    'country' => 'required',
+                ];
+                break;
+            case 'contact':
+                $rules = [
+                    'email' => 'required|confirmed|email|unique:member,email,' . $request->currentRegistration()->member->id,
+                    'phone_1' => 'required|',
+                    'phone_2' => 'nullable',
+                ];
+                break;
+            case 'diversity':
+                $rules = [
+                    'diversity_type_id' => 'required',
+                ];
+                break;
+            case 'waiver':
+                $rules = [
+                    'waiver_check' => 'accepted',
+                    'waiver_agree' => 'required',
+                ];
+                break;
+            case 'concussion':
+                $rules = [
+                    'concussion_check' => 'accepted',
+                    'concussion_waiver' => 'required',
+                ];
+                break;
+            case 'donation':
+                $rules = [
+                    'will_donate' => 'required',
+                    'donation_type_id' => 'required_if:will_donate,1|exists:donation_types,id',
+                ];
+                break;
+            case 'verify':
+                $rules = [
+                    'confirm' => 'accepted',
+                ];
+                break;
+
+        }
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $request->step = $currentStep;
+        return $this->postStep($request, $currentStep);
+    }
+
+    //region Process POST for each question/step
+
+    /**
+     * Call a view matching $step
+     *
+     * @param RegistrationRequest $request
+     * @param                     $step
+     * i.e age
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function postStep(RegistrationRequest $request, $step)
+    {
+
+        $method = Str::camel($step);
+        $request->step = $step;
+
+        if (method_exists($this, $method . "Step")) {
+            return $this->{$method . "Step"}($request);
+        }
+
+        return $this->genericStep($request);
+    }
+
+    protected function memberTypeStep(RegistrationRequest $request)
+    {
+        $params['usah_cost'] = Pricing::getMemberPricing($request->input('member_type_id'));
+        $params['affiliate_cost'] = Pricing::getAffiliatePricing('Mid-American District');
+        return $this->saveAndRedirect($request, $params);
+    }
+
+    public function registerAnotherStep(RegistrationRequest $request)
+    {
+        //stash current registration
+        $reg = $request->currentRegistration();
+        $reg->status = config('constants.registration.IN-CART');
+        $reg->save();
+        //start over
+        return redirect('registration');
+
+    }
+
+    public function paymentStep(RegistrationRequest $request)
+    {
+        foreach ($request->getCartBySession()->registrations as $registration) {
+            Mail::to($registration->member->email)
+                ->send(new MemberRegistration($registration));
+            $registration->status = config('constants.registration.PAID');
+            $registration->save();
+        }
+
+        //stash current registration
+        $cart = $request->getCartBySession();
+        $cart->status = config('constants.cart.COMPLETE');
+        $cart->save();
+
+        return $this->saveAndRedirect($request);
+
+    }
+
+    public function confirmationStep(RegistrationRequest $request)
+    {
+        //stash current registration
+        $reg = $request->currentRegistration();
+        $reg->status = config('constants.registration.IN-CART');
+        $reg->save();
+        //start over
     }
 
     /**
      * @param RegistrationRequest $request
      *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    protected function genericStep(RegistrationRequest $request)
+    {
+        return $this->saveAndRedirect($request);
+    }
+
+    /**
+     * @param RegistrationRequest $request
+     *
+     * @return RedirectResponse|\Illuminate\Routing\Redirector
      */
     protected function saveAndRedirect(RegistrationRequest $request, $extra = [])
     {
         $this->cart = $request->getCartBySession();
         $params = $request->input();
-        $params['step'] = $request->step();
+        $params['step'] = $request->step;
         $params = array_merge($params, $extra);
 
-        $request->saveRegistrationProgress($params, $request->input('reg_id'));
+        $request->saveRegistrationProgress($params);
 
-        $next = $this->nextQuestion($params['step']);
-        $to = '/register/' . $next['view'];
-        return redirect($to);
+        $next = $this->loadQuestion($params['step'])['view'];
+        return $this->redirectToStep($next);
     }
 
-    public function ageStep(AgeRequest $request)
+    /**
+     * @param RegistrationRequest $request
+     *
+     * @return RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    protected function personalStep($request)
     {
-        return $this->saveAndRedirect($request);
-    }
-
-    public function memberTypeStep(MemberTypeRequest $request)
-    {
-        return $this->saveAndRedirect($request);
-    }
-
-    public function whoStep(WhoRequest $request)
-    {
-        return $this->saveAndRedirect($request);
-    }
-
-    public function personalInformationStep(PersonalInformationRequest $request)
-    {
-        $member = Member::find($request->input('id'));
-
-        if (!$member) {
-            $member = new Member();
-        }
-
+        $member = $request->getCartBySession()->activeRegistration()->member;
         $member->fill($request->input());
         $member->save();
         $member->refresh();
@@ -205,17 +425,16 @@ class RegistrationWebController extends Controller
         return $this->saveAndRedirect($request, $extra);
     }
 
-    public function addressStep(AddressRequest $request)
+    /**
+     * @param RegistrationRequest $request
+     *
+     * @return RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    protected function addressStep($request)
     {
-        $address = Address::find($request->input('id'));
 
-        if (!$address) {
-            $address = new Address();
-        }
-
-        $memberId = $request->getCartBySession()->activeRegistration()->member_id;
+        $address = $request->currentRegistration()->member->address;
         $address->fill($request->input());
-        $address->member_id = $memberId;
         $address->save();
         $address->refresh();
 
@@ -224,10 +443,19 @@ class RegistrationWebController extends Controller
         return $this->saveAndRedirect($request, $extra);
     }
 
-    public function contactStep(ContactRequest $request)
+    //endregion
+
+    //region Pre-Process for each question/step
+
+    /**
+     * @param RegistrationRequest $request
+     *
+     * @return RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    protected function contactStep($request)
     {
 
-        $member = $request->getCartBySession()->activeRegistration()->member;
+        $member = $request->currentRegistration()->member;
         $member->fill($request->input());
         $member->save();
         $member->refresh();
@@ -235,47 +463,51 @@ class RegistrationWebController extends Controller
         return $this->saveAndRedirect($request);
     }
 
-    public function diversityStep(DiversityRequest $request)
+    /**
+     * @param RegistrationRequest $request
+     *
+     * @return RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    protected function donationStep($request)
     {
-        return $this->saveAndRedirect($request);
-    }
 
-    public function donationStep(DonationRequest $request)
-    {
-        return $this->saveAndRedirect($request);
-    }
+        $reg = $request->currentRegistration();
 
-    public function waiverStep(WaiverRequest $request)
-    {
-        return $this->saveAndRedirect($request);
-    }
+        $donation_type_id = $request->input('donation_type_id');
+        if ($donation_type_id) {
+            $donation = DonationType::find($donation_type_id);
 
-    public function concussionStep(ConcussionRequest $request)
-    {
-        return $this->saveAndRedirect($request);
-    }
-
-    public function verifyStep(VerifyRequest $request)
-    {
-        return $this->saveAndRedirect($request);
-    }
-
-    public function paymentStep(PaymentRequest $request)
-    {
-        return $this->saveAndRedirect($request);
-    }
-
-    protected function loadView($question, $order, RegistrationRequest $request)
-    {
-        $terms = Terms::with('member')->get();
-        $cart = $request->getCartBySession();
-
-        $params = compact('question', 'order', 'terms', 'cart');
-
-        if (method_exists($this, $question . "View")) {
-            return $this->{$question . "View"}($params);
+            if ($donation) {
+                $reg->donation_cost = $donation->cost;
+                $reg->donation_type_id = $donation_type_id;
+            }
+        } else {
+            $reg->donation_cost = 0;
+            $reg->donation_type_id = 0;
         }
 
+        $reg->save();
+        $reg->refresh();
+
+        return $this->saveAndRedirect($request);
+    }
+
+    protected function memberTypeView($params)
+    {
+        $params['terms'] = Terms::with('member')->get();
+
+        return view('registration.form', $params);
+    }
+
+    protected function waiverView($params)
+    {
+        $params['waiver'] = Waiver::where(['status' => true])->first();
+        return view('registration.form', $params);
+    }
+
+    protected function concussionView($params)
+    {
+        $params['concussion'] = Concussion::where(['status' => true])->first();
         return view('registration.form', $params);
     }
 
@@ -284,5 +516,24 @@ class RegistrationWebController extends Controller
         $params['registrationTypes'] = RegistrationType::all();
         return view('registration.form', $params);
     }
+
+    protected function personalView($params)
+    {
+        //$params['hideErrorSummary'] = true;
+        return view('registration.form', $params);
+    }
+
+    protected function donationView($params)
+    {
+        $params['donationTypes'] = DonationType::where(['status' => true])->get();
+        return view('registration.form', $params);
+    }
+
+    protected function diversityView($params)
+    {
+        $params['diversityTypes'] = config('constants.diversityTypes');
+        return view('registration.form', $params);
+    }
+    //endregion
 
 }

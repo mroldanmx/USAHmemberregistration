@@ -13,8 +13,12 @@ class CreateDonationTypesTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('donation_types');
         Schema::create('donation_types', function (Blueprint $table) {
             $table->increments('id');
+            $table->decimal('cost')->comment("Amount of donation");
+            $table->string('description')->default('');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

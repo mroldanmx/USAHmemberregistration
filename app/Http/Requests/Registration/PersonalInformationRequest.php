@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Registration;
 
 use App\Http\Requests\RegistrationRequest;
+use App\Rules\Birthdate;
 
 class PersonalInformationRequest extends RegistrationRequest
 {
@@ -30,7 +31,7 @@ class PersonalInformationRequest extends RegistrationRequest
             'dob_day' => 'required',
             'dob_month' => 'required',
             'dob_year' => 'required',
-            'dob' => 'required|date',
+            'dob' => ['required', 'string', new Birthdate($this)],
             'gender' => 'required',
             'citizenship' => 'required',
         ];

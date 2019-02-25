@@ -99,7 +99,7 @@
 
 </div><!-- steps-bar -->
 
-<div class="container">
+<div id="form-container" class="container">
 
     @yield('content')
 
@@ -108,6 +108,6 @@
 @include('landing_footer')
 
 
-<script src="{{asset('js/app.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/register.js')}}" type="text/javascript"></script>
 </body>
 </html>

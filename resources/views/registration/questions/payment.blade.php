@@ -1,3 +1,12 @@
+@php
+    $member = $reg->member;
+    $address = $member->address;
+
+@endphp
+
+<script>
+    const address = @json($address);
+</script>
 <div id="payment" class="question-wrapper container medium">
 
     <div class="row question-icon">
@@ -16,21 +25,21 @@
 
                 <p>USA Hockey <i class="fas fa-info-circle" data-toggle="tooltip" data-trigger="click"
                                  data-placement="top" title="Tooltip on left"></i> <span
-                            class="pull-right">$40.00</span></p>
+                            class="pull-right">${{$cart->usah_total_cost()}}</span></p>
                 <p>Affiliate <i class="fas fa-info-circle" data-toggle="tooltip" data-trigger="click"
-                                data-placement="top" title="Tooltip on left"></i> <span class="pull-right">$10.00</span>
+                                data-placement="top" title="Tooltip on left"></i> <span class="pull-right">${{$cart->affiliate_total_cost()}}</span>
                 </p>
                 <p>USA Hockey Foundation <i class="fas fa-info-circle" data-toggle="tooltip" data-trigger="click"
-                                            data-placement="top" title="Tooltip on left"></i> <span class="pull-right">$0.00</span>
+                                            data-placement="top" title="Tooltip on left"></i> <span class="pull-right">${{$cart->donation_total_cost()}}</span>
                 </p>
 
                 <hr>
 
-                <p><b>Subtotal</b> <span class="pull-right">$50.00</span></p>
+                <p><b>Subtotal</b> <span class="pull-right">${{$cart->subtotal()}}</span></p>
 
                 <hr>
 
-                <p><b>Gran Total</b> <span class="pull-right red">$50.00</span></p>
+                <p><b>Gran Total</b> <span class="pull-right red">${{$cart->total()}}</span></p>
 
 
             </div><!-- block-container -->
@@ -78,14 +87,6 @@
                     </div>
                 </div>
 
-                <div class="col-md-12 text-left">
-                    <div class="object checkbox" style="margin-bottom: 25px">
-                        <label>
-                            <input type="checkbox"> <span class="checkmark"></span> Save this card
-                        </label>
-                    </div>
-                </div>
-
             </div>
 
 
@@ -96,7 +97,7 @@
                 <div class="col-md-12 text-left">
                     <div class="object checkbox" style="margin-bottom: 25px">
                         <label>
-                            <input type="checkbox"> <span class="checkmark"></span> Use the same as registration
+                            <input class="use-same-address" value="1" type="checkbox"> <span class="checkmark"></span> Use the same as registration
                         </label>
                     </div>
                 </div>
@@ -104,28 +105,28 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Address <span class="required">*</span></label>
-                        <input type="text" class="form-control input-lg" placeholder="e.g. 580 Whiff Oaf Lane">
+                        <input id="line_1" type="text" class="form-control input-lg" placeholder="e.g. 580 Whiff Oaf Lane">
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">City <span class="required">*</span></label>
-                        <input type="text" class="form-control input-lg" placeholder="e.g. Orlando">
+                        <input id="city" type="text" class="form-control input-lg" placeholder="e.g. Orlando">
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">State <span class="required">*</span></label>
-                        <input type="text" class="form-control input-lg" placeholder="e.g. Florida">
+                        <input id="state" type="text" class="form-control input-lg" placeholder="e.g. Florida">
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Country <span class="required">*</span></label>
-                        <select class="form-control input-lg" placeholder="e.g. USA">
+                        <select id="country" class="form-control input-lg" placeholder="e.g. USA">
                             <option>e.g. United States</option>
                             <option>United States</option>
                             <option>Canada</option>
@@ -136,7 +137,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Zip Code <span class="required">*</span></label>
-                        <input type="text" class="form-control input-lg" placeholder="e.g. Zip Code">
+                        <input type="text" id="zip" class="form-control input-lg js-zipcode" placeholder="e.g. Zip Code">
                     </div>
                 </div>
 
@@ -170,7 +171,7 @@
 
     <div class="row">
 
-        <a href="#" class="btn btn-link js-go-back">Previous</a>
+        <a href="{{url('register/prevQuestion')}}" class="btn btn-link js-go-back">Previous</a>
         <input type="submit" class="btn btn-primary" value="Next">
 
     </div>
