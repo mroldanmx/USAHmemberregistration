@@ -353,7 +353,8 @@ class RegistrationWebController extends Controller
 
     }
 
-    public function paymentStep(RegistrationRequest $request)
+
+    public function confirmationStep(RegistrationRequest $request)
     {
         try {
             foreach ($request->getCartBySession()->registrations as $registration) {
@@ -370,19 +371,6 @@ class RegistrationWebController extends Controller
         } catch (\Exception $exception) {
             error_log($exception->getMessage());
         }
-
-
-        return $this->saveAndRedirect($request);
-
-    }
-
-    public function confirmationStep(RegistrationRequest $request)
-    {
-        //stash current registration
-        $reg = $request->currentRegistration();
-        $reg->status = config('constants.registration.IN-CART');
-        $reg->save();
-        //start over
     }
 
     /**
