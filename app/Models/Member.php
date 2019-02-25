@@ -5,7 +5,10 @@ namespace App\Models;
     use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Member extends Model
+    /**
+ * @property Address address
+ */
+    class Member extends Model
 {
     const PLAYER_TYPE = 1;
     // const COACH_TYPE = 1;
@@ -56,5 +59,42 @@ class Member extends Model
     public function getAgeAttribute()
     {
         return Carbon::parse($this->attributes['dob'])->age;
+    }
+
+    public function getDobDayAttribute()
+    {
+        if (!$this->dob) {
+            return '';
+        }
+        return (new Carbon($this->dob))->day;
+    }
+
+    public function getDobMonthAttribute()
+    {
+        if (!$this->dob) {
+            return '';
+        }
+        return (new Carbon($this->dob))->month;
+    }
+
+    public function getDobYearAttribute()
+    {
+        if (!$this->dob) {
+            return '';
+        }
+        return (new Carbon($this->dob))->year;
+    }
+
+    public function getFullNameAttribute()
+    {
+        return sprintf("%s %s", $this->first_name, $this->last_name);
+    }
+
+    public function getFriendlyDobAttribute()
+    {
+        if (!$this->dob) {
+            return '';
+        }
+        return (new Carbon($this->dob))->toFormattedDateString();
     }
 }

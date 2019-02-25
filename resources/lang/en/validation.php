@@ -145,6 +145,9 @@ return [
         ],
         'donation_cost' => [
             "invalid" => 'The donation cost is invalid.'
+        ],
+        'donation_type_id'=>[
+            "required_if"=>"The :attribute field is missing, select one option."
         ]
     ],
 
@@ -166,6 +169,8 @@ return [
         'dob_day' => 'day',
         'dob_month' => 'month',
         'dob_year' => 'year',
+        'donation_type_id' => 'donation amount',
+
     ],
 
 ];

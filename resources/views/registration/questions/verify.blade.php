@@ -1,9 +1,19 @@
 @php
-$reg = $cart->activeRegistration();
 $member = $reg->member;
-$address = $member->address
+$address = $member->address;
+
 @endphp
-<div id="verify" data-order="{{$order}}" class="question-wrapper container expanded">
+
+<script>
+    const address = @json($address);
+
+    const use_same_address = ()=>{
+      for(let key in address){
+          $(`input#${key}`).val(address[key]);
+      }
+    };
+</script>
+<div id="verify" data-order="{{$order}}" class="question-wrapper">
 
     <div class="row question-icon">
         <i class="fas fa-check"></i>
@@ -302,7 +312,7 @@ $address = $member->address
     </div><!-- wrapper -->
 
     <div class="text-center" style="margin: 25px 0 -2px;">
-        <button class="btn btn-link vertical-icon"><i class="fas fa-user-plus"></i> Register Another Person</button>
+        <a href="{{url('registration/another')}}" class="btn btn-link vertical-icon"><i class="fas fa-user-plus"></i> Register Another Person</a>
     </div>
 
     <div class="row">

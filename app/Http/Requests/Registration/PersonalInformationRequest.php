@@ -31,7 +31,7 @@ class PersonalInformationRequest extends RegistrationRequest
             'dob_day' => 'required',
             'dob_month' => 'required',
             'dob_year' => 'required',
-            'dob' => 'required|date',
+            'dob' => ['required', 'string', new Birthdate($this)],
             'gender' => 'required',
             'citizenship' => 'required',
         ];

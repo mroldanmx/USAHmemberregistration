@@ -8,6 +8,9 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class RegistrationRequest extends FormRequest
 {
+
+    public $step = 'none';
+
     public function authorize()
     {
         return true;
@@ -19,30 +22,38 @@ class RegistrationRequest extends FormRequest
     }
 
     /**
+     * @param string $status
+     *
      * @return Cart
      */
-    public function getCartBySession()
+    public function getCartBySession($status = 'CREATED')
     {
         //create or load a cart
         $cart = Cart::firstOrCreate([
             "session" => session()->getId(),
-            "status" => 'CREATED',
+            "status" => $status,
         ]);
 
         return $cart;
     }
 
-    public function saveRegistrationProgress($fields, $registrationID)
+    /**
+     * Returns current, active Registration.
+     * @return Registration
+     */
+    public function currentRegistration()
     {
-        $registration = Registration::findOrFail($registrationID);
+        return $this->getCartBySession()->activeRegistration();
+    }
+
+    public function saveRegistrationProgress($fields)
+    {
+        $registration = $this->currentRegistration();
         $registration->fill($fields);
         $registration->save();
         $registration->refresh();
         return $registration;
     }
 
-    public function step(){
-
-    }
 
 }

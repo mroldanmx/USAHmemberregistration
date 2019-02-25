@@ -1,4 +1,9 @@
-<div id="member_type" data-order="{{$order}}" class="question-wrapper">
+@php
+    $prev = old('member_type_id',$reg->member_type_id);
+    $playerPrice = \App\Models\Pricing::getMemberPricing('Player')
+@endphp
+    <div id="member_type" data-order="{{$order}}" class="question-wrapper">
+    <span id="player-price" class="hidden">{{$playerPrice}}</span>
 
     <form action="/register/member_type" method="POST">
         @csrf
@@ -12,14 +17,22 @@
         </div>
 
         <div class="row">
-            <div class="col-md-offset-3 col-md-6" style="text-align: left;">
+            <div class="col-md-offset-3 col-md-6 {{$errors->has('member_type_id')?'has-error':''}}" style="text-align: left;">
 
                 @foreach($terms as $term)
-                    <label class="object radio">{{$term->member->type}}
+                    @php
+                    $checked = '';
+
+                    if($prev && $prev == $term->member->id){
+                        $checked = 'checked';
+                    }
+                    @endphp
+
+                    <label class="object radio ">{{$term->member->type}}
                         <input class="js-registration-control"
                                type="radio"
                                name="member_type_id"
-                               required
+                               {{$checked}}
                                value="{{$term->member->id}}"
                                data-required-message="{{trans('validation.custom.member_type.required')}}">
                         <span class="checkmark"></span>
@@ -37,12 +50,11 @@
                         {!! $term->html !!}
                     </div>
                 @endforeach
-                <div id="membership-requirements-checkbox" class="object checkbox">
+                <div id="membership-requirements-checkbox" class="object checkbox {{$errors->has('member_type_checkbox')?'has-error':''}}">
                     <label>
                         <input
                                 name="member_type_checkbox"
                                 type="checkbox"
-                                required
                                 data-required-message="{{trans('validation.custom.member_type.accepted')}}">
                         <span class="checkmark"></span>
                         I have read the requirements for this membership type <span class="required">*</span>
@@ -54,7 +66,7 @@
 
         <div class="row">
 
-            <a href="#" class="btn btn-link js-go-back">Previous</a>
+            <a href="{{url('register/prevQuestion')}}" class="btn btn-link js-go-back">Previous</a>
             <input type="submit" class="btn btn-primary" value="Next">
 
         </div>
