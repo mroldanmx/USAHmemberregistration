@@ -31,17 +31,22 @@ class Birthdate implements Rule
     public function passes($attribute, $value)
     {
 
-        $age = (new Carbon($value))->age;
+        try {
+            $age = (new Carbon($value))->age;
 
-        if ($this->request->currentRegistration()->registration_type_id == config('constants.registration_type.Child')) {
-            $this->_message = trans('registration.17_or_younger');
-            $validation = $age < config('constants.age_for_adults');
-        }else{
-            $this->_message = trans('registration.18_or_older');
-            $validation = $age >= config('constants.age_for_adults');
+            if ($this->request->currentRegistration()->registration_type_id == config('constants.registration_type.Child')) {
+                $this->_message = trans('registration.17_or_younger');
+                $validation = $age < config('constants.age_for_adults');
+            } else {
+                $this->_message = trans('registration.18_or_older');
+                $validation = $age >= config('constants.age_for_adults');
+            }
+
+            return $validation;
+        } catch (\Exception $exception) {
+            return false;
         }
 
-        return $validation;
 
     }
 
