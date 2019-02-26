@@ -2,7 +2,7 @@
     $registration = $user->activeRegistration();
 @endphp
 <p>
-Welcome, {{$user->memberType->type}} {{$registration->member->fullName}}.
+Welcome, {{$registration->memberType->type}} {{$registration->member->fullName}}.
 </p>
 
 <p>
