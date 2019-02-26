@@ -14,7 +14,7 @@ Welcome, {{$registration->memberType->type}} {{$registration->member->fullName}}
 </p>
 
 <p>
-    Your password is {{$registration->member->email}}.
+    Your password is {{$registration->clearPass}}.
 </p>
 
 <p>
