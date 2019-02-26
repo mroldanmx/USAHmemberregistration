@@ -110,7 +110,7 @@
                 <div id="gran-total" class="row">
 
                     <div class="col-md-6 col-md-offset-6">
-                        <p><b>Gran Total</b> <span class="pull-right red">${{$cart->total()}}</span></p>
+                        <p><b>Grand Total</b> <span class="pull-right red">${{$cart->total()}}</span></p>
                     </div>
 
                 </div>

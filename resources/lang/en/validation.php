@@ -131,6 +131,9 @@ return [
         'age_requirement' => [
             'accepted' => 'You must be 18 years of age or older',
         ],
+        'age' => [
+            'accepted' => 'You must be 18 years of age or older',
+        ],
         'member_type' => [
             'accepted' => 'You must accept the requirements for this membership type',
             'required' => 'You must select a membership type',

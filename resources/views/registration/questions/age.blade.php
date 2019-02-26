@@ -27,6 +27,7 @@
                     > <span class="checkmark"></span> I am 18 years old or greater <span
                             class="required">*</span>
                 </label>
+                <small style="position: absolute" class="help-block">{{$errors->has('age')?$errors->first('age'):''}}</small>
             </div>
 
         </div>

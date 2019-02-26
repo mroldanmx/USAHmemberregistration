@@ -44,11 +44,11 @@
                 @endforeach
                 <hr>
 
-                <p><b>Subtotal</b> <span class="pull-right">${{$cart->subtotal()}}</span></p>
+                <p><b>Sub total</b> <span class="pull-right">${{$cart->subtotal()}}</span></p>
 
                 <hr>
 
-                <p><b>Gran Total</b> <span class="pull-right red">${{$cart->total()}}</span></p>
+                <p><b>Grand Total</b> <span class="pull-right red">${{$cart->total()}}</span></p>
 
 
             </div><!-- block-container -->

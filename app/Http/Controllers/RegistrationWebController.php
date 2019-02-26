@@ -14,6 +14,7 @@ use App\Models\RegistrationType;
 use App\Models\Terms;
 use App\Models\Waiver;
 use App\Rules\Birthdate;
+use App\Rules\PhoneNumber;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
@@ -275,8 +276,8 @@ class RegistrationWebController extends Controller
             case 'contact':
                 $rules = [
                     'email' => 'required|confirmed|email|unique:member,email,' . $request->currentRegistration()->member->id,
-                    'phone_1' => 'required|',
-                    'phone_2' => 'nullable',
+                    'phone_1' => ['required', new PhoneNumber()],
+                    'phone_2' => ['nullable', new PhoneNumber()],
                 ];
                 break;
             case 'diversity':

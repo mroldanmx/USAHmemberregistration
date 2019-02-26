@@ -20,6 +20,7 @@ $member = $reg->member;
             <div class="form-group {{$errors->has('email')?'has-error':''}}">
                 <label for="exampleInputPassword1">Email Address <span class="required">*</span></label>
                 <input name="email" value="{{old('email',$member->email)}}" type="email" class="form-control input-lg" placeholder="e.g. john.dee@mail.com">
+                <small  class="help-block">{{$errors->first('email')}}</small>
             </div>
         </div>
 
@@ -27,7 +28,7 @@ $member = $reg->member;
             <div class="form-group {{$errors->has('email_confirmation')?'has-error':''}}">
                 <label for="exampleInputPassword1">Re-type Email Address <span class="required">*</span></label>
                 <input name="email_confirmation" type="email"  class="form-control input-lg" placeholder="e.g. john.dee@mail.com">
-
+                <small  class="help-block">{{$errors->first('email_confirmation')}}</small>
             </div>
         </div>
 
@@ -39,6 +40,7 @@ $member = $reg->member;
             <div class="form-group {{$errors->has('phone_1')?'has-error':''}}">
                 <label for="exampleInputPassword1">Mobile Number <span>*</span></label>
                 <input maxlength="12" name="phone_1" type="text" value="{{old('phone_1',$member->phone_1)}}" class="form-control input-lg" placeholder="e.g. 213 456 7890">
+                <small  class="help-block">{{$errors->first('phone_1')}}</small>
             </div>
         </div>
 

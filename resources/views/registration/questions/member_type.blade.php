@@ -38,7 +38,7 @@
                         <span class="checkmark"></span>
                     </label><br>
                 @endforeach
-
+                    <small style="position: absolute" class="help-block">{{$errors->has('member_type_id')?$errors->first('member_type_id'):''}}</small>
             </div>
         </div>
 
@@ -59,6 +59,7 @@
                         <span class="checkmark"></span>
                         I have read the requirements for this membership type <span class="required">*</span>
                     </label>
+                    <small style="position: absolute" class="help-block">{{$errors->has('member_type_checkbox')?$errors->first('member_type_checkbox'):''}}</small>
                 </div>
 
             </div>

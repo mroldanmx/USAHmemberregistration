@@ -13,7 +13,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="text-justify">
+            <div class="text-justify scrollable">
                 {{$concussion->html}}
             </div>
         </div>

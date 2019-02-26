@@ -21,6 +21,8 @@ $member = $reg->member;
                 <input autocomplete="off" type="hidden" name="id" class="form-control input-lg" value="{{old('id')}}">
                 <input autocomplete="off" type="text" name="first_name" class="form-control input-lg"
                        value="{{old('first_name',$member->first_name)}}" placeholder="e.g. John">
+                <small  class="help-block">{{$errors->first('first_name')}}</small>
+
             </div>
         </div>
 
@@ -29,6 +31,7 @@ $member = $reg->member;
                 <label>LEGAL Last Name <span class="required">*</span></label>
                 <input autocomplete="off" type="text" name="last_name" class="form-control input-lg"
                        value="{{old('last_name',$member->last_name)}}" placeholder="e.g. Dee">
+                <small  class="help-block">{{$errors->first('last_name')}}</small>
             </div>
         </div>
     </div>
@@ -85,6 +88,7 @@ $member = $reg->member;
                 </div>
                 <div class="help-block"></div>
             </div><!-- birthdate -->
+            <small  class="help-block">{{$errors->first('dob')}}</small>
 
         </div>
 

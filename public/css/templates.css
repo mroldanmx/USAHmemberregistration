@@ -1556,10 +1556,7 @@ input.sign-with-initials{
     padding-left: 4em;
 }
 
-div.has-error {
-    /*padding: 0.5em 1em;*/
-    box-shadow: 0 0 3px 1px #a94442;
-}
+
 
 .has-error .checkmark{
     border-color: #a94442;
@@ -1571,4 +1568,23 @@ div.has-error {
     height: 39px;
     width: 39px;
     transform: translateY(0);
+}
+
+/* add gap to last buttons in form
+ */
+#registrationForm .row:last-child {
+    padding-top: 2em;
+}
+
+.has-error input,
+.has-error select
+{
+    /*padding: 0.5em 1em;*/
+    /*box-shadow: 0 0 3px 1px #a94442;*/
+    border:1px solid #a94442;
+}
+
+.scrollable {
+    height: 250px;
+    overflow: scroll;
 }
