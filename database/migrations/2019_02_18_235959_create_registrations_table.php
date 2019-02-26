@@ -21,6 +21,7 @@ class CreateRegistrationsTable extends Migration
             $table->string('member_id')->nullable(true);
             $table->unsignedInteger('cart_id');
             $table->unsignedInteger('member_type_id')->nullable(true);
+            $table->unsignedInteger('user_id')->nullable(true);
             $table->unsignedInteger('registration_type_id')->nullable(true);
             $table->unsignedInteger('address_id')->nullable(true);
             $table->unsignedInteger('association_id')->nullable(true);

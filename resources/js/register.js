@@ -85,24 +85,20 @@ $(document).ready(function(){
         donation_type_input.trigger('change');
     }
 
-    if ($('#verify').length) {
+    //adjust main container width, depending on which view we're displaying
+    if ($('#verify').length || $('#waiver').length || $('#concussion').length) {
         $(document).ready(function(){
             $('#form-container').addClass('expanded');
         });
     }
 
-    if ($('#payment').length) {
+    if ($('#payment').length || $('#confirmation').length) {
         $(document).ready(function(){
             $('#form-container').addClass('medium');
         });
     }
 
-    if ($('#confirmation').length) {
-        $(document).ready(function(){
-            $('#form-container').addClass('medium');
-        });
-    }
-
+    //show the fee price from the backend. No hard-code.
     if ($('#player-price').length) {
         $('.player-price-holder').html($('#player-price').html())
     }

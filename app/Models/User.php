@@ -78,4 +78,18 @@ class User extends Authenticatable
     {
         return $this->roles->pluck('name')->all();
     }
+
+    public function registrations()
+    {
+        return $this->hasMany(Registration::class);
+    }
+
+    public function activeRegistration()
+    {
+        //TODO which paid registration should we get? check date?
+        return Registration::where([
+            'user_id' => $this->id,
+            'status' => config('constants.registration.PAID'),
+        ])->first();
+    }
 }

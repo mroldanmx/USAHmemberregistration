@@ -27,6 +27,12 @@
                     <span>Members List</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('admin.registrations.index') }}">
+                    <i class="fa fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
             <!--li class="treeview">
                 <a href="{{ route('admin.pricing.index') }}">
                     <i class="fa fa-credit-card"></i>

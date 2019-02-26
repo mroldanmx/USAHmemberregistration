@@ -142,7 +142,7 @@ $address = $member->address;
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Citizenship</label>
-                    <div class="data">{{$reg->citizenship}}</div>
+                    <div class="data">{{array_flip(config('constants.citizenship'))[$reg->citizenship]}}</div>
 
                     <div class="horizontal-radio-group">
                         <label class="object radio">USA
@@ -164,7 +164,7 @@ $address = $member->address;
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Ethnic Heritage</label>
-                    <div class="data">{{$reg->diversity_type_id}}</div>
+                    <div class="data">{{config('constants.diversityTypes')[$reg->diversity_type_id]}}</div>
 
                     <select class="form-control input-lg">
                         <option>American Indian or Alaska Native</option>

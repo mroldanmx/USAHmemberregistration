@@ -12,17 +12,17 @@ class TermsTableSeeder extends Seeder
     public function run()
     {
         $player_html = '<h3>USA Hockey Registration fee – $ <span class="player-price-holder"></span></h3>
-                <p>The USA Hockey Registration fee is $<span class="player-price-holder"></span> per person (exception, birth year 2012 and after). <a>Affiliate
+                <p>The USA Hockey Registration fee is $<span class="player-price-holder"></span> per person (exception, birth year 2012 and after). <a href="https://www.usahockeyregistration.com/pages/affiliate_help.html" target="_blank">Affiliate
                         fee</a> (if applicable) varies by Affiliate. If a participant plays and coaches he/she pays only
                     one registration fee.</p>
 
-                <p>Click <a>here</a> for information about USA Hockey Member benefits.</p>';
+                <p>Click <a href="https://www.usahockeyregistration.com/images/Benefits.pdf" target="_blank">here</a> for information about USA Hockey Member benefits.</p>';
 
         $manager_html = ' <h3>Managers and Volunteers.</h3>
                 <p>Register here when your program has confirmed your participation. There is no charge for this
                     registration; it does NOT allow on-ice participation.</p>
 
-                <p>Click <a>here</a> for information about USA Hockey Member benefits.</p>';
+                <p>Click  <a href="https://www.usahockeyregistration.com/images/Benefits.pdf" target="_blank">here</a> for information about USA Hockey Member benefits.</p>';
 
         $officials_html = '<h3>Officials (Referees)</h3>
                 <div class="ragi-right-referee" style="" id="refereesSelection">

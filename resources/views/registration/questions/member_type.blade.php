@@ -43,7 +43,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-offset-0 col-md-12" style="text-align: center;">
 
                 @foreach($terms as $term)
                     <div data-term-id="{{$term->member->id}}" class="note js-membership-requirement">

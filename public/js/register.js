@@ -11403,25 +11403,21 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
 
   if (donation_type_input.length) {
     donation_type_input.trigger('change');
-  }
+  } //adjust main container width, depending on which view we're displaying
 
-  if (jquery__WEBPACK_IMPORTED_MODULE_1___default()('#verify').length) {
+
+  if (jquery__WEBPACK_IMPORTED_MODULE_1___default()('#verify').length || jquery__WEBPACK_IMPORTED_MODULE_1___default()('#waiver').length || jquery__WEBPACK_IMPORTED_MODULE_1___default()('#concussion').length) {
     jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
       jquery__WEBPACK_IMPORTED_MODULE_1___default()('#form-container').addClass('expanded');
     });
   }
 
-  if (jquery__WEBPACK_IMPORTED_MODULE_1___default()('#payment').length) {
+  if (jquery__WEBPACK_IMPORTED_MODULE_1___default()('#payment').length || jquery__WEBPACK_IMPORTED_MODULE_1___default()('#confirmation').length) {
     jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
       jquery__WEBPACK_IMPORTED_MODULE_1___default()('#form-container').addClass('medium');
     });
-  }
+  } //show the fee price from the backend. No hard-code.
 
-  if (jquery__WEBPACK_IMPORTED_MODULE_1___default()('#confirmation').length) {
-    jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
-      jquery__WEBPACK_IMPORTED_MODULE_1___default()('#form-container').addClass('medium');
-    });
-  }
 
   if (jquery__WEBPACK_IMPORTED_MODULE_1___default()('#player-price').length) {
     jquery__WEBPACK_IMPORTED_MODULE_1___default()('.player-price-holder').html(jquery__WEBPACK_IMPORTED_MODULE_1___default()('#player-price').html());

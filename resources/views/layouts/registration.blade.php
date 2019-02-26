@@ -66,7 +66,7 @@
         </div><!-- step -->
 
         <div class="step-bar active">
-            <div class="step-progress p-1"></div>
+            <div class="step-progress p-{{$order + 1}}"></div>
         </div><!-- step-bar -->
 
         <div class="step">
@@ -108,6 +108,6 @@
 @include('landing_footer')
 
 
-<script src="{{asset('js/register.js')}}" type="text/javascript"></script>
+<script src="{{mix('/js/register.js')}}" type="text/javascript"></script>
 </body>
 </html>
