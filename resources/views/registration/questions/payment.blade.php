@@ -1,7 +1,7 @@
 @php
     $member = $reg->member;
     $address = $member->address;
-
+    $billingFees = \App\Models\SystemPreferences::get('billing')
 @endphp
 
 <script>
@@ -23,16 +23,25 @@
 
                 <h3>Bill Information</h3>
 
-                <p>USA Hockey <i class="fas fa-info-circle" data-toggle="tooltip" data-trigger="click"
-                                 data-placement="top" title="Tooltip on left"></i> <span
-                            class="pull-right">${{$cart->usah_total_cost()}}</span></p>
-                <p>Affiliate <i class="fas fa-info-circle" data-toggle="tooltip" data-trigger="click"
-                                data-placement="top" title="Tooltip on left"></i> <span class="pull-right">${{$cart->affiliate_total_cost()}}</span>
-                </p>
-                <p>USA Hockey Foundation <i class="fas fa-info-circle" data-toggle="tooltip" data-trigger="click"
-                                            data-placement="top" title="Tooltip on left"></i> <span class="pull-right">${{$cart->donation_total_cost()}}</span>
-                </p>
-
+                @foreach($billingFees as $billingFee)
+                    @php
+                        switch($billingFee->keyword){
+                            case "USA Hockey":
+                            $amount = $cart->usah_total_cost();
+                            break;
+                            case "Affiliate":
+                            $amount = $cart->affiliate_total_cost();
+                            break;
+                            default:
+                            $amount = $cart->donation_total_cost();
+                            break;
+                        }
+                    @endphp
+                    <p>{{$billingFee->keyword}}
+                        <i class="fas fa-info-circle" data-toggle="tooltip" data-trigger="click"
+                             data-placement="top" title="{{$billingFee->value}}"></i> <span
+                        class="pull-right">${{$amount}}</span></p>
+                @endforeach
                 <hr>
 
                 <p><b>Subtotal</b> <span class="pull-right">${{$cart->subtotal()}}</span></p>

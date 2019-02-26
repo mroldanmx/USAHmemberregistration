@@ -12,9 +12,20 @@ class Cart extends Model
         'status',
     ];
 
-    public function registrations()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function totalRegistrations()
     {
         return $this->hasMany(Registration::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function registrations()
+    {
+        return $this->totalRegistrations()->where(['status'=>'CREATED']);
     }
 
     /**

@@ -1547,18 +1547,28 @@ input.sign-with-initials{
       width: 3em;
       opacity: 1;
       height: initial;
-      border: 2px solid #b3b3b3
+      border: 2px solid #b3b3b3;
+      text-align: center;
+    text-transform: uppercase;
   }
 
 .sign-with-initials + label{
     padding-left: 4em;
 }
 
-.has-error {
-    padding: 0.5em 1em;
+div.has-error {
+    /*padding: 0.5em 1em;*/
     box-shadow: 0 0 3px 1px #a94442;
 }
 
 .has-error .checkmark{
     border-color: #a94442;
+}
+
+#waiver .checkmark,
+#concussion .checkmark{
+    top: initial;
+    height: 39px;
+    width: 39px;
+    transform: translateY(0);
 }

@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             WaiversTableSeeder::class,
             ConcussionTableSeeder::class,
             DonationTypeSeeder::class,
+            SystemPreferencesSeeder::class,
         ]);
     }
 }

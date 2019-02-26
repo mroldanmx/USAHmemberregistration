@@ -1,34 +1,35 @@
 <?php
 return [
-  "contact" => [
-      "tel" => [
-          "number"=>"18005663288,ext=123",
-          "label" => "1-800-566-3288 ext 123"
-      ],
-      "email" => "memberservices@usahockey.org",
-  ],
-    "member_types"=>[
+    "contact" => [
+        "tel" => [
+            "number" => "18005663288,ext=123",
+            "label" => "1-800-566-3288 ext 123",
+        ],
+        "email" => "memberservices@usahockey.org",
+    ],
+    "support_email" => env('SUPPORT_EMAIL'),
+    "member_types" => [
         "Player" => 1,
         "Manager" => 2,
         "Official" => 3,
     ],
-    "registration_type"=>[
+    "registration_type" => [
         "Myself" => 1,
         "Child" => 2,
         "Adult" => 3,
-        "Adult-Non-Family" => 4
+        "Adult-Non-Family" => 4,
     ],
-    "citizenship"=>[
-      'USA'=>1,
-      'Canada'=>2,
-      'Other'=>3
+    "citizenship" => [
+        'USA' => 1,
+        'Canada' => 2,
+        'Other' => 3,
     ],
-    "gender"=>[
-      'Male'=>'M',
-      'Female'=>'F',
+    "gender" => [
+        'Male' => 'M',
+        'Female' => 'F',
     ],
     "age_for_adults" => 18,
-    "diversityTypes"=>[
+    "diversityTypes" => [
         "American Indian or Alaska Native",
         "Asian",
         "Black or African American",
@@ -39,17 +40,17 @@ return [
         "I would prefer not to share this information",
         "Other",
     ],
-    "registration"=>[
+    "registration" => [
         "CREATED" => "CREATED",
         "IN-CART" => 'IN-CART',
         "PAID" => "PAID",
 
     ],
-    "cart"=>[
+    "cart" => [
         "CREATED" => "CREATED",
         "COMPLETE" => 'COMPLETE',
     ],
-    "member_pricing"=>[
+    "member_pricing" => [
         "Player" => [
             "Regular" => 90.00,
         ],
@@ -71,14 +72,17 @@ return [
             "Affiliated" => 30.00,
         ],
     ],
-    "affiliate_pricing"=>[
+    "affiliate_pricing" => [
         "Mid-American District" => [
             "Regular" => 10.00,
         ],
     ],
-    "emails"=>[
+    "emails" => [
         "registration" => 'welcome@usahockey.com',
-
-    ]
+    ],
+    "contries" => [
+        "US" => "United States",
+        "CA" => "Canada",
+    ],
 
 ];

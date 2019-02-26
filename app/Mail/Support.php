@@ -3,25 +3,24 @@
 namespace App\Mail;
 
 use App\Models\Registration;
-use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
-class MemberRegistration extends Mailable
+class Support extends Mailable
 {
     use Queueable, SerializesModels;
-    public $user;
+
+    public $params;
 
     /**
      * Create a new message instance.
      *
-     * @param User $user
+     * @param $params
      */
-    public function __construct(User $user)
+    public function __construct($params)
     {
-        $this->user = $user;
+        $this->params = $params;
     }
 
     /**
@@ -31,8 +30,6 @@ class MemberRegistration extends Mailable
      */
     public function build()
     {
-        return $this
-            ->from(config('constants.emails.registration'))
-            ->view('mail.registration.welcome');
+        return $this->view('mail.support.index');
     }
 }

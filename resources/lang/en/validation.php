@@ -170,6 +170,9 @@ return [
         'dob_month' => 'month',
         'dob_year' => 'year',
         'donation_type_id' => 'donation amount',
+        'line_1' => 'Mailing Address',
+        'phone_1' => 'Mobile Number',
+        'phone_2' => 'Phone Number',
 
     ],
 

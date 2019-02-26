@@ -26,7 +26,7 @@ class RegistrationTypeTableSeeder extends Seeder
                 'terms' => 'Each registrant must be present to acknowledge waivers.',
             ],
             [
-                'type' => 'Adult Family Member (18 and over)',
+                'type' => 'Adult Non-family Member',
                 'terms' => "Each person being registered needs to be present to accept the USA Hockey Waiver of Liability and the USA Hockey Concussion Information and Acknowledgement. Also, be sure to provide each person's correct mailing address and personal email address so that confirmation of registration can be delivered. ",
             ],
         ];

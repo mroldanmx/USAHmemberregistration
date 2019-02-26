@@ -20,7 +20,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-offset-0 col-md-12" style="text-align: left;">
+        <div class="col-md-offset-0 col-md-12" style="text-align: center;">
 
             <div class="object checkbox">
                 <input

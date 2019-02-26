@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\DonationType;
 use App\Http\Requests\RegistrationRequest;
 use App\Mail\MemberRegistration;
+use App\Mail\Support;
 use App\Models\Cart;
 use App\Models\Concussion;
 use App\Models\Pricing;
+use App\Models\Registration;
 use App\Models\RegistrationType;
 use App\Models\Terms;
 use App\Models\Waiver;
@@ -143,8 +145,13 @@ class RegistrationWebController extends Controller
      */
     public function getStep(RegistrationRequest $request, $step)
     {
-        $step = $this->loadQuestion($step, true, $request);
-        return $this->loadView($step['view'], $step['order'], $request);
+        try {
+            $step = $this->loadQuestion($step, true, $request);
+            return $this->loadView($step['view'], $step['order'], $request);
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
+
     }
 
     /**
@@ -193,8 +200,6 @@ class RegistrationWebController extends Controller
     protected function loadView($question, $order, RegistrationRequest $request)
     {
         try {
-
-
             $cart = $request->getCartBySession();
             $reg = $cart->activeRegistration();
 
@@ -363,23 +368,33 @@ class RegistrationWebController extends Controller
 
     public function confirmationStep(RegistrationRequest $request)
     {
-        try {
-            foreach ($request->getCartBySession()->registrations as $registration) {
-                Mail::to($registration->member->email)
-                    ->send(new MemberRegistration($registration));
-                $registration->status = config('constants.registration.PAID');
-                $registration->save();
-            }
 
-            //stash current registration
-            $cart = $request->getCartBySession();
-            $cart->status = config('constants.cart.COMPLETE');
-            $cart->save();
-        } catch (\Exception $exception) {
-            error_log($exception->getMessage());
+        foreach ($request->getCartBySession()->registrations as $registration) {
+
+            /** @var Registration $registration */
+            $user = $registration->createUserForMember();
+
+            //TODO Security check, validate actual payment [enhancement]
+            $registration->status = config('constants.registration.PAID');
+            $registration->save();
+
+            //user created? send email.
+            if ($user) {
+                Mail::to($user->email)
+                    ->send(new MemberRegistration($user));
+
+            } else {
+                //something went wrong, notify support
+
+                $support_email = config('constants.support_email');
+                if ($support_email) {
+                    Mail::to($support_email)
+                        ->send(new Support($registration));
+                }
+            }
         }
 
-        return redirect('login');
+        return redirect('/login');
     }
 
     /**

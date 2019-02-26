@@ -20,7 +20,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-offset-0 col-md-12" style="text-align: left;">
+        <div class="col-md-offset-0 col-md-12" style="text-align: center;">
 
             <div class="object checkbox">
                 <input
@@ -29,7 +29,8 @@
                         name="concussion_waiver"
                         type="text" maxlength="2">
                 <label>
-                    <input value="1" name="concussion_check" type="checkbox" class="{{$errors->has('concussion_check')?"has-error":""}}">
+                    <input value="1" name="concussion_check" type="checkbox"
+                           class="{{$errors->has('concussion_check')?"has-error":""}}">
 
                     <span class="checkmark"></span>
 
