@@ -41,7 +41,7 @@
         </div>
 
         <h1>
-            2018-2019
+            {{date('Y')}}-{{date('Y')+1}}
             <small>Season Registration</small>
         </h1>
 

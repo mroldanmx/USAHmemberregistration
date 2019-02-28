@@ -28,12 +28,9 @@
                         value="{{old('waiver_agree',$reg->waiver_agree)}}"
                         name="waiver_agree"
                         type="text" maxlength="2">
-                <label>
+                <label style="padding-left: 1em;">
                     <input value="1" name="waiver_check" type="checkbox">
-
                     <span class="checkmark"></span>
-
-
                     I have read and accept the USA Hockey Waiver of Liability <span class="required">*</span>
                 </label>
 

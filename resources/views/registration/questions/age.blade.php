@@ -13,11 +13,9 @@
             <p>You must be 18 or older to complete an online registration for yourself or your child.</p>
             <p>If you are not, a parent or guardian must complete this registration for you.</p>
 
-            <div class="object checkbox {{$errors->has('age')?'has-error':''}}">
+            <div class="object checkbox {{$errors->has('age')?'has-error':''}} pull-left">
                 <label>
-                    <input
-
-                            data-required-message="{{
+                    <input data-required-message="{{
                             trans('validation.custom.age_requirement.accepted')
                             }}"
                             name="age"
@@ -27,13 +25,14 @@
                     > <span class="checkmark"></span> I am 18 years old or greater <span
                             class="required">*</span>
                 </label>
-                <small style="position: absolute" class="help-block">{{$errors->has('age')?$errors->first('age'):''}}</small>
+                <small style="position: absolute"
+                       class="help-block">{{$errors->has('age')?$errors->first('age'):''}}</small>
             </div>
 
         </div>
     </div>
 
-    <div class="row">
+    <div class="row text-center">
 
         <input type="submit" class="btn btn-primary" value="Next">
 
