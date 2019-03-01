@@ -41,7 +41,7 @@
         </div>
 
         <h1>
-            2018-2019
+            {{date('Y')}}-{{date('Y')+1}}
             <small>Season Registration</small>
         </h1>
 
@@ -108,6 +108,19 @@
 @include('landing_footer')
 
 
-<script src="{{mix('/js/register.js')}}" type="text/javascript"></script>
+<script src="{{ URL::asset('js/register.js')}}" type="text/javascript"></script>
+<script src="{{ URL::asset('js/jquery.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
+<script src="https://rawgit.com/lopezton/jquery-creditcard-formatter/master/ccFormat.js"></script>
+<script>
+    var phones = [{"mask": "(###) ###-####"}, {"mask": "(###) ###-####"}];
+    $(function () {
+        $('.phone-fm').inputmask({
+            mask: phones,
+            greedy: false,
+            definitions: {'#': {validator: "[0-9]", cardinality: 1}}
+        });
+    });
+</script>
 </body>
 </html>

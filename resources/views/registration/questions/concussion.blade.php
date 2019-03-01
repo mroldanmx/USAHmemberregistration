@@ -23,20 +23,20 @@
         <div class="col-md-offset-0 col-md-12" style="text-align: center;">
 
             <div class="object checkbox">
-                <input
-                        class="sign-with-initials {{$errors->has('concussion_waiver')?"has-error":""}}"
-                        value="{{old('concussion_waiver',$reg->concussion_waiver)}}"
-                        name="concussion_waiver"
-                        type="text" maxlength="2">
-                <label>
+
+                <label class="text-left">
                     <input value="1" name="concussion_check" type="checkbox"
                            class="{{$errors->has('concussion_check')?"has-error":""}}">
 
-                    <span class="checkmark"></span>
+                    <span class="checkmark w-30 h-30"></span>
 
 
-                    I have read and accept the USA Hockey
-                    Concussion Information and Acknowledgement <span class="required">*</span>
+                    I <input
+                            class="sign-with-initials h-30 {{$errors->has('concussion_waiver')?"has-error":""}}"
+                            value="{{old('concussion_waiver',$reg->concussion_waiver)}}"
+                            name="concussion_waiver"
+                            type="text" maxlength="2"> <span class="ml-70">have read and accept the USA Hockey
+                        Concussion Information and Acknowledgement</span> <span class="required">*</span>
                 </label>
 
             </div>

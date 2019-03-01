@@ -33,7 +33,7 @@
 
         <div class="pull-right">
 
-            <a class="icon-with-text" href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a class="icon-with-text hide" href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
             <a class="icon-with-text" href="#"><i class="fas fa-question"></i> FAQ</a>
 
         </div>

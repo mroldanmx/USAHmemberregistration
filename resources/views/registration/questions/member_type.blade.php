@@ -2,7 +2,7 @@
     $prev = old('member_type_id',$reg->member_type_id);
     $playerPrice = \App\Models\Pricing::getMemberPricing('Player')
 @endphp
-    <div id="member_type" data-order="{{$order}}" class="question-wrapper">
+<div id="member_type" data-order="{{$order}}" class="question-wrapper">
     <span id="player-price" class="hidden">{{$playerPrice}}</span>
 
     <form action="/register/member_type" method="POST">
@@ -17,15 +17,16 @@
         </div>
 
         <div class="row">
-            <div class="col-md-offset-3 col-md-6 {{$errors->has('member_type_id')?'has-error':''}}" style="text-align: left;">
+            <div class="col-md-offset-3 col-md-6 {{$errors->has('member_type_id')?'has-error':''}}"
+                 style="text-align: left;">
 
                 @foreach($terms as $term)
                     @php
-                    $checked = '';
+                        $checked = '';
 
-                    if($prev && $prev == $term->member->id){
-                        $checked = 'checked';
-                    }
+                        if($prev && $prev == $term->member->id){
+                            $checked = 'checked';
+                        }
                     @endphp
 
                     <label class="object radio ">{{$term->member->type}}
@@ -38,7 +39,8 @@
                         <span class="checkmark"></span>
                     </label><br>
                 @endforeach
-                    <small style="position: absolute" class="help-block">{{$errors->has('member_type_id')?$errors->first('member_type_id'):''}}</small>
+                <small style="position: absolute"
+                       class="help-block">{{$errors->has('member_type_id')?$errors->first('member_type_id'):''}}</small>
             </div>
         </div>
 
@@ -50,7 +52,8 @@
                         {!! $term->html !!}
                     </div>
                 @endforeach
-                <div id="membership-requirements-checkbox" class="object checkbox {{$errors->has('member_type_checkbox')?'has-error':''}}">
+                <div id="membership-requirements-checkbox"
+                     class="object checkbox pull-left {{$errors->has('member_type_checkbox')?'has-error':''}}">
                     <label>
                         <input
                                 name="member_type_checkbox"
@@ -59,7 +62,8 @@
                         <span class="checkmark"></span>
                         I have read the requirements for this membership type <span class="required">*</span>
                     </label>
-                    <small style="position: absolute" class="help-block">{{$errors->has('member_type_checkbox')?$errors->first('member_type_checkbox'):''}}</small>
+                    <small style="position: absolute"
+                           class="help-block">{{$errors->has('member_type_checkbox')?$errors->first('member_type_checkbox'):''}}</small>
                 </div>
 
             </div>
