@@ -39,7 +39,7 @@
                         <span class="checkmark"></span>
                     </label><br>
                 @endforeach
-                <small style="position: absolute"
+                <small
                        class="help-block">{{$errors->has('member_type_id')?$errors->first('member_type_id'):''}}</small>
             </div>
         </div>

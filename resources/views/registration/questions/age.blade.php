@@ -20,7 +20,7 @@
                             }}"
                            name="age"
                            type="checkbox"
-                           value="1" required
+                           value="1"
                            {{old('age')?'checked':''}}
                            data-error-msg="The email is required in valid format!"/>
                     <span class="checkmark"></span> I am 18 years old or greater <span

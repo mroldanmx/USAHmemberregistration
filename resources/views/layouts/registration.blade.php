@@ -121,6 +121,14 @@
             definitions: {'#': {validator: "[0-9]", cardinality: 1}}
         });
     });
+
+    const wip = (callback=null)=>{
+        alert('Work in progress');
+
+        if (callback) {
+            callback();
+        }
+    }
 </script>
 </body>
 </html>

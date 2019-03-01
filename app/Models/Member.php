@@ -78,6 +78,14 @@ use Illuminate\Database\Eloquent\Model;
         return (new Carbon($this->dob))->year;
     }
 
+        public function getDobEnglish()
+        {
+            if (!$this->getDobDayAttribute()) {
+                return '';
+            }
+            return Carbon::parse($this->dob)->format('M d Y');
+        }
+
     public function getFullNameAttribute()
     {
         return sprintf("%s %s", $this->first_name, $this->last_name);

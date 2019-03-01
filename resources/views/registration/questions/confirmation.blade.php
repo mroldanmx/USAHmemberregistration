@@ -16,14 +16,14 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Date of Registration</label>
-                            <div class="data">May 25, 1985</div>
+                            <div class="data">{{date('M d, Y')}}</div>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Confirmation Number</label>
-                            <div class="data">182500938HORNK</div>
+                            <label>Transaction ID</label>
+                            <div class="data">{{str_random(15)}}</div>
                         </div>
                     </div>
 
@@ -51,8 +51,16 @@
 
                         <div class="row white-row">
 
+                            @include('support.work_in_progress')
                             <div class="col-md-12">
                                 <h3>Member Details</h3>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Confirmation Number</label>
+                                    <div class="data">{{strtoupper(str_random(8))}}</div>
+                                </div>
                             </div>
 
                             <div class="col-md-6">
@@ -121,8 +129,8 @@
 
         <div class="col-md-12">
             <div class="block-container">
-
-                <p><b>This confirms that you have paid you 2014-15 USA Hockey & Affillate fee (if applicable)</b></p>
+                @include('support.work_in_progress')
+                <p><b>This confirms that you have paid 2019-2020 USA Hockey & Affillate fee (if applicable)</b></p>
 
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
                     massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -141,19 +149,23 @@
     <div class="row">
 
         <div class="col-xs-4 col-sm-offset-3 col-sm-2 col-md-offset-3 col-md-2">
-            <button onclick="window.print()" class="btn btn-link vertical-icon"><i class="fas fa-print"></i>Print</button>
+            <button type="button" onclick="window.print()" class="btn btn-link vertical-icon"><i class="fas fa-print"></i>Print</button>
         </div>
         <div class="col-xs-4 col-sm-2 col-md-2">
-            <button  class="btn btn-link vertical-icon"><i class="fas fa-share-square"></i>Share</button>
+            <button type="button" onclick="wip()"  class="btn btn-link vertical-icon"><i class="fas fa-share-square"></i>Share</button>
         </div>
         <div class="col-xs-4 col-sm-2 col-md-2">
-            <button class="btn btn-link vertical-icon"><i class="fas fa-file-download"></i>Download</button>
+            <button type="button" onclick="wip()" class="btn btn-link vertical-icon"><i class="fas fa-file-download"></i>Download</button>
         </div>
     </div>
 
     <div class="row">
 
-        <input type="submit" class="btn btn-primary">Continue to Login</input>
+        <button type="button"
+                onclick="wip(()=> window.location.href = '{{url('/')}}')"
+                class="btn btn-primary">
+            Next steps
+        </button>
 
     </div>
 
