@@ -43,7 +43,7 @@ $address = $member->address;
             <div class="col-md-6">
                 <div class="form-group" style="margin-bottom: 0;">
                     <label>Birthdate</label>
-                    <div class="data">{{$member->dob}}</div>
+                    <div class="data">{{$member->getDobEnglish()}}</div>
 
                     <div class="birthdate">
 
@@ -299,10 +299,10 @@ $address = $member->address;
                 Or click below to edit or delete this information
             </div>
             <div class="col-md-12">
-                <button class="btn btn-link action edit"><i class="fas fa-edit"></i> Edit</button>
+                <button onclick="wip()" type="button" class="btn btn-link action edit"><i class="fas fa-edit"></i> Edit</button>
 
-                <button class="btn btn-link action cancel"><i class="fas fa-ban"></i> Cancel</button>
-                <button class="btn btn-link action save"><i class="fas fa-folder"></i> Save</button>
+                <button onclick="wip()" type="button" class="btn btn-link action cancel"><i class="fas fa-ban"></i> Cancel</button>
+                <button onclick="wip()" type="button" class="btn btn-link action save"><i class="fas fa-folder"></i> Save</button>
 
             </div>
 
@@ -312,7 +312,7 @@ $address = $member->address;
     </div><!-- wrapper -->
 
     <div class="text-center" style="margin: 25px 0 -2px;">
-        <a href="{{url('registration/another')}}" class="btn btn-link vertical-icon"><i class="fas fa-user-plus"></i> Register Another Person</a>
+        <button onclick="wip()" type="button" href="{{url('registration/another')}}" class="btn btn-link vertical-icon"><i class="fas fa-user-plus"></i> Register Another Person</button>
     </div>
 
     <div class="row">

@@ -59,6 +59,8 @@
 
             <h3 class="text-left" style="margin-top: 0">Card Information</h3>
 
+            @include('support.work_in_progress')
+
             <div class="row">
 
                 <div class="col-md-12">
@@ -137,8 +139,8 @@
                         <label for="exampleInputPassword1">Country <span class="required">*</span></label>
                         <select id="country" class="form-control input-lg" placeholder="e.g. USA" required />
                             <option>e.g. United States</option>
-                            <option>United States</option>
-                            <option>Canada</option>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
                         </select>
                     </div>
                 </div>

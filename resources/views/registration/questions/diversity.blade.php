@@ -20,7 +20,7 @@
         <div class="col-md-offset-1 col-md-10" style="text-align: left;">
             @foreach($diversityTypes as $id => $diversity)
                 @php
-                    $selected = old('diversity_type_id',$reg->diversity_type_id) == $id ?'checked':'';
+                    $selected = old('diversity_type_id',$reg->diversity_type_id) === $id ?'checked':'';
                 @endphp
 
                 <label class="object radio">{{$diversity}}

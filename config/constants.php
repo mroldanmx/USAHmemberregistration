@@ -52,7 +52,7 @@ return [
     ],
     "member_pricing" => [
         "Player" => [
-            "Regular" => 90.00,
+            "Regular" => 40.00,
         ],
         "Manager" => [
             "Regular" => 0.00,

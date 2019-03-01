@@ -107,7 +107,7 @@ $(document).ready(function(){
 $(document).on('click','.use-same-address',function(){
     if ($(this).is(':checked') && address) {
         for(let key in address){
-            $(`input#${key}`).val(address[key]);
+            $(`input#${key}, select#${key}`).val(address[key]);
         }
     }
 });

@@ -41,7 +41,7 @@ $member = $reg->member;
         <div class="col-md-6 {{$errors->has('dob')?'has-error':''}}">
 
             <label class="label-row">Birthdate <span class="required">*</span></label>
-
+            <i class="alert-warning">⚠ this will be a unique field️</i>
             <div class="birthdate">
 
                 <div class="form-group">
@@ -91,7 +91,7 @@ $member = $reg->member;
             </div><!-- birthdate -->
             <small class="help-block">{{$errors->first('dob')}}</small>
             <div class="clearfix"></div>
-            <input type="date" class="datepicker form-control input-lg "/>
+            <input type="hidden" min="{{date('Y-m-d',strtotime('-30 years'))}}" class="datepicker form-control input-lg "/>
         </div>
 
         <div class="col-md-6 " style="text-align: left;">
@@ -100,7 +100,7 @@ $member = $reg->member;
                 <label>Gender <span class="required">*</span></label>
                 @foreach(config('constants.gender') as $gender => $id)
                     @php
-                        $selected = old('citizenship',$member->gender) == $id ?'checked':'';
+                        $selected = old('gender',$member->gender) == $id ?'checked':'';
                     @endphp
                     <label class="object radio">{{$gender}}
                         <input type="radio" {{$selected}} value="{{$id}}" name="gender">

@@ -11426,7 +11426,7 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
 jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).on('click', '.use-same-address', function () {
   if (jquery__WEBPACK_IMPORTED_MODULE_1___default()(this).is(':checked') && address) {
     for (var key in address) {
-      jquery__WEBPACK_IMPORTED_MODULE_1___default()("input#".concat(key)).val(address[key]);
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()("input#".concat(key, ", select#").concat(key)).val(address[key]);
     }
   }
 });

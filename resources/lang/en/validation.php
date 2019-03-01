@@ -151,6 +151,9 @@ return [
         ],
         'donation_type_id'=>[
             "required_if"=>"The :attribute field is missing, select one option."
+        ],
+        'email'=>[
+            'unique'=>'This email is already taken. This validation will change on a next release'
         ]
     ],
 

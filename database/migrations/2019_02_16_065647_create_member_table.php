@@ -23,8 +23,8 @@ class CreateMemberTable extends Migration
             $table->string('last_name')->default('');
             $table->string('gender',1)->nullable();
             $table->date('dob')->nullable();
-            $table->string('phone_1',12)->nullable();
-            $table->string('phone_2',12)->nullable();
+            $table->string('phone_1',14)->nullable();
+            $table->string('phone_2',14)->nullable();
             $table->string('email',100)->nullable();
             $table->tinyInteger('citizenship')->nullable();
             $table->timestamps();
