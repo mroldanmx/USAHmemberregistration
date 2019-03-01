@@ -13,16 +13,17 @@
             <p>You must be 18 or older to complete an online registration for yourself or your child.</p>
             <p>If you are not, a parent or guardian must complete this registration for you.</p>
 
-            <div class="object checkbox {{$errors->has('age')?'has-error':''}} pull-left">
+            <div class="form-group object checkbox {{$errors->has('age')?'has-error':''}} pull-left">
                 <label>
                     <input data-required-message="{{
                             trans('validation.custom.age_requirement.accepted')
                             }}"
-                            name="age"
-                            type="checkbox"
-                            value="1"
-                            {{old('age')?'checked':''}}
-                    > <span class="checkmark"></span> I am 18 years old or greater <span
+                           name="age"
+                           type="checkbox"
+                           value="1" required
+                           {{old('age')?'checked':''}}
+                           data-error-msg="The email is required in valid format!"/>
+                    <span class="checkmark"></span> I am 18 years old or greater <span
                             class="required">*</span>
                 </label>
                 <small style="position: absolute"

@@ -64,35 +64,35 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label>Name on Card <span class="required">*</span></label>
-                        <input type="text" class="form-control input-lg" placeholder="e.g. John Ricado">
+                        <input type="text" class="form-control input-lg" placeholder="e.g. John Ricado" required />
                     </div>
                 </div>
 
                 <div class="col-md-12">
                     <div class="form-group">
                         <label>Card Number <span class="required">*</span></label>
-                        <input type="number" class="form-control input-lg" placeholder="e.g. 1234 5678 9012 3456">
+                        <input type="number" id="CREDITCARD" class="form-control input-lg" placeholder="e.g. 1234 5678 9012 3456" required />
                     </div>
                 </div>
 
                 <div class="col-xs-6 col-sm-4 col-md-4">
                     <div class="form-group">
                         <label>Expiration Date <span class="required">*</span></label>
-                        <input type="text" class="form-control input-lg" placeholder="Month">
+                        <input type="text" class="form-control input-lg" placeholder="Month" required />
                     </div>
                 </div>
 
                 <div class="col-xs-6 col-sm-4 col-md-4">
                     <div class="form-group">
                         <label></label>
-                        <input type="text" class="form-control input-lg" placeholder="Year">
+                        <input type="text" class="form-control input-lg" placeholder="Year" required>
                     </div>
                 </div>
 
                 <div class="col-xs-6 col-sm-offset-1 col-sm-3 col-md-offset-1 col-md-3">
                     <div class="form-group">
                         <label>CVV/CVC <span class="required">*</span></label>
-                        <input type="text" class="form-control input-lg" placeholder="e.g. 123">
+                        <input type="text" class="form-control input-lg" placeholder="e.g. 123" required />
                     </div>
                 </div>
 
@@ -114,28 +114,28 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Address <span class="required">*</span></label>
-                        <input id="line_1" type="text" class="form-control input-lg" placeholder="e.g. 580 Whiff Oaf Lane">
+                        <input id="line_1" type="text" class="form-control input-lg" placeholder="e.g. 580 Whiff Oaf Lane" required />
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">City <span class="required">*</span></label>
-                        <input id="city" type="text" class="form-control input-lg" placeholder="e.g. Orlando">
+                        <input id="city" type="text" class="form-control input-lg" placeholder="e.g. Orlando" required />
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">State <span class="required">*</span></label>
-                        <input id="state" type="text" class="form-control input-lg" placeholder="e.g. Florida">
+                        <input id="state" type="text" class="form-control input-lg" placeholder="e.g. Florida" required />
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Country <span class="required">*</span></label>
-                        <select id="country" class="form-control input-lg" placeholder="e.g. USA">
+                        <select id="country" class="form-control input-lg" placeholder="e.g. USA" required />
                             <option>e.g. United States</option>
                             <option>United States</option>
                             <option>Canada</option>
@@ -146,7 +146,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Zip Code <span class="required">*</span></label>
-                        <input type="text" id="zip" class="form-control input-lg js-zipcode" placeholder="e.g. Zip Code">
+                        <input type="text" id="zip" class="form-control input-lg js-zipcode" placeholder="e.g. Zip Code" required >
                     </div>
                 </div>
 

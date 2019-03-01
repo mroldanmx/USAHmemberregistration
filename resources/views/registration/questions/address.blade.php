@@ -22,7 +22,7 @@ $address = $reg->member->address;
             <div class="form-group">
                 <label for="exampleInputPassword1">Mailing Address <span class="required">*</span></label>
                 <input type="hidden" name="id" value="{{old('id')}}">
-                <input type="text" name="line_1" value="{{old('line_1',$address->line_1)}}"
+                <input type="text" name="line_1" required value="{{old('line_1',$address->line_1)}}"
                        class="form-control input-lg" placeholder="e.g. 580 Whiff Oaf Lane">
             </div>
         </div>
@@ -30,7 +30,7 @@ $address = $reg->member->address;
         <div class="col-md-6 {{$errors->has('zip')?'has-error':''}}">
             <div class="form-group">
                 <label for="exampleInputPassword1">Zip Code <span class="required">*</span></label>
-                <input type="text" name="zip" value="{{old('zip',$address->zip)}}"
+                <input type="text" name="zip" required value="{{old('zip',$address->zip)}}"
                        class="form-control input-lg js-zipcode" placeholder="e.g. Zip Code">
             </div>
         </div>
@@ -39,7 +39,7 @@ $address = $reg->member->address;
             <div class="form-group">
                 <label for="exampleInputPassword1">City <span class="required">*</span></label>
                 <input type="text" name="city" value="{{old('city',$address->city)}}" class="form-control input-lg"
-                       placeholder="e.g. Orlando">
+                       placeholder="e.g. Orlando" required/>
             </div>
         </div>
 
@@ -47,14 +47,14 @@ $address = $reg->member->address;
             <div class="form-group">
                 <label for="exampleInputPassword1">State <span class="required">*</span></label>
                 <input type="text" name="state" value="{{old('state',$address->state)}}" class="form-control input-lg"
-                       placeholder="e.g. Florida">
+                       placeholder="e.g. Florida" required/>
             </div>
         </div>
 
         <div class="col-md-6 {{$errors->has('country')?'has-error':''}}">
             <div class="form-group">
                 <label for="exampleInputPassword1">Country <span class="required">*</span></label>
-                <select class="form-control input-lg" name="country" value="{{old('country',$address->country)}}"
+                <select class="form-control input-lg" required name="country" value="{{old('country',$address->country)}}"
                         >
                     <option value="">Select Country</option>
                     <option {{$address->country == 'US'?'selected':''}} value="US">United States</option>

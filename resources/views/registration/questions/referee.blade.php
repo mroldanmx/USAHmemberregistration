@@ -141,7 +141,8 @@
                     </div>
 
                 </div><!-- birthdate -->
-
+                <div class="clearfix"></div>
+                <input type="date" class="datepicker form-control input-lg "/>
             </div>
 
             <div class="col-sm-4 col-md-4">
