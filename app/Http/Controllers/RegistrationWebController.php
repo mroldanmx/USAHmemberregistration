@@ -381,8 +381,8 @@ class RegistrationWebController extends Controller
 
             //user created? send email.
             if ($user) {
-                Mail::to($user->email)
-                    ->send(new MemberRegistration($user));
+                //Mail::to($user->email)
+                //    ->send(new MemberRegistration($user));
 
             } else {
                 //something went wrong, notify support
