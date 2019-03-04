@@ -11344,20 +11344,20 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).on('change', '[name="mem
     jquery__WEBPACK_IMPORTED_MODULE_1___default()('.js-child').removeClass('hidden');
   }
 });
-jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).on('change', 'input[name="who"]', function () {
+jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).on('click', 'input[name="registration_type_id"]', function () {
   var registration_type = jquery__WEBPACK_IMPORTED_MODULE_1___default()(this).val();
 
   switch (registration_type) {
     case '3':
       if (!confirm('Each registrant must be present to acknowledge waivers.')) {
-        jquery__WEBPACK_IMPORTED_MODULE_1___default()('input[name="who"]').prop('checked', false);
+        jquery__WEBPACK_IMPORTED_MODULE_1___default()('input[name="registration_type_id"]').prop('checked', false);
       }
 
       break;
 
     case '4':
       if (!confirm("Each person being registered needs to be present to accept the USA Hockey Waiver of Liability and the USA Hockey Concussion Information and Acknowledgement. Also, be sure to provide each person's correct mailing address and personal email address so that confirmation of registration can be delivered. ")) {
-        jquery__WEBPACK_IMPORTED_MODULE_1___default()('input[name="who"]').prop('checked', false);
+        jquery__WEBPACK_IMPORTED_MODULE_1___default()('input[name="registration_type_id"]').prop('checked', false);
       }
 
       break;
@@ -11465,7 +11465,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('form#registrationForm').on('submi
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/rataciber/proyectos/integrass/USAHmemberregistration/resources/js/register.js */"./resources/js/register.js");
+module.exports = __webpack_require__(/*! /Users/ecastilloc/USAHmemberregistration/resources/js/register.js */"./resources/js/register.js");
 
 
 /***/ })

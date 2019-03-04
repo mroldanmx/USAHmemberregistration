@@ -44,18 +44,18 @@ $(document).on('change', '[name="member_type_id"]', function () {
     }
 });
 
-$(document).on('change', 'input[name="who"]', function () {
+$(document).on('click', 'input[name="registration_type_id"]', function () {
     const registration_type = $(this).val();
     switch (registration_type) {
         case '3':
             if (!confirm('Each registrant must be present to acknowledge waivers.')) {
-                $('input[name="who"]').prop('checked', false);
+                $('input[name="registration_type_id"]').prop('checked', false);
             }
             break;
 
         case '4':
             if (!confirm("Each person being registered needs to be present to accept the USA Hockey Waiver of Liability and the USA Hockey Concussion Information and Acknowledgement. Also, be sure to provide each person's correct mailing address and personal email address so that confirmation of registration can be delivered. ")) {
-                $('input[name="who"]').prop('checked', false);
+                $('input[name="registration_type_id"]').prop('checked', false);
             }
             break;
     }
