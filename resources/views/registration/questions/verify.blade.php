@@ -288,11 +288,13 @@ $address = $member->address;
         <div class="row">
 
             <div class="col-md-12 no-edit">
-                <div class="object checkbox">
+                <div class="form-group object checkbox {{$errors->has('confirm')?'has-error':''}}">
                     <label>
-                        <input name="confirm" value="1" type="checkbox"> <span class="checkmark"></span> I confim that the legal name and
+                        <input data-required-message="{{trans('validation.custom.confirm_name.required')}}" name="confirm" value="1" type="checkbox"> <span class="checkmark"></span> I confim that the legal name and
                         birthday are correct <span class="required">*</span>
                     </label>
+                    <small style="position: absolute"
+                           class="help-block">{{$errors->has('confirm')?$errors->first('confirm'):''}}</small>
                 </div>
             </div>
             <div class="col-md-12 no-edit">

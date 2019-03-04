@@ -154,6 +154,9 @@ return [
         ],
         'email'=>[
             'unique'=>'This email is already taken. This validation will change on a next release'
+        ],
+        'confirm_name'=>[
+            'required'=>'Please complete highlighted fields where information is required!'
         ]
     ],
 
